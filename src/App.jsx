@@ -11,6 +11,10 @@ import Contact from './pages/Contact';
 import Team from './pages/Team';
 import Footer from './components/Footer';
 import SocialButtons from './components/SocialButtons';
+import Loan from './pages/Loans';
+import Benifits from './pages/Benefits';
+import Valueaddedservices from './pages/Valueservices';
+import Process from './pages/Process';
 
 function App() {
   return (
@@ -28,6 +32,11 @@ function App() {
             <Route path="/career" element={<Career />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/services/loans" element={<Loan />} />
+            <Route path="/services/process" element={<Process />} />
+            <Route path="/services/benefits" element={<Benifits />} />
+            <Route path="/services/valueservices" element={<Valueaddedservices />} />
+
           </Routes>
         </main>
         <SocialButtons />
