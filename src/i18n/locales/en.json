@@ -1,0 +1,205 @@
+{
+  "nav": {
+    "home": "Home",
+    "calculator": "Loan Calculator",
+    "services": "Services",
+    "about": "About",
+    "gallery": "Gallery",
+    "support": "Support",
+    "career": "Career",
+    "contact": "Contact",
+    "team": "Our Team",
+    "applyNow": "Apply Now",
+    "goldLoan": "Gold Loan",
+    "silverLoan": "Silver Loan",
+    "jewelleryLoan": "Jewellery Loan",
+    "journey": "Our Journey",
+    "leadership": "Leadership",
+    "values": "Our Values"
+  },
+  "hero": {
+    "title": "Get Quick Gold Loans at Best Rates",
+    "goldRate": "Current Gold Rate (24K): ₹{{price}}/gram"
+  },
+  "carousel": {
+    "slide1": {
+      "title": "Quick Gold Loans",
+      "description": "Get instant loans against your gold jewelry with competitive interest rates"
+    },
+    "slide2": {
+      "title": "Safe & Secure",
+      "description": "Your gold is safe with us in our highly secure vaults"
+    },
+    "slide3": {
+      "title": "Best Rates Guaranteed",
+      "description": "We offer the most competitive interest rates in the market"
+    }
+  },
+  "features": {
+    "title": "Why Choose UniGold Finance?",
+    "quickProcessing": {
+      "title": "Quick Processing",
+      "description": "Get your loan approved within 30 minutes"
+    },
+    "bestRates": {
+      "title": "Best Rates",
+      "description": "Competitive interest rates starting from 7.5%"
+    },
+    "safeStorage": {
+      "title": "Safe Storage",
+      "description": "Your gold is safe in our secure vaults"
+    }
+  },
+  "calculator": {
+    "title": "Gold Loan Calculator",
+    "weight": "Gold Weight (grams)",
+    "purity": "Gold Purity (K)",
+    "duration": "Loan Duration (months)",
+    "loanDetails": "Loan Details",
+    "maxLoan": "Maximum Loan Amount: ₹{{amount}}",
+    "emi": "Monthly EMI: ₹{{amount}}",
+    "emiSchedule": "EMI Schedule"
+  },
+  "services": {
+    "title": "Our Services",
+    "goldLoan": {
+      "title": "Gold Loan",
+      "description": "Get instant loans against your gold jewelry with competitive interest rates",
+      "features": {
+        "title": "Features",
+        "feature1": "Quick processing within 30 minutes",
+        "feature2": "Interest rates from 7.5% per annum",
+        "feature3": "Loan amount up to 75% of gold value",
+        "feature4": "Flexible repayment options"
+      }
+    },
+    "silverLoan": {
+      "title": "Silver Loan",
+      "description": "Unlock the value of your silver assets with our flexible loan options",
+      "features": {
+        "title": "Features",
+        "feature1": "Competitive rates for silver items",
+        "feature2": "Accept all forms of silver",
+        "feature3": "Safe storage in secured vaults",
+        "feature4": "Transparent valuation process"
+      }
+    },
+    "jewelleryLoan": {
+      "title": "Jewellery Loan",
+      "description": "Quick loans against your precious jewellery with safe storage facilities",
+      "features": {
+        "title": "Features",
+        "feature1": "Accept all types of jewellery",
+        "feature2": "Expert valuation team",
+        "feature3": "Insurance coverage",
+        "feature4": "Multiple repayment options"
+      }
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "journey": {
+      "title": "Our Journey",
+      "description": "Established in 2020, UniGold Finance has been serving customers with trust and reliability",
+      "milestones": {
+        "2020": "Founded with a vision to revolutionize gold loans",
+        "2021": "Expanded to 50+ branches",
+        "2022": "Launched digital gold loan platform",
+        "2023": "Achieved ₹1000 crore loan portfolio"
+      }
+    },
+    "leadership": {
+      "title": "Leadership",
+      "description": "Our experienced leadership team brings decades of expertise in financial services"
+    },
+    "values": {
+      "title": "Our Values",
+      "integrity": "Integrity in all dealings",
+      "transparency": "Complete transparency",
+      "customer": "Customer-first approach",
+      "innovation": "Continuous innovation"
+    }
+  },
+  "team": {
+    "title": "Meet Our Team",
+    "member1": {
+      "name": "John Smith",
+      "position": "CEO",
+      "bio": "With over 20 years of experience in financial services"
+    },
+    "member2": {
+      "name": "Sarah Johnson",
+      "position": "Operations Director",
+      "bio": "Expert in gold valuation and risk management"
+    },
+    "member3": {
+      "name": "Michael Chen",
+      "position": "Chief Financial Officer",
+      "bio": "Specializes in financial planning and strategy"
+    }
+  },
+  "career": {
+    "title": "Career Opportunities",
+    "description": "Join our dynamic team and grow with us",
+    "positions": {
+      "title": "Open Positions",
+      "position1": {
+        "title": "Gold Loan Officer",
+        "location": "Mumbai",
+        "type": "Full Time"
+      },
+      "position2": {
+        "title": "Branch Manager",
+        "location": "Delhi",
+        "type": "Full Time"
+      },
+      "position3": {
+        "title": "Risk Analyst",
+        "location": "Bangalore",
+        "type": "Full Time"
+      }
+    },
+    "benefits": {
+      "title": "Benefits",
+      "benefit1": "Competitive salary",
+      "benefit2": "Health insurance",
+      "benefit3": "Professional development",
+      "benefit4": "Work-life balance"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message"
+    },
+    "info": {
+      "address": "123 Finance Street, Mumbai",
+      "phone": "+91 1800-123-4567",
+      "email": "info@unigold.com"
+    }
+  },
+  "loanPopup": {
+    "title": "Special Gold Loan Offer!",
+    "benefits": {
+      "title": "Benefits",
+      "point1": "Instant approval within 30 minutes",
+      "point2": "Interest rates starting from 7.5%",
+      "point3": "No hidden charges",
+      "point4": "Flexible repayment options"
+    },
+    "scheme": {
+      "title": "Current Scheme",
+      "description": "Get up to 75% of your gold value as loan amount with minimal documentation"
+    },
+    "applyNow": "Apply Now"
+  },
+  "footer": {
+    "tagline": "Your trusted partner for gold loans",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "address": "Address"
+  }
+}
