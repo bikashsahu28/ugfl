@@ -56,12 +56,19 @@ function Navbar() {
     <nav className={`bg-white shadow-lg transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 z-50' : ''}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <div className="flex items-center flex-shrink-0">
+          {/* <div className="flex items-center flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <span className="text-2xl font-bold text-primary">UniGold</span>
-              <span className="text-secondary">Finance</span>
+              <span className="text-2xl font-bold text-primary">UNIGOLD FINANCE<br></br><span className="text-secondary">GOLD LOAN</span></span><br></br>
             </Link>
-          </div>
+          </div> */}
+<div className="flex items-center flex-shrink-0">
+  <Link to="/" className="flex flex-col items-center">
+    <span className="text-2xl font-bold text-primary">
+      UNIGOLD FINANCE<span className="align-super text-xs">™</span>
+    </span>
+    <span className="text-sm  text-secondary -mt-1">GOLD LOAN</span>
+  </Link>
+</div>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-1 xl:space-x-2">

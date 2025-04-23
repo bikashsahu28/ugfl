@@ -15,6 +15,7 @@ import Loan from './pages/Loans';
 import Benifits from './pages/Benefits';
 import Valueaddedservices from './pages/Valueservices';
 import Process from './pages/Process';
+import LoanApplicationForm from './components/LoanApplicationForm';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/services/process" element={<Process />} />
             <Route path="/services/benefits" element={<Benifits />} />
             <Route path="/services/valueservices" element={<Valueaddedservices />} />
+            <Route path="/LoanApplicationForm" element={<LoanApplicationForm />} />
 
           </Routes>
         </main>
