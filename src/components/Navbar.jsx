@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import NavDropdown from './NavDropdown';
@@ -10,7 +10,7 @@ function Navbar() {
   const [isSticky, setIsSticky] = useState(false);
   const { t } = useTranslation();
   const location = useLocation();
-
+  const navigate = useNavigate();
   const navItems = [
     {
       title: t('nav.services'),
@@ -56,11 +56,7 @@ function Navbar() {
     <nav className={`bg-white shadow-lg transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 z-50' : ''}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          {/* <div className="flex items-center flex-shrink-0">
-            <Link to="/" className="flex items-center">
-              <span className="text-2xl font-bold text-primary">UNIGOLD FINANCE<br></br><span className="text-secondary">GOLD LOAN</span></span><br></br>
-            </Link>
-          </div> */}
+      
 <div className="flex items-center flex-shrink-0">
   <Link to="/" className="flex flex-col items-center">
     <span className="text-2xl font-bold text-primary">
@@ -88,7 +84,7 @@ function Navbar() {
             <div className="ml-2">
               <LanguageDropdown />
             </div>
-            <button className="primary-button ml-2">{t('nav.applyNow')}</button>
+            <button className="primary-button ml-2" onClick={() => navigate('/LoanApplicationForm')} >{t('nav.applyNow')}</button>
           </div>
 
           {/* Mobile Menu Button */}

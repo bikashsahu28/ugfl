@@ -16,8 +16,7 @@ function Home() {
     triggerOnce: true,
     threshold: 0.1
   });
-  const [showForm, setShowForm] = useState(false);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // Adding these scroll effects at the component level
 
   useEffect(() => {
@@ -121,35 +120,37 @@ const visibleTestimonials = testimonials.slice(
       <LoanPopup />
       {/* Why Choose Us Section */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6 rounded-lg bg-white shadow-lg">
-              <div className="text-4xl mb-4">💸</div>
-              <h3 className="text-xl font-semibold mb-2">Low Interest Rates</h3>
-              <p className="text-gray-600">Starting from just 0.75% per month</p>
-            </div>
-            <div className="text-center p-6 rounded-lg bg-white shadow-lg">
-              <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-semibold mb-2">Instant Disbursal</h3>
-              <p className="text-gray-600">Get cash in hand within 30 minutes</p>
-            </div>
-            <div className="text-center p-6 rounded-lg bg-white shadow-lg">
-              <div className="text-4xl mb-4">🔒</div>
-              <h3 className="text-xl font-semibold mb-2">Safe Storage</h3>
-              <p className="text-gray-600">Bank-grade vaults with insurance</p>
-            </div>
-            <div className="text-center p-6 rounded-lg bg-white shadow-lg">
-              <div className="text-4xl mb-4">🔄</div>
-              <h3 className="text-xl font-semibold mb-2">Flexible Repayment</h3>
-              <p className="text-gray-600">Choose tenure from 3 to 12 months</p>
-            </div>
-          </div>
-          <div className="mt-12 text-center">
-            <p className="text-xl font-medium">Trusted by <span className="text-primary font-bold">50,000+</span> Happy Customers</p>
-          </div>
-        </div>
-      </section>
+  <div className="max-w-7xl mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-12">{t('whyChooseUs.title')}</h2>
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="text-center p-6 rounded-lg bg-white shadow-lg">
+        <div className="text-4xl mb-4">💸</div>
+        <h3 className="text-xl font-semibold mb-2">{t('whyChooseUs.features.lowInterest.title')}</h3>
+        <p className="text-gray-600">{t('whyChooseUs.features.lowInterest.desc')}</p>
+      </div>
+      <div className="text-center p-6 rounded-lg bg-white shadow-lg">
+        <div className="text-4xl mb-4">⚡</div>
+        <h3 className="text-xl font-semibold mb-2">{t('whyChooseUs.features.instantDisbursal.title')}</h3>
+        <p className="text-gray-600">{t('whyChooseUs.features.instantDisbursal.desc')}</p>
+      </div>
+      <div className="text-center p-6 rounded-lg bg-white shadow-lg">
+        <div className="text-4xl mb-4">🔒</div>
+        <h3 className="text-xl font-semibold mb-2">{t('whyChooseUs.features.safeStorage.title')}</h3>
+        <p className="text-gray-600">{t('whyChooseUs.features.safeStorage.desc')}</p>
+      </div>
+      <div className="text-center p-6 rounded-lg bg-white shadow-lg">
+        <div className="text-4xl mb-4">🔄</div>
+        <h3 className="text-xl font-semibold mb-2">{t('whyChooseUs.features.flexibleRepayment.title')}</h3>
+        <p className="text-gray-600">{t('whyChooseUs.features.flexibleRepayment.desc')}</p>
+      </div>
+    </div>
+    <div className="mt-12 text-center">
+      <p className="text-xl font-medium">
+        {t('whyChooseUs.trusted')} <span className="text-primary font-bold">50,000+</span> {t('whyChooseUs.customers')}
+      </p>
+    </div>
+  </div>
+</section>
       {/* Hero Section (Updated) */}
       <section className="relative bg-gradient-to-r from-primary to-red-700 text-white py-6 overflow-hidden">
   {/* Animated background elements */}
@@ -164,128 +165,198 @@ const visibleTestimonials = testimonials.slice(
       <div className="w-64 h-64 rounded-full bg-white"></div>
     </motion.div>
   </div>
-
-  <div className="max-w-7xl mx-auto px-4 relative z-10">
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
+<div className="max-w-7xl mx-auto px-4 relative z-10">
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.2 }}
+    className="text-center"
+  >
+    {/* Main headline with gold text effect */}
+    <motion.h1 
+      className="text-4xl md:text-6xl font-bold mb-6"
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
-      className="text-center"
+      transition={{ duration: 0.6, delay: 0.4 }}
     >
-      {/* Main headline with gold text effect */}
-      <motion.h1 
-        className="text-4xl md:text-6xl font-bold mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">
-          Instant Gold Loans
-        </span>
-        <br className="md:hidden" /> with Lowest Interest Rates
-      </motion.h1>
+      <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">
+        {t('hero1.mainTitle')}
+      </span>
+      <br className="md:hidden" /> {t('hero1.subTitle')}
+    </motion.h1>
 
-      {/* USP badges with staggered animation */}
-      <motion.div 
-        className="flex flex-wrap justify-center gap-2 mb-8"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.1,
-              delayChildren: 0.6
-            }
+    {/* USP badges with staggered animation */}
+    <motion.div 
+      className="flex flex-wrap justify-center gap-2 mb-8"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.6
           }
-        }}
-      >
-        {['100% Transparent', 'Safe Vault Storage', 'Fast Processing'].map((item, i) => (
-          <motion.span
-            key={i}
-            variants={{
-              hidden: { opacity: 0, y: 10 },
-              visible: { opacity: 1, y: 0 }
-            }}
-            className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20"
-          >
-            <span className="mr-2">✓</span>
-            {item}
-          </motion.span>
-        ))}
-      </motion.div>
-
-      {/* Gold price ticker with animation */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: 0.8 }}
-        className="inline-block px-6 py-3 mb-10 bg-black/20 rounded-full backdrop-blur-sm border border-yellow-400/30"
-      >
-        <div className="flex items-center">
-          <svg className="w-6 h-6 mr-2 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-          </svg>
-          <span className="text-xl font-medium">
-            Today's Gold Rate: <span className="text-yellow-400 font-bold">₹{goldPrice}/g</span>
-          </span>
-        </div>
-      </motion.div>
-
-      {/* CTA buttons with hover effects */}
-      {/* <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 1 }}
-        className="flex flex-wrap justify-center gap-4"
-      >
-        <Link 
-          to="/LoanApplicationForm" 
-          className="relative overflow-hidden group bg-secondary text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 text-lg shadow-lg hover:shadow-xl"
+        }
+      }}
+    >
+      {t('hero1.badges', { returnObjects: true }).map((item, i) => (
+        <motion.span
+          key={i}
+          variants={{
+            hidden: { opacity: 0, y: 10 },
+            visible: { opacity: 1, y: 0 }
+          }}
+          className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20"
         >
-          <span className="relative z-10">Apply Online</span>
-          <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-        </Link>
-       
-        <Link 
-          to="/calculator" 
-          className="relative overflow-hidden group bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:text-primary-dark transition-all duration-300 text-lg shadow-lg hover:shadow-xl border-2 border-transparent hover:border-white/30"
-        >
-          <span className="relative z-10">Check Eligibility</span>
-          <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-        </Link>
-      </motion.div> */}
- <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1 }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              <button 
-                onClick={() => setShowForm(true)}
-                className="relative overflow-hidden group bg-secondary text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 text-lg shadow-lg hover:shadow-xl"
-              >
-                <span className="relative z-10">Apply Online</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              </button>
-              
-              <Link 
-                to="/calculator" 
-                className="relative overflow-hidden group bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:text-primary-dark transition-all duration-300 text-lg shadow-lg hover:shadow-xl border-2 border-transparent hover:border-white/30"
-              >
-                <span className="relative z-10">Check Eligibility</span>
-                <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              </Link>
-            </motion.div>
-
+          <span className="mr-2">✓</span>
+          {item}
+        </motion.span>
+      ))}
     </motion.div>
-     {/* Loan Application Modal */}
-     {showForm && (
-        <LoanApplicationForm onClose={() => setShowForm(false)} />
-      )}
-  </div>
 
+    {/* Gold price ticker with animation */}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay: 0.8 }}
+      className="inline-block px-6 py-3 mb-10 bg-black/20 rounded-full backdrop-blur-sm border border-yellow-400/30"
+    >
+      <div className="flex items-center">
+        <svg className="w-6 h-6 mr-2 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+        </svg>
+        <span className="text-xl font-medium">
+          {t('hero1.goldRate')} <span className="text-yellow-400 font-bold">₹{goldPrice}/g</span>
+        </span>
+      </div>
+    </motion.div>
+
+    {/* CTA buttons with hover effects */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 1 }}
+      className="flex flex-wrap justify-center gap-4"
+    >
+      <button 
+        onClick={() => setIsModalOpen(true)}
+        className="relative overflow-hidden group bg-secondary text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 text-lg shadow-lg hover:shadow-xl"
+      >
+        <span className="relative z-10">{t('hero1.cta.applyOnline')}</span>
+        <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+      </button>
+      <Link 
+        to="/calculator" 
+        className="relative overflow-hidden group bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:text-primary-dark transition-all duration-300 text-lg shadow-lg hover:shadow-xl border-2 border-transparent hover:border-white/30"
+      >
+        <span className="relative z-10">{t('hero1.cta.checkEligibility')}</span>
+        <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+      </Link>
+    </motion.div>
+
+    {/* Modal (already properly internationalized) */}
+    {isModalOpen && (
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto"
+        >
+          {/* ... modal content remains the same ... */}
+          {isModalOpen && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto"
+    >
+      <div className="p-6">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-xl font-bold text-gray-800">{t('goldLoan.title')}</h3>
+          <button 
+            onClick={() => setIsModalOpen(false)}
+            className="text-gray-500 hover:text-gray-700"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <form className="space-y-4">
+          <div>
+            <label className="block text-sm text-left font-bold text-gray-700 mb-1">{t('goldLoan.fullName')}</label>
+            <input 
+              type="text" 
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              placeholder={t('goldLoan.fullName')}
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm text-left font-bold text-gray-700 mb-1">{t('goldLoan.phoneNumber')}</label>
+            <input 
+              type="tel" 
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              placeholder={t('goldLoan.phoneNumber')}
+              required
+            /> 
+          </div>
+
+          <div>
+            <label className="block text-sm text-left font-bold text-gray-700 mb-1">{t('goldLoan.email')}</label>
+            <input 
+              type="email" 
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              placeholder={t('goldLoan.email')}
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-bold text-left text-gray-700 mb-1">{t('goldLoan.goldWeight')}</label>
+            <input 
+              type="number" 
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              placeholder={t('goldLoan.goldWeight')}
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm text-left font-bold text-gray-700 mb-1">{t('goldLoan.loanAmount')}</label>
+            <input 
+              type="number" 
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              placeholder={t('goldLoan.loanAmount')}
+              min="0"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-yellow-500 text-gray-900 py-2 px-4 rounded-md font-semibold hover:bg-yellow-600 transition-colors duration-300"
+          >
+            {t('goldLoan.submit')}
+          </button>
+        </form>
+      </div>
+    </motion.div>
+  </div>
+)}
+        </motion.div>
+      </div>
+    )}
+  </motion.div>
+</div>
   {/* Floating gold coins animation */}
   {[...Array(5)].map((_, i) => (
     <motion.div

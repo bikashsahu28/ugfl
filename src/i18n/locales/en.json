@@ -185,7 +185,7 @@
     "title": "Special Gold Loan Offer!",
     "benefits": {
       "title": "Benefits",
-      "point1": "Instant approval within 30 minutes",
+      "point1": "Instant approval within 5 minutes",
       "point2": "Interest rates starting from 7.5%",
       "point3": "No hidden charges",
       "point4": "Flexible repayment options"
@@ -201,5 +201,130 @@
     "quickLinks": "Quick Links",
     "contact": "Contact",
     "address": "Address"
-  }
+  },
+    "goldLoan": {
+      "title": "Gold Loan Application",
+      "fullName": "Full Name",
+      "phoneNumber": "Phone Number",
+      "email": "Email Address",
+      "goldWeight": "Gold Weight (grams)",
+      "loanAmount": "Loan Amount Required",
+      "submit": "Submit Application"
+    },
+      "whyChooseUs": {
+        "title": "Why Choose Us",
+        "features": {
+          "lowInterest": {
+            "title": "Low Interest Rates",
+            "desc": "Starting from just 0.75% per month"
+          },
+          "instantDisbursal": {
+            "title": "Instant Disbursal",
+            "desc": "Get cash in hand within 30 minutes"
+          },
+          "safeStorage": {
+            "title": "Safe Storage",
+            "desc": "Bank-grade vaults with insurance"
+          },
+          "flexibleRepayment": {
+            "title": "Flexible Repayment",
+            "desc": "Choose tenure from 3 to 12 months"
+          }
+        },
+        "trusted": "Trusted by",
+        "customers": "Happy Customers"
+      },
+      
+        "hero1": {
+          "mainTitle": "Instant Gold Loans",
+          "subTitle": "with Lowest Interest Rates",
+          "badges": ["100% Transparent", "Safe Vault Storage", "Fast Processing"],
+          "goldRate": "Today's Gold Rate:",
+          "cta": {
+            "applyOnline": "Apply Online",
+            "checkEligibility": "Check Eligibility"
+          }
+        },
+        "goldLoan1": {
+          "title": "Gold Loan Application",
+          "fullName": "Full Name",
+          "phoneNumber": "Phone Number",
+          "email": "Email Address",
+          "goldWeight": "Gold Weight (grams)",
+          "loanAmount": "Loan Amount Required",
+          "submit": "Submit Application"
+        },
+          "LoanApplicationForm": {
+            "title": "Gold Loan Application",
+            "description": "Fill out the form below to apply for a gold loan",
+            "fields": {
+              "name": "Full Name",
+              "email": "Email",
+              "phone": "Phone Number",
+              "goldType": "Gold Purity",
+              "goldWeight": "Gold Weight (grams)",
+              "loanAmount": "Loan Amount (₹)",
+              "tenure": "Loan Tenure (months)",
+              "address": "Address",
+              "agreeTerms": "I agree to the terms and conditions"
+            },
+            "placeholders": {
+              "name": "Enter your full name",
+              "email": "Enter your email",
+              "phone": "Enter your phone number",
+              "goldWeight": "Enter gold weight",
+              "loanAmount": "Enter loan amount",
+              "address": "Enter your full address"
+            },
+            "options": {
+              "selectTenure": "Select tenure",
+              "months": "Months",
+              "goldTypes": {
+                "22K": "22K Gold",
+                "18K": "18K Gold",
+                "24K": "24K Gold"
+              }
+            },
+            "submit": "Submit Application",
+            "processing": "Processing..."
+          },
+            "loanServices": {
+              "title": "Gold Loan Services",
+              "subtitle": "Fast, secure, and affordable gold loans tailored to your needs",
+              "quickApproval": {
+                "title": "Quick Loan Approval",
+                "description": "Get funds within hours with our streamlined process",
+                "detail1": "Unigold ensures that we have the best loan options available to our clients to ensure ease during a financial emergency. We understand that while applying for loans, people generally face tons of hurdles which make the entire process more tedious.",
+                "detail2": "Our customers have an option to avail themselves of a gold loan, one of the easiest ways to secure every loan in India. And in no time, you will have access to funds.",
+                "detail3": "Be it an urgent medical case, a tuition fee payment, or funds needed for business expansion, we guarantee quick service with minimal documentation."
+              },
+              "interestRates": {
+                "title": "Competitive Interest Rates",
+                "description": "Lowest gold loan rates with no hidden charges",
+                "detail1": "When it is a question of gold loans, affordability is important. We provide some of the best interest rates on gold loans in the industry.",
+                "detail2": "Our open pricing strategy helps prevent there being any hidden fees and ensures that our gold loans are one of the lowest cost borrowing options in the market.",
+                "detail3": "Whatever the size of your loan, from a small loan to a larger loan, our low interest rate makes it simpler and easier to repay."
+              },
+              "repayment": {
+                "title": "Flexible Repayment Options",
+                "description": "Choose a repayment plan that fits your finances",
+                "detail1": "At Unigold Finance, we provide customizable gold loan repayment plans that fit your financial situation. We believe that repayment should be as stress-free as borrowing.",
+                "detail2": "Whether you prefer monthly instalments, quarterly payments, or a lump-sum repayment at the end of the loan tenure, we've got you covered.",
+                "detail3": "Our customized repayment plans are designed to align with your cash flow, ensuring you never feel burdened by your loan obligations."
+              },
+              "vaultStorage": {
+                "title": "Secure Vault Storage",
+                "description": "Bank-grade security for your precious gold",
+                "detail1": "Your gold is precious, and at Unigold Finance, we treat it with the utmost care. Our secure vault storage facilities are equipped with state-of-the-art security features.",
+                "detail2": "All pledged gold is fully insured, providing you with complete peace of mind. Whether you're pledging family heirlooms or investment gold, you can trust Unigold Finance.",
+                "detail3": "Our commitment to safety and transparency ensures that your gold is in the best hands with 24/7 surveillance and biometric access."
+              },
+              "cta": {
+                "title": "Ready to Get Started?",
+                "description": "Apply for a gold loan today and get instant access to funds with minimal documentation and competitive rates.",
+                "buttonText": "Apply Now"
+              }
+            }
+          
+        
 }
