@@ -35,12 +35,11 @@ function Loan() {
     </p>
   </div>
 </div>
-
         {/* Interest Rates Card */}
         <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
   <div className="p-6">
     <div className="bg-yellow-100 w-14 h-14 rounded-full flex items-center justify-center mb-4 group-hover:bg-red-50 transition-colors duration-300">
-      <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6 text-yellow-600 group-hover:text-red-600 transition-colors duration-300 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
     </div>
@@ -56,7 +55,7 @@ function Loan() {
         <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
   <div className="p-6">
     <div className="bg-yellow-100 w-14 h-14 rounded-full flex items-center justify-center mb-4 group-hover:bg-red-50 transition-colors duration-300">
-    <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg className="w-6 h-6 text-yellow-600 group-hover:text-red-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
               </svg>
     </div>
@@ -67,27 +66,13 @@ function Loan() {
     {t('loanServices.repayment.description')}
     </p>
   </div>
-</div>
+</div> 
         {/* Vault Storage Card */}
-        {/* <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-          <div className="p-6">
-            <div className="bg-yellow-100 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-              <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              {t('loanServices.vaultStorage.title')}
-            </h3>
-            <p className="text-gray-600">
-              {t('loanServices.vaultStorage.description')}
-            </p>
-          </div>
-        </div> */}
+
              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
   <div className="p-6">
     <div className="bg-yellow-100 w-14 h-14 rounded-full flex items-center justify-center mb-4 group-hover:bg-red-50 transition-colors duration-300">
-    <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg className="w-6 h-6 text-yellow-600 group-hover:text-red-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
     </div>
@@ -122,7 +107,7 @@ function Loan() {
             </div>
             <div className="md:w-1/2">
               <img 
-                src="/images/quick-approval.jpg" 
+                src="../image/img1.jpeg" 
                 alt={t('loanServices.quickApproval.title')}
                 className="rounded-lg shadow-md w-full"
               />
@@ -149,7 +134,7 @@ function Loan() {
             </div>
             <div className="md:w-1/2">
               <img 
-                src="/images/low-interest.jpg" 
+                src="../image/APP.jpeg"
                 alt={t('loanServices.interestRates.title')}
                 className="rounded-lg shadow-md w-full"
               />
@@ -176,7 +161,7 @@ function Loan() {
             </div>
             <div className="md:w-1/2">
               <img 
-                src="/images/flexible-repayment.jpg" 
+               src="../image/Repayment1.jpeg"
                 alt={t('loanServices.repayment.title')}
                 className="rounded-lg shadow-md w-full"
               />
@@ -203,9 +188,9 @@ function Loan() {
             </div>
             <div className="md:w-1/2">
               <img 
-                src="/images/secure-vault.jpg" 
+                src="../image/secure1.jpeg" 
                 alt={t('loanServices.vaultStorage.title')}
-                className="rounded-lg shadow-md w-full"
+                className="rounded-lg shadow-md w-full max-h-[400px] "
               />
             </div>
           </div>
@@ -228,5 +213,5 @@ function Loan() {
     </div>
   );
 }
-
+ 
 export default Loan;

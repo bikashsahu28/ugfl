@@ -324,7 +324,78 @@
                 "description": "Apply for a gold loan today and get instant access to funds with minimal documentation and competitive rates.",
                 "buttonText": "Apply Now"
               }
-            }
-          
-        
+            },
+              "gallery": {
+                "title": "UniGold Finance Gallery",
+                "subtitle": "Explore our journey through moments that define our commitment to excellence in financial services",
+                "officeOpening": "New Headquarters Opening",
+                "officeOpeningDesc": "Celebrating the inauguration of our state-of-the-art corporate headquarters in the financial district.",
+                "teamRetreat": "Annual Team Retreat",
+                "teamRetreatDesc": "Our team building stronger bonds during our annual strategy retreat in the mountains.",
+                "awardCeremony": "Industry Excellence Award",
+                "awardCeremonyDesc": "UniGold Finance recognized as the most innovative financial services provider of the year.",
+                "clientEvent": "Exclusive Client Event",
+                "clientEventDesc": "An evening of networking and financial insights with our valued clients and partners.",
+                "charityWork": "Community Support Initiative",
+                "charityWorkDesc": "Our team volunteering at local shelters as part of our corporate social responsibility program.",
+                "newProduct": "Gold-Backed Investment Launch",
+                "newProductDesc": "Introducing our revolutionary gold-backed investment product to the market.",
+                "readMore": "Read more",
+                "loadMore": "Load More"
+              },
+              "categories": {
+                "facilities": "Facilities",
+                "events": "Events",
+                "achievements": "Achievements",
+                "csr": "CSR",
+                "products": "Products"
+              },
+              "news": {
+                "title": "Latest News",
+                "subtitle": "Stay updated with our company announcements and financial updates",
+                "newBranch": {
+                  "title": "New Branch Opening in Mumbai",
+                  "excerpt": "UniGold Finance expands its presence with a new flagship branch in Mumbai's financial district."
+                },
+                "quarterlyResults": {
+                  "title": "Record Quarterly Results",
+                  "excerpt": "Company reports 25% growth in gold-backed investments for Q3 2023."
+                },
+                "readMore": "Read more"
+              },
+              "events": {
+                "title": "Upcoming Events",
+                "subtitle": "Join us at our financial seminars and investor meetings",
+                "upcoming": "Upcoming",
+                "register": "Register Now",
+                "investmentSeminar": {
+                  "title": "Gold Investment Seminar",
+                  "location": "Delhi Convention Center"
+                },
+                "annualMeeting": {
+                  "title": "Annual Investor Meeting",
+                  "location": "Virtual Event"
+                }
+              },
+              "testimonials": {
+                "title": "What Client Say's",
+                "subtitle": "What our valued clients say about our services",
+                "client1": {
+                  "name": "Rajesh Mehta",
+                  "designation": "Gold Investor",
+                  "quote": "UniGold's secure gold investment plans gave me 18% returns last year - the best in the market!"
+                },
+                "client2": {
+                  "name": "Priya Sharma",
+                  "designation": "Business Owner",
+                  "quote": "Their gold loan helped me expand my business with the lowest interest rates I could find."
+                },
+                "client3": {
+                  "name": "Amit Patel",
+                  "designation": "Retired Banker",
+                  "quote": "I trust UniGold with my family's gold assets because of their impeccable security systems."
+                }
+              }
+            
+     
 }
