@@ -395,7 +395,67 @@
                   "designation": "Retired Banker",
                   "quote": "I trust UniGold with my family's gold assets because of their impeccable security systems."
                 }
-              }
+              },
+                "process": {
+                  "title": "Gold Loan Application Process",
+                  "subtitle": "Simple, transparent and hassle-free gold loans with competitive interest rates",
+                  "eligibility": {
+                    "title": "Eligibility Criteria",
+                    "description": "Applying for a gold loan with Unigold Finance is simple and inclusive. Our eligibility criteria are designed to accommodate a wide range of customers.",
+                    "point1": "Minimum age requirement: 18 years",
+                    "point2": "Must own gold jewellery, coins, or bars",
+                    "point3": "No credit score or income proof required"
+                  },
+                  "documents": {
+                    "title": "Required Documents",
+                    "description": "We keep documentation simple with just a few essential requirements.",
+                    "idProof": {
+                      "title": "Identity Proof",
+                      "examples": "Aadhaar card, PAN card, Voter ID, or Passport"
+                    },
+                    "addressProof": {
+                      "title": "Address Proof",
+                      "examples": "Utility bill, Rental agreement, or Aadhaar card"
+                    },
+                    "goldDetails": {
+                      "title": "Gold Details",
+                      "examples": "Details of gold items being pledged"
+                    }
+                  },
+                  "steps": {
+                    "title": "Application Steps",
+                    "step1": {
+                      "title": "Visit Branch/Website",
+                      "description": "Start your application at any branch or through our website"
+                    },
+                    "step2": {
+                      "title": "Gold Evaluation",
+                      "description": "Our experts evaluate your gold's purity and weight"
+                    },
+                    "step3": {
+                      "title": "Document Verification",
+                      "description": "Quick verification of your submitted documents"
+                    },
+                    "step4": {
+                      "title": "Loan Disbursal",
+                      "description": "Get funds transferred within hours of approval"
+                    }
+                  },
+                  "faq": {
+                    "title": "Frequently Asked Questions",
+                    "maxLoanQuestion": "What is the maximum loan amount I can get against my gold?",
+                    "maxLoanAnswer": "You can get up to 75% of the gold's market value as loan amount.",
+                    "valuationQuestion": "How is the gold valuation done?",
+                    "valuationAnswer": "Our certified appraisers evaluate gold purity using advanced testing methods and weigh it to determine exact value.",
+                    "earlyRepaymentQuestion": "Can I repay the loan before the tenure ends?",
+                    "earlyRepaymentAnswer": "Yes, you can prepay anytime with minimal foreclosure charges after 3 months."
+                  }
+                },"proces": {
+  "faq": {
+    "cta": "Have More Questions? Contact Us"
+  }
+}
+              
             
      
 }
