@@ -454,7 +454,79 @@
   "faq": {
     "cta": "Have More Questions? Contact Us"
   }
-}
+},
+  "benefits": {
+    "title": "Benefits of Gold Loans",
+    "subtitle": "Why choose UniGold Finance for your gold loan needs",
+    "cta": "Apply for Gold Loan Now",
+    "lowInterest": {
+      "title": "Low-Interest Rates",
+      "description": "Enjoy significantly lower interest rates compared to personal loans or credit cards. Our gold loans offer an affordable solution for medical emergencies, weddings, or business needs."
+    },
+    "quickAccess": {
+      "title": "Easy Access to Funds",
+      "description": "Get funds within hours with our quick approval process and minimal documentation. Perfect for urgent expenses or planned investments."
+    },
+    "highLTV": {
+      "title": "High Loan-to-Value",
+      "description": "Borrow up to 75% of your gold's value without additional collateral. Get maximum funds for your financial requirements."
+    },
+    "security": {
+      "title": "Safety & Security",
+      "description": "Your gold is securely stored in our insured vaults with 24/7 surveillance and biometric access. Reclaim it anytime after repayment."
+    }
+  },
+    "benefits": {
+      "title": "Why Choose Our Gold Loans",
+      "subtitle": "Get instant liquidity while keeping ownership of your gold assets",
+      "lowInterest": {
+        "title": "Low Interest Rates",
+        "description": "Enjoy rates significantly lower than personal loans or credit cards",
+        "stats": "Starting from 0.79% per month"
+      },
+      "quickAccess": {
+        "title": "Quick Disbursal",
+        "description": "Get funds within hours of application",
+        "stats": "9 minutes approval time"
+      },
+      "highLTV": {
+        "title": "High Loan Value",
+        "description": "Get up to 75% of your gold's value as loan amount",
+        "stats": "75% LTV ratio"
+      },
+      "security": {
+        "title": "100% Secure",
+        "description": "Your gold is safe in our RBI-approved vaults",
+        "stats": "Insured storage"
+      },
+      "featuresTitle": "Our Gold Loan Features",
+      "features": {
+        "1": "No prepayment charges after 3 months",
+        "2": "Flexible repayment options",
+        "3": "Transparent pricing with no hidden fees",
+        "4": "Renewal facility available"
+      },
+      "testimonialsTitle": "What Our Customers Say",
+      "testimonials": {
+        "1": {
+          "name": "Rajesh Kumar",
+          "role": "Small Business Owner",
+          "quote": "Got ₹2 lakh within 1 hours for my emergency medical needs"
+        },
+        "2": {
+          "name": "Priya Sharma",
+          "role": "Homemaker",
+          "quote": "Best interest rates compared to 4 other banks I checked"
+        }
+      },
+      "cta": {
+        "title": "Ready to Get Your Loan?",
+        "subtitle": "Get instant approval without affecting your credit score",
+        "button": "Apply Now"
+      }
+    }
+  
+
               
             
      

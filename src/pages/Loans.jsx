@@ -20,7 +20,7 @@ function Loan() {
       {/* Services Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
            {/* Quick Approval Card */}
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-amber-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
   <div className="p-6">
     <div className="bg-yellow-100 w-14 h-14 rounded-full flex items-center justify-center mb-4 group-hover:bg-red-50 transition-colors duration-300">
       <svg className="w-6 h-6 text-yellow-600 group-hover:text-red-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -36,7 +36,7 @@ function Loan() {
   </div>
 </div>
         {/* Interest Rates Card */}
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-amber-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
   <div className="p-6">
     <div className="bg-yellow-100 w-14 h-14 rounded-full flex items-center justify-center mb-4 group-hover:bg-red-50 transition-colors duration-300">
       <svg className="w-6 h-6 text-yellow-600 group-hover:text-red-600 transition-colors duration-300 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -52,7 +52,7 @@ function Loan() {
   </div>
 </div>
         {/* Repayment Card */}
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-amber-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
   <div className="p-6">
     <div className="bg-yellow-100 w-14 h-14 rounded-full flex items-center justify-center mb-4 group-hover:bg-red-50 transition-colors duration-300">
     <svg className="w-6 h-6 text-yellow-600 group-hover:text-red-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,7 +69,7 @@ function Loan() {
 </div> 
         {/* Vault Storage Card */}
 
-             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+             <div className="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-amber-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
   <div className="p-6">
     <div className="bg-yellow-100 w-14 h-14 rounded-full flex items-center justify-center mb-4 group-hover:bg-red-50 transition-colors duration-300">
     <svg className="w-6 h-6 text-yellow-600 group-hover:text-red-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
