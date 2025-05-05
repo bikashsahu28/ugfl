@@ -524,7 +524,45 @@
         "subtitle": "Get instant approval without affecting your credit score",
         "button": "Apply Now"
       }
-    }
+    },
+      "services": {
+        "title": "Value-Added Services",
+        "subtitle": "Beyond gold loans - comprehensive financial solutions for your needs",
+        "learnMore": "Learn more",
+        "insurance": {
+          "title": "Insurance Services",
+          "description": "Complete protection for your pledged gold and valuables against theft, damage, or loss",
+          "features": [
+            "24/7 insured vault storage",
+            "Full market value coverage",
+            "Quick claim settlement"
+          ]
+        },
+        "advisory": {
+          "title": "Financial Advisory",
+          "description": "Expert guidance for investment planning, debt management, and wealth creation",
+          "features": [
+            "Personalized financial plans",
+            "Tax optimization strategies",
+            "Retirement planning"
+          ]
+        },
+        "wealth": {
+          "title": "Wealth Management",
+          "description": "Strategic solutions to grow and protect your assets for long-term prosperity",
+          "features": [
+            "Portfolio management",
+            "Education fund planning",
+            "Real estate investment guidance"
+          ]
+        },
+        "cta": {
+          "title": "Ready to Secure Your Financial Future?",
+          "subtitle": "Speak with our experts today about comprehensive financial solutions",
+          "button": "Book Consultation"
+        }
+      }
+    
   
 
               

@@ -115,30 +115,34 @@ const visibleTestimonials = testimonials.slice(
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       <HomeCarousel />
       <LoanPopup />
       {/* Why Choose Us Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 bg-gradient-to-b from-amber-50 to-white">
   <div className="max-w-7xl mx-auto px-4">
     <h2 className="text-3xl font-bold text-center mb-12">{t('whyChooseUs.title')}</h2>
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div className="text-center p-6 rounded-lg bg-white shadow-lg">
+      <div className="text-center rounded-xl shadow-lg overflow-hidden border-t-4 border-amber-500 hover:shadow-xl transition-all 
+      duration-300 hover:-translate-y-1 group p-6 rounded-lg bg-white shadow-lg">
         <div className="text-4xl mb-4">💸</div>
         <h3 className="text-xl font-semibold mb-2">{t('whyChooseUs.features.lowInterest.title')}</h3>
         <p className="text-gray-600">{t('whyChooseUs.features.lowInterest.desc')}</p>
       </div>
-      <div className="text-center p-6 rounded-lg bg-white shadow-lg">
+      <div className="rounded-xl shadow-lg overflow-hidden border-t-4 border-amber-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group
+      text-center p-6 rounded-lg bg-white shadow-lg">
         <div className="text-4xl mb-4">⚡</div>
         <h3 className="text-xl font-semibold mb-2">{t('whyChooseUs.features.instantDisbursal.title')}</h3>
         <p className="text-gray-600">{t('whyChooseUs.features.instantDisbursal.desc')}</p>
       </div>
-      <div className="text-center p-6 rounded-lg bg-white shadow-lg">
+      <div className="rounded-xl shadow-lg overflow-hidden border-t-4 border-amber-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group
+      text-center p-6 rounded-lg bg-white shadow-lg">
         <div className="text-4xl mb-4">🔒</div>
         <h3 className="text-xl font-semibold mb-2">{t('whyChooseUs.features.safeStorage.title')}</h3>
         <p className="text-gray-600">{t('whyChooseUs.features.safeStorage.desc')}</p>
       </div>
-      <div className="text-center p-6 rounded-lg bg-white shadow-lg">
+      <div className="rounded-xl shadow-lg overflow-hidden border-t-4 border-amber-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group
+      text-center p-6 rounded-lg bg-white shadow-lg">
         <div className="text-4xl mb-4">🔄</div>
         <h3 className="text-xl font-semibold mb-2">{t('whyChooseUs.features.flexibleRepayment.title')}</h3>
         <p className="text-gray-600">{t('whyChooseUs.features.flexibleRepayment.desc')}</p>
@@ -357,34 +361,45 @@ const visibleTestimonials = testimonials.slice(
     )}
   </motion.div>
 </div>
+
   {/* Floating gold coins animation */}
-  {[...Array(5)].map((_, i) => (
+  {[...Array(10)].map((_, i) => (
     <motion.div
       key={i}
-      initial={{ y: 0, x: Math.random() * 100 - 50, opacity: 0 }}
+      initial={{ 
+        y: 0, 
+        x: Math.random() * 100 - 50, 
+        opacity: 0,
+        scale: 0.8 + Math.random() * 0.7 // Random initial scale between 0.8-1.5
+      }}
       animate={{ 
-        y: [0, -20, 0],
-        opacity: [0, 0.4, 0],
-        x: Math.random() * 100 - 50
+        y: [0, -30, 0],
+        opacity: [0, 0.6, 0],
+        x: Math.random() * 100 - 50,
+        rotate: [0, 180, 360] // Added rotation for more dynamic effect
       }}
       transition={{
-        duration: 8 + Math.random() * 5,
+        duration: 7 + Math.random() * 8, // More varied duration (7-15 seconds)
         repeat: Infinity,
         ease: "easeInOut",
-        delay: Math.random() * 2
+        delay: Math.random() * 3 // Increased max delay to 3 seconds
       }}
-      className="absolute text-yellow-400 text-2xl"
+      className="absolute text-yellow-400"
       style={{
         top: `${Math.random() * 80 + 10}%`,
         left: `${Math.random() * 100}%`,
+        fontSize: `${2 + Math.random() * 3}rem`, // Random size between 2-5rem
+        filter: `brightness(${0.8 + Math.random() * 0.5})` // Slightly varied brightness
       }}
     >
-      •
+      {['🪙', '💰', '💵', '💴', '💶', '💷'][Math.floor(Math.random() * 6)]} {/* Random money emoji */}
     </motion.div>
-  ))}
+))}
 </section>
       {/* Gold Loan Calculator */}
-      <section className="py-16 bg-white">
+
+
+      {/* <section className="py-16  justify-content: flex-start bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Gold Loan Calculator</h2>
           <div className="max-w-lg mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
@@ -432,10 +447,160 @@ const visibleTestimonials = testimonials.slice(
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+<section className="py-16 bg-gradient-to-b from-gray-50 to-white bg-gradient-to-b from-amber-50 to-white">
+  <div className="max-w-7xl mx-auto px-4 lg:px-8">
+    <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+      {/* Left Column: Calculator Form */}
+      <div className="flex-1 flex flex-col">
+        <div className="mb-10">
+          <h2 className="text-4xl font-bold text-gray-900 mb-3">Gold Loan Calculator</h2>
+          <p className="text-lg text-gray-600">Calculate your loan amount based on current gold rates</p>
+        </div>
+        
+        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex-1">
+          {/* Gold Weight Slider */}
+          <div className="mb-8">
+            <div className="flex justify-between items-center mb-3">
+              <label className="text-lg font-medium text-gray-800">Gold Weight (grams)</label>
+              <span className="text-xl font-bold text-primary bg-primary/10 px-4 py-1 rounded-full">
+                {goldWeight}g
+              </span>
+            </div>
+            <input 
+              type="range" 
+              min="1" 
+              max="100" 
+              value={goldWeight} 
+              onChange={(e) => setGoldWeight(e.target.value)}
+              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
+            />
+            <div className="flex justify-between mt-2 text-sm text-gray-500">
+              <span>1g</span>
+              <span>50g</span>
+              <span>100g</span>
+            </div>
+          </div>
+          
+          {/* Purity Selection */}
+          <div className="mb-8">
+            <label className="block text-lg font-medium text-gray-800 mb-4">Gold Purity</label>
+            <div className="grid grid-cols-4 gap-3">
+              {[18, 20, 22, 24].map(karat => (
+                <button
+                  key={karat}
+                  className={`py-3 rounded-xl font-medium transition-all ${
+                    purity === karat 
+                      ? 'bg-primary text-white shadow-md' 
+                      : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+                  }`}
+                  onClick={() => setPurity(karat)}
+                >
+                  {karat}K
+                </button>
+              ))}
+            </div>
+          </div>
+          
+          {/* Gold Rate Display */}
+
+          <div className="bg-blue-50 p-5 rounded-xl border border-blue-100 mt-auto">
+  <div className="flex justify-between items-center">
+    <div>
+      <label className="block text-gray-700 font-medium mb-1">Current Gold Rate</label>
+      <div className="text-xs text-gray-500">Live market price</div>
+    </div>
+    <div className="text-3xl font-bold text-primary">
+      ₹{goldPrice ? goldPrice.toLocaleString('en-IN') : 'Loading...'}
+      <span className="text-sm text-gray-500 ml-1">/g</span>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+
+      {/* Right Column: Results and Formula */}
+      <div className="flex-1 flex flex-col gap-8">
+        {/* Estimated Loan Amount Box */}
+        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex-1">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="bg-primary/10 p-2 rounded-lg">
+              <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-semibold text-gray-800">Estimated Loan Amount</h3>
+          </div>
+          
+          <div className="flex items-end justify-between mb-6">
+            <div className="text-5xl font-bold text-primary">
+              ₹{loanAmount.toLocaleString('en-IN', { maximumFractionDigits: 2 })}
+            </div>
+            <div className="text-sm text-gray-600 text-right bg-gray-50 px-3 py-1 rounded-lg">
+              <div>Up to 75% of gold value</div>
+              <div className="font-medium">(LTV Ratio)</div>
+            </div>
+          </div>
+          
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+              <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span className="text-gray-700">Interest rates starting at 0.79% per month</span>
+            </div>
+            <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+              <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span className="text-gray-700">No hidden charges or processing fees</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Calculation Formula Box */}
+        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex-1">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="bg-primary/10 p-2 rounded-lg">
+              <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-semibold text-gray-800">Calculation Formula</h3>
+          </div>
+          
+          <div className="space-y-4">
+            <div className="bg-gray-50 p-5 rounded-xl">
+              <div className="text-gray-700 space-y-3">
+                <div className="flex gap-3">
+                  <div className="bg-primary/10 text-primary font-medium w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">1</div>
+                  <p>Pure Gold Content = Weight × (Purity/24)</p>
+                </div>
+                <div className="flex gap-3">
+                  <div className="bg-primary/10 text-primary font-medium w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">2</div>
+                  <p>Market Value = Pure Gold × Current Rate</p>
+                </div>
+                <div className="flex gap-3">
+                  <div className="bg-primary/10 text-primary font-medium w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">3</div>
+                  <p>Loan Amount = Market Value × 75% (LTV)</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+              <p className="font-medium text-gray-800">
+                Your calculation: {goldWeight}g × ({purity}K/24) × ₹{goldPrice} × 0.75 = <span className="text-primary">₹{loanAmount.toLocaleString('en-IN', { maximumFractionDigits: 2 })}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* How It Works Section */}
-<section className="py-16 bg-gray-50" ref={ref}>
+{/* <section className="py-16 bg-gray-50" ref={ref}> 
   <div className="max-w-7xl mx-auto px-4">
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -444,20 +609,46 @@ const visibleTestimonials = testimonials.slice(
       viewport={{ once: true }}
     >
       <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
-      <div className="grid md:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
         {processSteps.map((step, index) => (
           <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ 
-              duration: 0.6, 
-              delay: index * 0.15,
-              type: "spring",
-              stiffness: 100
-            }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="text-center bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 hover:border-primary/20"
+ className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition-all  hover:-translate-y-1 duration-300">
+            <div className="flex justify-center mb-4">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl font-bold">
+                {index + 1}
+              </div>
+            </div>
+            <h3 className="text-xl font-semibold mb-3 text-gray-800">{step.title}</h3>
+            <p className="text-gray-600">{step.description}</p>
+            {index < processSteps.length - 1 && (
+              <div className="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                </svg>
+              </div>
+            )}
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
+  </div>
+</section> */}
+
+<section className="py-16 bg-gray-50 " ref={ref}>
+  <div className="max-w-7xl mx-auto px-4">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+        {processSteps.map((step, index) => (
+          <motion.div
+            key={step.id || index}  // Added key prop here - use step.id if available, otherwise fallback to index
+            className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 relative"
           >
             <div className="flex justify-center mb-4">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl font-bold">
@@ -479,8 +670,37 @@ const visibleTestimonials = testimonials.slice(
     </motion.div>
   </div>
 </section>
+      {/* Trust & Security Section */}
+      <section className="py-16 bg-primary text-white ">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Trust & Security</h2>
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl mb-4">🏦</div>
+              <h3 className="text-xl font-semibold mb-2">RBI Registered</h3>
+              <p>Registered NBFC under RBI guidelines</p>
+            </div>
+            <div>
+              <div className="text-4xl mb-4">⭐</div>
+              <h3 className="text-xl font-semibold mb-2">ISO Certified</h3>
+              <p>ISO 9001:2015 certified processes</p>
+            </div>
+            <div>
+              <div className="text-4xl mb-4">🛡️</div>
+              <h3 className="text-xl font-semibold mb-2">Bank-Grade Vaults</h3>
+              <p>24/7 monitored with biometric access</p>
+            </div>
+            <div>
+              <div className="text-4xl mb-4">🤝</div>
+              <h3 className="text-xl font-semibold mb-2">Bank Partnerships</h3>
+              <p>Tied up with leading national banks</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
-<section className="py-16 bg-white relative" ref={ref}>
+      <section className="py-16 bg-white relative bg-gradient-to-b from-amber-50 to-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -514,7 +734,11 @@ const visibleTestimonials = testimonials.slice(
                     stiffness: 100
                   }}
                   viewport={{ once: true, margin: "-50px" }}
-                  className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 hover:border-primary/20"
+                  className="bg-white p-8 rounded-xl shadow-lg overflow-hidden border-t-4 border-amber-500  
+                  hover:-translate-y-1 hover:shadow-xl
+                  hover:border-amber-600 hover:bg-amber-50/30
+                  group "
+
                 >
                   <div className="flex mb-4">
                     {[...Array(5)].map((_, i) => (
@@ -567,38 +791,8 @@ const visibleTestimonials = testimonials.slice(
         </motion.div>
       </div>
     </section>
-
-      {/* Trust & Security Section */}
-      <section className="py-16 bg-primary text-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Trust & Security</h2>
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl mb-4">🏦</div>
-              <h3 className="text-xl font-semibold mb-2">RBI Registered</h3>
-              <p>Registered NBFC under RBI guidelines</p>
-            </div>
-            <div>
-              <div className="text-4xl mb-4">⭐</div>
-              <h3 className="text-xl font-semibold mb-2">ISO Certified</h3>
-              <p>ISO 9001:2015 certified processes</p>
-            </div>
-            <div>
-              <div className="text-4xl mb-4">🛡️</div>
-              <h3 className="text-xl font-semibold mb-2">Bank-Grade Vaults</h3>
-              <p>24/7 monitored with biometric access</p>
-            </div>
-            <div>
-              <div className="text-4xl mb-4">🤝</div>
-              <h3 className="text-xl font-semibold mb-2">Bank Partnerships</h3>
-              <p>Tied up with leading national banks</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Existing Features Section */}
-      <section ref={ref} className="py-16 bg-white">
+      {/* <section ref={ref} className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -623,10 +817,11 @@ const visibleTestimonials = testimonials.slice(
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 
+      bg-gradient-to-b from-amber-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
           <FAQ />
