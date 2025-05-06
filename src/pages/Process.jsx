@@ -36,7 +36,7 @@ function Process() {
                     <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="md:w-1/2">
               <img 
-                src="/images/eligibility.jpg" 
+                src="../image/img1.jpeg" 
                 alt={t('process.eligibility.title')}
                 className="rounded-lg w-full h-auto"
               />
@@ -67,7 +67,7 @@ function Process() {
           <div className="flex flex-col md:flex-row-reverse gap-8 items-center">
             <div className="md:w-1/2">
               <img 
-                src="/images/documents.jpg" 
+                src="../image/img1.jpeg" 
                 alt={t('process.documents.title')}
                 className="rounded-lg w-full h-auto"
               />

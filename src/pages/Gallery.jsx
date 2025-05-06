@@ -156,12 +156,12 @@ function Gallery() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* testiment Section */}
 <section className="bg-gold-50 rounded-xl p-12">
   <div className="text-center mb-12">
-    <h2 className="text-3xl font-bold text-gray-800 mb-4">{t('testimonials.title')}</h2>
+    <h2 className="text-3xl font-bold text-gray-800 mb-4">{t('testiment.title')}</h2>
     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-      {t('testimonials.subtitle')}
+      {t('testiment.subtitle')}
     </p>
   </div>
 
@@ -176,7 +176,7 @@ function Gallery() {
           <div className="w-12 h-12 rounded-full bg-gray-200 mr-4 overflow-hidden flex-shrink-0">
             <img 
               src={`../image/${client.img}`} 
-              alt={t(`testimonials.client${client.id}.name`)}
+              alt={t(`testiment.client${client.id}.name`)}
               className="w-full h-full object-cover"
               onError={(e) => {
                 e.currentTarget.src = '../image/default-profile.jpg';
@@ -186,15 +186,15 @@ function Gallery() {
           </div>
           <div>
             <h4 className="font-semibold text-gray-800">
-              {t(`testimonials.client${client.id}.name`)}
+              {t(`testiment.client${client.id}.name`)}
             </h4>
             <p className="text-sm text-gray-500">
-              {t(`testimonials.client${client.id}.designation`)}
+              {t(`testiment.client${client.id}.designation`)}
             </p>
           </div>
         </div>
         <p className="text-gray-600 italic mb-4">
-          "{t(`testimonials.client${client.id}.quote`)}"
+          "{t(`testiment.client${client.id}.quote`)}"
         </p>
         <div className="flex text-gold-400">
           {[...Array(5)].map((_, i) => (

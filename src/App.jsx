@@ -16,6 +16,9 @@ import Benifits from './pages/Benefits';
 import Valueaddedservices from './pages/Valueservices';
 import Process from './pages/Process';
 import LoanApplicationForm from './components/LoanApplicationForm';
+import History from './pages/History';
+import Mission from './pages/Mission';
+import Leadership from './pages/Leadership';
 
 function App() {
   return (
@@ -27,7 +30,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/about" element={<About />} />
+
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/support" element={<Support />} />
             <Route path="/career" element={<Career />} />
@@ -38,6 +41,10 @@ function App() {
             <Route path="/services/benefits" element={<Benifits />} />
             <Route path="/services/valueservices" element={<Valueaddedservices />} />
             <Route path="/LoanApplicationForm" element={<LoanApplicationForm />} />
+            <Route path="/about/company" element={<About />} />
+            <Route path="/about/history" element={<History />} />
+            <Route path="/about/mission" element={<Mission />} />
+            <Route path="/about/leadership" element={<Leadership />} />
 
           </Routes>
         </main>

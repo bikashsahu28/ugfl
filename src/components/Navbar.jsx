@@ -57,12 +57,18 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
       
-<div className="flex items-center flex-shrink-0">
-  <Link to="/" className="flex flex-col items-center">
+
+<div className="flex items-center space-x-2">
+  <img
+    src="../image/Logo1.jpg"
+    alt="Unigold Finance Logo"
+    className="h-10 w-auto object-contain rounded-lg"
+  />
+  <Link to="/" className="flex flex-col items-center text-center">
     <span className="text-2xl font-bold text-primary">
       UNIGOLD FINANCE<span className="align-super text-xs">™</span>
     </span>
-    <span className="text-sm  text-secondary -mt-1">GOLD LOAN</span>
+    <span className="text-sm text-secondary -mt-1">GOLD LOAN</span>
   </Link>
 </div>
 

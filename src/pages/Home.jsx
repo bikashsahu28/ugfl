@@ -448,7 +448,7 @@ const visibleTestimonials = testimonials.slice(
           </div>
         </div>
       </section> */}
-<section className="py-16 bg-gradient-to-b from-gray-50 to-white bg-gradient-to-b from-amber-50 to-white">
+<section className="py-16  bg-gradient-to-b from-amber-50 to-white">
   <div className="max-w-7xl mx-auto px-4 lg:px-8">
     <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
       {/* Left Column: Calculator Form */}

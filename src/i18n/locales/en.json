@@ -525,12 +525,13 @@
         "button": "Apply Now"
       }
     },
+  
       "services": {
-        "title": "Value-Added Services",
-        "subtitle": "Beyond gold loans - comprehensive financial solutions for your needs",
-        "learnMore": "Learn more",
+        "title": "Our Value-Added Services",
+        "subtitle": "Explore our range of financial services designed to empower your future.",
+        "learnMore": "Learn More",
         "insurance": {
-          "title": "Insurance Services",
+          "title": "Insurance Solutions",
           "description": "Complete protection for your pledged gold and valuables against theft, damage, or loss",
           "features": [
             "24/7 insured vault storage",
@@ -557,15 +558,232 @@
           ]
         },
         "cta": {
-          "title": "Ready to Secure Your Financial Future?",
-          "subtitle": "Speak with our experts today about comprehensive financial solutions",
-          "button": "Book Consultation"
+          "title": "Ready to Transform Your Financial Future?",
+          "subtitle": "Join thousands of satisfied customers and start your journey today.",
+          "getStarted": "Get Started Today",
+          "speakAdvisor": "Speak to Our Advisor",
+          "visitBranch": "Visit Your Nearest Branch"
         }
+      },
+      "whyChoose": {
+        "title": "Why Choose Our Value-Added Services?",
+        "trusted": "Trusted partner with transparent processes",
+        "competitive": "Competitive interest rates and easy terms",
+        "digital": "Digital-first and branch support",
+        "oneStop": "One-stop financial solution hub"
+      },
+      "testimonials": {
+        "title": "Customer Success Stories",
+        "0": {
+          "name": "John Doe",
+          "feedback": "The insurance plan was a game-changer for my family’s security.",
+          "highlight": "Saved 30% on premiums with customized plans."
+        },
+        "1": {
+          "name": "Jane Smith",
+          "feedback": "The wealth management service helped me plan my retirement.",
+          "highlight": "Achieved 12% annual returns on investments."
+        }
+      },
+      "faqs": {
+        "title": "Frequently Asked Questions",
+        "0": {
+          "question": "What documents are required to apply for these services?",
+          "answer": "You need ID proof, address proof, and income documents."
+        },
+        "1": {
+          "question": "Who is eligible for these services?",
+          "answer": "Individuals above 18 with a valid bank account are eligible."
+        },
+        "2": {
+          "question": "What are the benefits of these services?",
+          "answer": "They offer financial security, growth, and expert guidance."
+        }
+      },
+      "contact": {
+        "title": "Get in Touch",
+        "phone": {
+          "title": "Call Us",
+          "number": "+1-800-123-4567"
+        },
+        "email": {
+          "title": "Email Us",
+          "address": "support@financeapp.com"
+        },
+        "requestCallback": "Request a Callback",
+        "callbackDescription": "Our team will reach out within 24 hours.",
+        "bookAppointment": "Book an Appointment"
       }
     
-  
+       ,"testiment": {
+      "title": "What Our Clients Say",
+      "subtitle": "Hear from our valued clients about their experiences with our services.",
+      "client1": {
+        "name": "John Doe",
+        "designation": "CEO, TechCorp",
+        "quote": "The team delivered exceptional results, exceeding our expectations with their professionalism and expertise."
+      },
+      "client2": {
+        "name": "Jane Smith",
+        "designation": "Marketing Director, Innovate Ltd",
+        "quote": "Their innovative solutions transformed our business, driving significant growth and engagement."
+      },
+      "client3": {
+        "name": "Rahul Sharma",
+        "designation": "Founder, StartUp Hub",
+        "quote": "Working with them was a game-changer; their dedication and creativity are unmatched."
+      }
+    }
 
-              
-            
+
+    ,
+      "contact": {
+        "heroTitle": "We're Here to Help",
+        "heroSubtitle": "Contact us for any questions about our gold loan services",
+        "formTitle": "Send Us a Message",
+        "name": "Full Name",
+        "phone": "Phone Number",
+        "email": "Email Address",
+        "city": "City",
+        "inquiryType": "Type of Inquiry",
+        "selectOption": "Select an option",
+        "goldLoan": "Gold Loan Information",
+        "emi": "EMI/Payment Questions",
+        "repayment": "Loan Repayment",
+        "branchInfo": "Branch Information",
+        "others": "Other Questions",
+        "message": "Your Message",
+        "notRobot": "I'm not a robot",
+        "submit": "Submit Message",
+        "callSupport": "24/7 Customer Support",
+        "workingHours": "Working Hours",
+        "languageSupport": "Language Support Available",
+        "chatOnWhatsApp": "Chat with us on WhatsApp",
+        "emailSupport": "Email Support",
+        "generalInquiries": "General Inquiries",
+        "loanRepayment": "Loan Repayment",
+        "complaints": "Complaints/Suggestions",
+        "branchLocator": "Find a Branch Near You",
+        "state": "State",
+        "selectState": "Select State",
+        "district": "District",
+        "selectDistrict": "Select District",
+        "findBranches": "Find Branches",
+        "availableBranches": "Available Branches",
+        "timings": "Timings",
+        "mapPlaceholder": "Map would show here with branch locations",
+        "faqTitle": "Frequently Asked Questions",
+        "faq1": {
+          "question": "What documents do I need for a gold loan?",
+          "answer": "You need your ID proof (Aadhaar, PAN, Voter ID), address proof, and gold ornaments with purity certificate."
+        },
+        "faq2": {
+          "question": "How long does loan approval take?",
+          "answer": "Our gold loans are approved within 30 minutes after document verification and gold appraisal."
+        },
+        "faq3": {
+          "question": "Can I repay my loan early?",
+          "answer": "Yes, you can repay your loan anytime before the due date. We offer interest rebates for early repayment."
+        },
+        "viewAllFAQs": "View all FAQs",
+        "connectWithUs": "Connect With Us",
+        "corporateOffice": "Corporate Office",
+        "officeHours": "Office Hours",
+        "downloadBranchList": "Download Complete Branch List (PDF)",
+        "scheduleCallback": "Request a Callback",
+        "preferredDate": "Preferred Date",
+        "preferredTime": "Preferred Time",
+        "selectTime": "Select Time Slot",
+        "scheduleNow": "Schedule Now"
+      }
+    
+          
+      
+    ,  "hero": {
+      "title": "Our Journey",
+      "subtitle": "Discover the legacy of UniGold Finance, built on trust and excellence in gold loan services."
+    },
+    "overview": {
+      "title": "About UniGold Finance",
+      "description": "Founded in 2005, UniGold Finance has grown to become a trusted name in gold loan services, empowering millions with accessible and transparent financial solutions. With a commitment to customer satisfaction, we have expanded across India, blending tradition with innovation."
+    },
+    "timeline": {
+      "title": "Milestones",
+      "milestone1": {
+        "title": "Founded UniGold Finance",
+        "description": "Established our first branch in Mumbai, introducing accessible gold loans to empower communities."
+      },
+      "milestone2": {
+        "title": "Expanded to 50 Branches",
+        "description": "Reached 50 branches across India, strengthening our presence in urban and rural areas."
+      },
+      "milestone3": {
+        "title": "Award for Excellence",
+        "description": "Received the National Finance Award for outstanding customer service and innovation."
+      },
+      "milestone4": {
+        "title": "Digital Transformation",
+        "description": "Launched online loan applications and customer portals, enhancing accessibility."
+      }
+    },
+    "gallery": {
+      "title": "Our History in Pictures",
+      "image1": { "alt": "Opening of First Branch in Mumbai" },
+      "image2": { "alt": "Receiving National Finance Award 2015" },
+      "image3": { "alt": "Customer Appreciation Event 2020" }
+    },
+    "mission": {
+      "title": "Our Mission & Values",
+      "value1": {
+        "title": "Trust",
+        "description": "Building lasting relationships through transparency and reliability."
+      },
+      "value2": {
+        "title": "Customer Focus",
+        "description": "Prioritizing the needs of our customers with tailored solutions."
+      },
+      "value3": {
+        "title": "Innovation",
+        "description": "Embracing technology to deliver seamless financial services."
+      }
+    },
+    "stats": {
+      "title": "Our Impact",
+      "customers": { "value": "1M+", "label": "Customers Served" },
+      "branches": { "value": "100+", "label": "Branches Nationwide" },
+      "loans": { "value": "500K+", "label": "Loans Disbursed" }
+    }
+       
+    
+
+
+    ,"history": {
+    "title": "Our Journey",
+    "founding": {
+      "year": "2023",
+      "title": "Foundation of UniGold",
+      "description": "UniGold Finance Company was established with a vision to provide affordable gold loans to the people of Odisha. Our first branch opened in Bhubaneswar with a small team of dedicated professionals."
+    },
+    "milestone1": {
+      "year": "2024",
+      "title": "First Major Milestone",
+      "description": "Reached ₹100 crore in gold loan disbursements. Expanded to 5 branches across Odisha, becoming a trusted name in gold loans."
+    },
+    "expansion": {
+      "year": "2024",
+      "title": "Statewide Expansion",
+      "description": "Launched our innovative gold loan products with flexible repayment options. Expanded to all 30 districts of Odisha."
+    },
+    "present": {
+      "year": "Present",
+      "title": "Leading Gold Loan Provider",
+      "description": "Today, UniGold is Odisha's most trusted gold loan company with over 50 branches. We continue to innovate with customer-centric products while maintaining our core values."
+    },
+    "achievements": "Our Achievements",
+    "branches": "Branches Across Odisha",
+    "customers": "Happy Customers",
+    "loans": "Gold Loans Disbursed"
+  }
+
      
 }
