@@ -20,7 +20,7 @@ function Home() {
   // Adding these scroll effects at the component level
 
   useEffect(() => {
-    setGoldPrice(6245.50);
+    setGoldPrice(6319.50);
     
     const interval = setInterval(() => {
       const randomChange = (Math.random() - 0.5) * 10;
@@ -121,7 +121,7 @@ const visibleTestimonials = testimonials.slice(
       {/* Why Choose Us Section */}
       <section className="py-16 bg-gray-50 bg-gradient-to-b from-amber-50 to-white">
   <div className="max-w-7xl mx-auto px-4">
-    <h2 className="text-3xl font-bold text-center mb-12">{t('whyChooseUs.title')}</h2>
+    <h2 className="text-3xl font-bold  text-center text-amber-700 mb-12">{t('whyChooseUs.title')}</h2>
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       <div className="text-center rounded-xl shadow-lg overflow-hidden border-t-4 border-amber-500 hover:shadow-xl transition-all 
       duration-300 hover:-translate-y-1 group p-6 rounded-lg bg-white shadow-lg">
@@ -454,7 +454,7 @@ const visibleTestimonials = testimonials.slice(
       {/* Left Column: Calculator Form */}
       <div className="flex-1 flex flex-col">
         <div className="mb-10">
-          <h2 className="text-4xl font-bold text-gray-900 mb-3">Gold Loan Calculator</h2>
+          <h2 className="text-3xl font-bold text-amber-700">Gold Loan Calculator</h2>
           <p className="text-lg text-gray-600">Calculate your loan amount based on current gold rates</p>
         </div>
         
@@ -643,7 +643,10 @@ const visibleTestimonials = testimonials.slice(
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
+      {/* <h2 className=" text-center text-3xl md:text-5xl font-bold text-amber-700 mb-12"> */}
+      <h2 className="text-3xl font-bold  text-center text-amber-700 mb-12">
+      
+        How It Works</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
         {processSteps.map((step, index) => (
           <motion.div
@@ -708,7 +711,7 @@ const visibleTestimonials = testimonials.slice(
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
+          <h2 className="text-3xl font-bold  text-center text-amber-700 mb-12">What Our Customers Say</h2>
           
           <div className="relative">
             <button 
@@ -823,7 +826,7 @@ const visibleTestimonials = testimonials.slice(
       <section className="py-16 bg-gray-50 
       bg-gradient-to-b from-amber-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold  text-center text-amber-700 mb-12">Frequently Asked Questions</h2>
           <FAQ />
         </div>
       </section>
@@ -831,7 +834,7 @@ const visibleTestimonials = testimonials.slice(
       {/* Map Section */}
 <section className="py-16 bg-white">
   <div className="max-w-7xl mx-auto px-4">
-    <h2 className="text-3xl font-bold text-center mb-12">Visit Us</h2>
+    <h2 className="text-3xl font-bold  text-center text-amber-700 mb-12">Visit Us</h2>
     
     <div className="grid md:grid-cols-2 gap-8 items-center">
       {/* Contact Info Card */}

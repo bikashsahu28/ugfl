@@ -5,8 +5,8 @@ function History() {
 
   return (
 
-    
-    <div className="bg-gradient-to-b from-amber-50 to-white max-w-7xl mx-auto px-4 py-12">
+    <div className="bg-gradient-to-b from-amber-50 to-white">
+    <div className="max-w-7xl mx-auto px-4 py-12">
       {/* Page Header */}
       {/* <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gold-600 mb-4">{t('history.title')}</h1>
@@ -159,6 +159,7 @@ function History() {
           ))}
         </div>
       </section>
+    </div>
     </div>
   );
 }

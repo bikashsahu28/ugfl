@@ -6,10 +6,11 @@ function Loan() {
   const navigate = useNavigate();
 
   return (
+    <div className="bg-gradient-to-b from-amber-50 to-white">
     <div className="max-w-7xl mx-auto px-4 py-12">
       {/* Hero Section */}
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <h1 className="text-3xl font-bold  text-center text-amber-700 ">
           {t('loanServices.title')}
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -85,14 +86,13 @@ function Loan() {
   </div>
 </div>
       </div>
-
       {/* Detailed Sections */}
       <div className="space-y-16">
         {/* Quick Approval Section */}
         <div className="bg-gradient-to-r from-yellow-50 to-white rounded-2xl p-8 md:p-12">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-bold  text-amber-700">
                 {t('loanServices.quickApproval.title')}
               </h2>
               <p className="text-gray-700 mb-6">
@@ -119,7 +119,7 @@ function Loan() {
         <div className="bg-gradient-to-r from-white to-yellow-50 rounded-2xl p-8 md:p-12">
           <div className="flex flex-col md:flex-row-reverse items-center gap-8">
             <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-bold   text-amber-700">
                 {t('loanServices.interestRates.title')}
               </h2>
               <p className="text-gray-700 mb-6">
@@ -146,7 +146,7 @@ function Loan() {
         <div className="bg-gradient-to-r from-yellow-50 to-white rounded-2xl p-8 md:p-12">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-bold text-amber-700">
                 {t('loanServices.repayment.title')}
               </h2>
               <p className="text-gray-700 mb-6">
@@ -173,7 +173,7 @@ function Loan() {
         <div className="bg-gradient-to-r from-white to-yellow-50 rounded-2xl p-8 md:p-12">
           <div className="flex flex-col md:flex-row-reverse items-center gap-8">
             <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-bold  text-amber-700">
                 {t('loanServices.vaultStorage.title')}
               </h2>
               <p className="text-gray-700 mb-6">
@@ -210,6 +210,7 @@ function Loan() {
           {t('loanServices.cta.buttonText')}
         </button>
       </div>
+    </div>
     </div>
   );
 }

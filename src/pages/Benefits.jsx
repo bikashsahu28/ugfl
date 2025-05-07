@@ -61,6 +61,7 @@ function Benefits() {
   ];
 
   return (
+    <div className="bg-gradient-to-b from-amber-50 to-white">
     <div className="max-w-7xl mx-auto px-4 py-12">
       {/* Hero Section */}
       <div className="text-center mb-16">
@@ -136,6 +137,7 @@ function Benefits() {
           {t('benefits.cta.button')} <FiArrowRight className="ml-2" />
         </button>
       </div>
+    </div>
     </div>
   );
 }

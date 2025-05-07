@@ -42,6 +42,7 @@ function Contact() {
   };
 
   return (
+    <div className="bg-gradient-to-b from-amber-50 to-white">
     <div className="max-w-7xl mx-auto px-4 py-8">
       {/* Hero Header */}
       <section className="bg-blue-50 rounded-lg p-8 mb-12 text-center">
@@ -470,6 +471,7 @@ function Contact() {
           </button>
         </div>
       </section>
+    </div>
     </div>
   );
 }

@@ -49,7 +49,7 @@ function Team() {
   };
 
   return (
-    <div>
+    <div className="bg-gradient-to-b from-amber-50 to-white"> 
 
       {/* Hero Section */}
       <section className="bg-primary text-white py-16 text-center">

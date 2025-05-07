@@ -11,8 +11,9 @@ function Services() {
   };
 
   return (
+    <div className="bg-gradient-to-b from-amber-50 to-white">
     <div className="max-w-7xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-12">{t('services.title')}</h1>
+      <h1 className="text-3xl font-bold text-center mb-12 ">{t('services.title')}</h1>
       
       <div id="gold-loan" className="mb-16">
         <motion.div
@@ -163,6 +164,7 @@ function Services() {
           </div>
         </motion.div>
       </div>
+    </div>
     </div>
   );
 }

@@ -131,6 +131,7 @@ function Career() {
   ];
 
   return (
+    <div className="bg-gradient-to-b from-amber-50 to-white">
     <div className="max-w-7xl mx-auto px-4 py-16">
       <h1 className="text-4xl font-bold text-center mb-6">Build Your Career With Us</h1>
       <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
@@ -339,6 +340,7 @@ key={index}
     </div>
   </div>
 </section>
+    </div>
     </div>
   );
 }

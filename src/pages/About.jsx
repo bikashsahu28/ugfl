@@ -10,6 +10,7 @@ function About() {
   };
 
   return (
+    <div className="bg-gradient-to-b from-amber-50 to-white">
     <div className="max-w-7xl mx-auto px-4 py-16">
       <h1 className="text-4xl font-bold text-center mb-12">{t('about.title')}</h1>
 
@@ -73,6 +74,7 @@ function About() {
           </div>
         </div>
       </motion.div>
+    </div>
     </div>
   );
 }

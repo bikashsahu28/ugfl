@@ -19,10 +19,11 @@ function Process() {
   ];
 
   return (
+    <div className="bg-gradient-to-b from-amber-50 to-white">
     <div className="max-w-7xl mx-auto px-4 py-12">
       {/* Hero Section */}
       <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">{t('process.title')}</h1>
+        <h1 className="text-4xl font-bold  font-bold  text-center text-amber-700 mb-4">{t('process.title')}</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           {t('process.subtitle')}
         </p>
@@ -81,7 +82,7 @@ function Process() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {['idProof', 'addressProof', 'goldDetails'].map((doc) => (
-                  <div key={doc} className="bg-white p-4 rounded-lg shadow-sm">
+                  <div key={doc} className="bg-white bg-gradient-to-b from-amber-50 to-white p-4 rounded-lg shadow-sm">
                     <h3 className="font-semibold text-gold-700 mb-2">
                       {t(`process.documents.${doc}.title`)}
                     </h3>
@@ -96,45 +97,53 @@ function Process() {
         </section>
 
         {/* Application Steps */}
-        <section className="bg-white rounded-xl shadow-md p-8">
-          <h2 className="text-3xl font-bold text-gold-600 mb-8 text-center">
-            {t('process.steps.title')}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map((step) => (
-              <div key={step} className="bg-gray-50 p-6 rounded-lg text-center">
-                <div className="bg-gold-100 text-gold-800 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                  {step}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  {t(`process.steps.step${step}.title`)}
-                </h3>
-                <p className="text-gray-600">
-                  {t(`process.steps.step${step}.description`)}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+
+<section className=" bg-white rounded-2xl shadow-lg p-10 my-12">
+  <h2 className="text-4xl font-bold text-gold-700 mb-10 text-center tracking-tight font-bold  text-center text-amber-700">
+    {t('process.steps.title')}
+  </h2>
+  <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8">
+    {/* Connecting Line (visible on desktop) */}
+    <div className=" hidden md:block absolute top-24 left-1/4 right-1/4 h-1 bg-gold-200"></div>
+    {
+    //[1, 2, 3, 4]
+    [
+      { step: 1, image: '../image/img1.jpeg' },
+      { step: 2, image: '../image/img2.jpeg' },
+      { step: 3, image: '../image/img3.jpeg' },
+      { step: 4, image: '../image/img4.jpeg' }
+    ]
+    .map(({step, image}, index) => (
+      <div
+        key={step}
+        className="bg-gradient-to-b from-amber-50 to-white rounded-2xl shadow-lg border-t-4 border-amber-500 relative bg-gray-50 p-8 rounded-xl shadow-sm text-center transform hover:scale-105 transition-transform duration-300"
+      >
+        {/* Icon Placeholder */}
+        <div className="w-16 h-16 mx-auto mb-4">
+          <img
+            src={image} 
+            alt={`Step ${step}`} 
+            className="w-25 h-25 rounded-lg object-contain"
+          />
+        </div>
+        {/* Step Number */}
+<div className="bg-gradient-to-r from-gold-500 to-gold-700 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-md">
+  <span className="text-amber-300 [text-shadow:_0_1px_0_rgb(255_255_255_/_40%)]">
+    {step}
+  </span>
+</div>
+        <h3 className="text-xl font-semibold text-gray-800 mb-3">
+          {t(`process.steps.step${step}.title`)}
+        </h3>
+        <p className="text-gray-600 text-sm leading-relaxed">
+          {t(`process.steps.step${step}.description`)}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>
 
         {/* FAQ Section */}
-        {/* <section className="bg-gray-50 rounded-xl shadow-md p-8">
-          <h2 className="text-3xl font-bold text-gold-600 mb-8 text-center">
-            {t('process.faq.title')}
-          </h2>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {faqItems.map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  {item.question}
-                </h3>
-                <p className="text-gray-600">
-                  {item.answer}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section> */}
         <section className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl shadow-lg p-10">
   <div className="text-center mb-12">
     <h2 className="text-4xl font-bold text-amber-700 mb-4">
@@ -188,6 +197,7 @@ function Process() {
   </div>
 </section>
       </div>
+    </div>
     </div>
   );
 }

@@ -50,6 +50,7 @@ function Gallery() {
   ];
 
   return (
+    <div className="bg-gradient-to-b from-amber-50 to-white">
     <div className="max-w-7xl mx-auto px-4 py-12 space-y-16">
       {/* Main Gallery Section */}
       <section>
@@ -208,6 +209,7 @@ function Gallery() {
   </div>
 </section>
     </div>
+    </div>   
   );
 }
 
