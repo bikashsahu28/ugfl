@@ -726,12 +726,25 @@
         "description": "Launched online loan applications and customer portals, enhancing accessibility."
       }
     },
-    "gallery": {
-      "title": "Our History in Pictures",
-      "image1": { "alt": "Opening of First Branch in Mumbai" },
-      "image2": { "alt": "Receiving National Finance Award 2015" },
-      "image3": { "alt": "Customer Appreciation Event 2020" }
-    },
+    
+  "gallery": {
+    "title": "Gallery of Trust and Service",
+    "subtitle": "Take a look at our journey through customer service, community engagement, and operational excellence.",
+    "officeOpening": "Office Opening Ceremony",
+    "teamRetreat": "Team Retreat",
+    "awardCeremony": "Award Ceremony",
+    "clientEvent": "Client Interaction Event",
+    "charityWork": "Charity & Community Work",
+    "newProduct": "New Product Launch"
+  },
+  "categories": {
+    "facilities": "Facilities",
+    "events": "Events",
+    "achievements": "Achievements",
+    "csr": "CSR",
+    "products": "Products"
+  }
+,
     "mission": {
       "title": "Our Mission & Values",
       "value1": {

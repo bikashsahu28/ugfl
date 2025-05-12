@@ -64,12 +64,22 @@ function Navbar() {
     alt="Unigold Finance Logo"
     className="h-10 w-auto object-contain rounded-lg"
   />
-  <Link to="/" className="flex flex-col items-center text-center">
+  {/* <Link to="/" className="flex flex-col items-center text-center">
     <span className="text-2xl font-bold text-primary">
       UNIGOLD FINANCE<span className="align-super text-xs">™</span>
     </span>
     <span className="text-sm text-secondary -mt-1">GOLD LOAN</span>
-  </Link>
+  </Link> */}
+  <Link to="/" className="flex flex-col items-center text-center">
+  <span className="text-xl sm:text-2xl font-bold text-primary leading-tight">
+    UNIGOLD FINANCE
+    <span className="align-super text-[10px] sm:text-xs">™</span>
+  </span>
+  <span className="text-xs sm:text-sm text-secondary -mt-0.5 sm:-mt-1">
+    GOLD LOAN
+  </span>
+</Link>
+
 </div>
 
           {/* Desktop Menu */}
