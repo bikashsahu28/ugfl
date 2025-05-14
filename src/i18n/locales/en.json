@@ -96,30 +96,120 @@
       }
     }
   },
+  
   "about": {
-    "title": "About Us",
-    "journey": {
-      "title": "Our Journey",
-      "description": "Established in 2020, UniGold Finance has been serving customers with trust and reliability",
-      "milestones": {
-        "2020": "Founded with a vision to revolutionize gold loans",
-        "2021": "Expanded to 50+ branches",
-        "2022": "Launched digital gold loan platform",
-        "2023": "Achieved ₹1000 crore loan portfolio"
+   
+     "title": "Trusted Gold Loan Partners Since 2023",
+  "overview": "Founded in 2023, we've rapidly grown to become Odisha's fastest-growing gold loan provider with 20 branches and ₹230+ crores Assets Under Management (AUM). Our customer-first approach and transparent processes have helped over 15,000 families unlock the value of their gold assets.",
+
+  "growth": {
+    "title": "Our Remarkable Growth",
+    "founding": {
+      "title": "Humble Beginnings",
+      "description": "Started in April 2023 with a single branch in Bhubaneswar, focusing on fair gold valuation and quick disbursals."
+    ,"fact1": {
+        "title": "First Month Achievement",
+        "detail": "Disbursed ₹2.5 crores to 120 customers in our first month"
+      },
+      "fact2": {
+        "title": "Core Philosophy",
+        "detail": "Built on three pillars: Gold Security, Fast Processing, and Fair Valuation"
+      }},
+    "expansion": {
+      "title": "Odisha Expansion",
+      "description": "In just 18 months, we've established a strong presence across 20 strategic locations:",
+      "branches": {
+        "1": "Bhubaneswar (Flagship Branch)",
+        "2": "Cuttack City Center",
+        "3": "Puri Pilgrim Center",
+        "4": "Sambalpur Commercial Hub",
+        "5": "Rourkela Industrial Branch"
       }
     },
-    "leadership": {
-      "title": "Leadership",
-      "description": "Our experienced leadership team brings decades of expertise in financial services"
-    },
-    "values": {
-      "title": "Our Values",
-      "integrity": "Integrity in all dealings",
-      "transparency": "Complete transparency",
-      "customer": "Customer-first approach",
-      "innovation": "Continuous innovation"
+    "aum": {
+      "title": "Financial Milestone",
+      "description": "Achieved ₹230 Crore AUM through trust-building measures and competitive interest rates starting at 0.79% per month.",
+      "subtext": "Serving 500+ customers monthly with 98% renewal rate"
     }
   },
+  
+  "journey": {
+    "title": "Our Gold Journey",
+    "description": "From a single branch to becoming one of the most trusted gold loan providers in the region, our growth reflects our commitment to customer satisfaction.",
+    "milestones": {
+      "2010": "Founded with a vision to revolutionize gold loans",
+      "2014": "Crossed ₹100 crore in gold loan disbursements",
+      "2018": "Launched mobile gold loan services",
+      "2023": "Served over 50,000 happy customers"
+    }
+  },
+  
+  "whyUs": {
+    "title": "Why Choose Our Gold Loans",
+    "points": {
+      "rate": {
+        "title": "Lowest Interest Rates",
+        "description": "Enjoy rates starting from just 0.75% per month with no hidden charges."
+      },
+      "process": {
+        "title": "Quick Processing",
+        "description": "Get loans approved within 30 minutes with minimal documentation."
+      },
+      "security": {
+        "title": "100% Secure",
+        "description": "Your gold is stored in RBI-approved vaults with insurance coverage."
+      }
+    }
+  },
+  
+  "values": {
+    "title": "Our Golden Values",
+    "list": {
+      "integrity": {
+        "icon": "integrity",
+        "title": "Integrity",
+        "description": "Every transaction is conducted with honesty and ethical practices."
+      },
+      "transparency": {
+        "icon": "transparency",
+        "title": "Transparency",
+        "description": "No hidden charges or fine print - we believe in clear communication."
+      },
+      "customer": {
+        "icon": "customer",
+        "title": "Customer First",
+        "description": "Your needs are our priority with flexible repayment options."
+      },
+      "innovation": {
+        "icon": "innovation",
+        "title": "Innovation",
+        "description": "Continuous improvement in our services through technology."
+      }
+    }
+  },
+  
+  "leadership": {
+    "title": "Our Golden Team",
+    "description": "With over 50 years of combined experience in banking and finance, our leadership team brings expertise and vision to serve you better.",
+    "team": {
+      "ceo": {
+        "name": "Rajesh Sharma",
+        "position": "Founder & CEO",
+        "bio": "Former banker with 25+ years experience in financial services."
+      },
+      "operations": {
+        "name": "Priya Patel",
+        "position": "Head of Operations",
+        "bio": "Specializes in gold valuation and risk management."
+      },
+      "technology": {
+        "name": "Amit Kumar",
+        "position": "CTO",
+        "bio": "Driving digital transformation in gold loan services."
+      }
+    }
+  }
+},
   "team": {
     "title": "Meet Our Team",
     "member1": {
@@ -797,6 +887,5 @@
     "customers": "Happy Customers",
     "loans": "Gold Loans Disbursed"
   }
-
      
 }
