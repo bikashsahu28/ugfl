@@ -398,56 +398,6 @@ const visibleTestimonials = testimonials.slice(
 </section>
       {/* Gold Loan Calculator */}
 
-
-      {/* <section className="py-16  justify-content: flex-start bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Gold Loan Calculator</h2>
-          <div className="max-w-lg mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
-            <div className="mb-6">
-              <label className="block text-gray-700 mb-2">Gold Weight (grams)</label>
-              <input 
-                type="range" 
-                min="1" 
-                max="100" 
-                value={goldWeight} 
-                onChange={(e) => setGoldWeight(e.target.value)}
-                className="w-full"
-              />
-              <div className="flex justify-between mt-2">
-                <span>1g</span>
-                <span className="font-bold">{goldWeight}g</span>
-                <span>100g</span>
-              </div>
-            </div>
-            
-            <div className="mb-6">
-              <label className="block text-gray-700 mb-2">Purity</label>
-              <div className="flex gap-4">
-                {[18, 20, 22, 24].map(karat => (
-                  <button
-                    key={karat}
-                    className={`px-4 py-2 rounded ${purity === karat ? 'bg-primary text-white' : 'bg-gray-200'}`}
-                    onClick={() => setPurity(karat)}
-                  >
-                    {karat}K
-                  </button>
-                ))}
-              </div>
-            </div>
-            
-            <div className="mb-6">
-              <label className="block text-gray-700 mb-2">Current Gold Rate</label>
-              <div className="text-2xl font-bold">₹{goldPrice}/g</div>
-            </div>
-            
-            <div className="border-t pt-6">
-              <h3 className="text-xl font-semibold mb-2">Estimated Loan Amount</h3>
-              <div className="text-3xl font-bold text-primary">₹{loanAmount.toFixed(2)}</div>
-              <p className="text-sm text-gray-500 mt-2">*Approximate calculation based on 75% LTV</p>
-            </div>
-          </div>
-        </div>
-      </section> */}
 <section className="py-16  bg-gradient-to-b from-amber-50 to-white">
   <div className="max-w-7xl mx-auto px-4 lg:px-8">
     <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
@@ -600,40 +550,6 @@ const visibleTestimonials = testimonials.slice(
 </section>
 
       {/* How It Works Section */}
-{/* <section className="py-16 bg-gray-50" ref={ref}> 
-  <div className="max-w-7xl mx-auto px-4">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-    >
-      <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-        {processSteps.map((step, index) => (
-          <motion.div
- className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition-all  hover:-translate-y-1 duration-300">
-            <div className="flex justify-center mb-4">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl font-bold">
-                {index + 1}
-              </div>
-            </div>
-            <h3 className="text-xl font-semibold mb-3 text-gray-800">{step.title}</h3>
-            <p className="text-gray-600">{step.description}</p>
-            {index < processSteps.length - 1 && (
-              <div className="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 text-gray-300">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-                </svg>
-              </div>
-            )}
-          </motion.div>
-        ))}
-      </div>
-    </motion.div>
-  </div>
-</section> */}
 
 <section className="py-16 bg-gray-50 " ref={ref}>
   <div className="max-w-7xl mx-auto px-4">
