@@ -17,7 +17,7 @@ function Mission() {
                <h3 className="text-lg font-semibold text-gray-800">{t(`mission.${value}.title`)}</h3>
                <p className="text-gray-600">{t(`mission.${value}.description`)}</p>
              </div>
-           ))}
+           ))} 
          </div>
        </section>
       </div>
