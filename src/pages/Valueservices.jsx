@@ -83,9 +83,9 @@ function ValueAddedServices() {
 
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 py-16">
+  
         {/* Hero Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -97,8 +97,39 @@ function ValueAddedServices() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {t('services.subtitle')}
           </p>
-        </motion.div>
+        </motion.div> */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="bg-gradient-to-r from-yellow-600 to-yellow-800 py-12 text-center relative overflow-hidden mb-16"
+>
+  <div className="absolute inset-0 opacity-20">
+    <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" }}></div>
+  </div>
+  <div className="max-w-7xl mx-auto px-4 relative z-10">
+    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+      {t('services.title')}
+    </h1>
+    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto">
+      {t('services.subtitle')}
+    </p>
+    <div className="mt-6 flex justify-center space-x-4">
+      <motion.div 
+        whileHover={{ scale: 1.05 }}
+        className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 text-white font-medium flex items-center"
+      >
+        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+        Premium Services
+      </motion.div>
+    </div>
+  </div>
+</motion.div>
 
+
+    <div className="max-w-7xl mx-auto px-4 py-16"> 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (

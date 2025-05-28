@@ -1,85 +1,3 @@
-// import { useTranslation } from 'react-i18next';
-// import { motion } from 'framer-motion';
-
-// function About() {
-//   const { t } = useTranslation();
-
-//   const fadeIn = {
-//     hidden: { opacity: 0, y: 20 },
-//     visible: { opacity: 1, y: 0 }
-//   };
-
-//   return (
-//     <div className="bg-gradient-to-b from-amber-50 to-white">
-//     <div className="max-w-7xl mx-auto px-4 py-16">
-//       <h1 className="text-4xl font-bold text-center mb-12">{t('about.title')}</h1>
-
-//       <motion.div
-//         id="journey"
-//         initial="hidden"
-//         whileInView="visible"
-//         viewport={{ once: true }}
-//         variants={fadeIn}
-//         transition={{ duration: 0.6 }}
-//         className="mb-16"
-//       >
-//         <h2 className="text-2xl font-bold mb-6">{t('about.journey.title')}</h2>
-//         <p className="text-gray-600 mb-8">{t('about.journey.description')}</p>
-//         <div className="grid md:grid-cols-4 gap-6">
-//           {Object.entries(t('about.journey.milestones', { returnObjects: true })).map(([year, milestone]) => (
-//             <div key={year} className="bg-white rounded-lg shadow-lg p-6">
-//               <h3 className="text-xl font-bold text-primary mb-2">{year}</h3>
-//               <p className="text-gray-600">{milestone}</p>
-//             </div>
-//           ))}
-//         </div>
-//       </motion.div>
-
-//       <motion.div
-//         id="leadership"
-//         initial="hidden"
-//         whileInView="visible"
-//         viewport={{ once: true }}
-//         variants={fadeIn}
-//         transition={{ duration: 0.6 }}
-//         className="mb-16"
-//       >
-//         <h2 className="text-2xl font-bold mb-6">{t('about.leadership.title')}</h2>
-//         <div className="bg-white rounded-lg shadow-lg p-8">
-//           <p className="text-gray-600">{t('about.leadership.description')}</p>
-//         </div>
-//       </motion.div>
-
-//       <motion.div
-//         id="values"
-//         initial="hidden"
-//         whileInView="visible"
-//         viewport={{ once: true }}
-//         variants={fadeIn}
-//         transition={{ duration: 0.6 }}
-//       >
-//         <h2 className="text-2xl font-bold mb-6">{t('about.values.title')}</h2>
-//         <div className="grid md:grid-cols-4 gap-6">
-//           <div className="bg-white rounded-lg shadow-lg p-6">
-//             <h3 className="font-semibold mb-2">{t('about.values.integrity')}</h3>
-//           </div>
-//           <div className="bg-white rounded-lg shadow-lg p-6">
-//             <h3 className="font-semibold mb-2">{t('about.values.transparency')}</h3>
-//           </div>
-//           <div className="bg-white rounded-lg shadow-lg p-6">
-//             <h3 className="font-semibold mb-2">{t('about.values.customer')}</h3>
-//           </div>
-//           <div className="bg-white rounded-lg shadow-lg p-6">
-//             <h3 className="font-semibold mb-2">{t('about.values.innovation')}</h3>
-//           </div>
-//         </div>
-//       </motion.div>
-//     </div>
-//     </div>
-//   );
-// }
-
-// export default About;
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
@@ -93,8 +11,52 @@ function About() {
 
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <motion.h1 
+
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={fadeIn}
+  transition={{ duration: 0.6 }}
+  className="bg-gradient-to-r from-yellow-600 to-yellow-800 py-12 text-center relative overflow-hidden mb-12"
+>
+  <div className="absolute inset-0 opacity-20">
+    <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" }}></div>
+  </div>
+  <div className="max-w-7xl mx-auto px-4 relative z-10">
+    <motion.h1 
+      className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg"
+    >
+      {t('about.title')}
+    </motion.h1>
+    <motion.p 
+      className="text-xl md:text-2xl text-yellow-100 font-medium max-w-4xl mx-auto"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      {t('about.overview')}
+    </motion.p>
+    <motion.div 
+      className="mt-8 flex justify-center space-x-4"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.6, duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 text-white font-medium flex items-center">
+        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+        </svg>
+        Our Story
+      </div>
+    </motion.div>
+  </div>
+</motion.div>
+
+      <div className="max-w-7xl mx-auto px-4 py-3">
+        {/* <motion.h1 
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -106,7 +68,7 @@ function About() {
           <p className="text-lg text-gray-700 mt-8 max-w-4xl mx-auto">
             {t('about.overview')}
           </p>
-        </motion.h1>
+        </motion.h1> */}
 {/* Growth Story - New Section */}
         <motion.div
           initial="hidden"

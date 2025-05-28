@@ -6,29 +6,39 @@ function History() {
   return (
 
     <div className="bg-gradient-to-b from-amber-50 to-white">
+
+      {/* Hero Section */}
+ <div className="bg-gradient-to-r from-yellow-600 to-yellow-800 py-12 text-center relative overflow-hidden mb-12">
+  <div className="absolute inset-0 opacity-20">
+    <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" }}></div>
+  </div>
+  <div className="max-w-7xl mx-auto px-4 relative z-10">
+    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+      {t('overview.title')}
+    </h2>
+    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto">
+      {t('overview.description')}
+    </p>
+    <div className="mt-6 flex justify-center space-x-4">
+      <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 text-white font-medium flex items-center">
+        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+        Quick Overview
+      </div>
+    </div>
+  </div>
+</div>
     <div className="max-w-7xl mx-auto px-4 py-12">
       {/* Page Header */}
-      {/* <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gold-600 mb-4">{t('history.title')}</h1>
-        <div className="w-24 h-1 bg-gold-500 mx-auto"></div>
-      </div>
-       */}
+      
         {/* Company Overview */}
-        <section className="mb-12">
+        {/* <section className="mb-12">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">{t('overview.title')}</h2>
         <p className="text-gray-600 max-w-3xl mx-auto text-center">{t('overview.description')}</p>
-      </section>
-
- {/* Hero Section */}
- {/* <section className="bg-gold-50 rounded-xl p-12 text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">{t('hero.title')}</h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">{t('hero.subtitle')}</p>
-        <img
-          src="../image/history-hero.jpg"
-          alt="UniGold Finance Legacy"
-          className="mt-6 rounded-lg mx-auto max-w-md shadow-md"
-        />
       </section> */}
+
+ 
 
       {/* Timeline Section */}
       <div className="relative">
