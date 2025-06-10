@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import FAQ from '../components/FAQ';
 import HomeCarousel from '../components/HomeCarousel';
 import LoanPopup from '../components/LoanPopup';
+import LiveChat from '../components/LiveChat';
 
 function Home() {
   const [goldPrice, setGoldPrice] = useState(null);
@@ -296,27 +297,26 @@ const visibleTestimonials = testimonials.slice(
             <label className="block text-sm text-left font-bold text-gray-700 mb-1">{t('goldLoan.fullName')}</label>
             <input 
               type="text" 
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black"
               placeholder={t('goldLoan.fullName')}
               required
             />
           </div>
 
-          <div>
-            <label className="block text-sm text-left font-bold text-gray-700 mb-1">{t('goldLoan.phoneNumber')}</label>
-            <input 
-              type="tel" 
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
-              placeholder={t('goldLoan.phoneNumber')}
-              required
-            /> 
-          </div>
-
+<div>
+  <label className="block text-sm text-left font-bold text-gray-700 mb-1">{t('goldLoan.phoneNumber')}</label>
+  <input 
+    type="tel" 
+    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black"
+    placeholder={t('goldLoan.phoneNumber')}
+    required
+  /> 
+</div>
           <div>
             <label className="block text-sm text-left font-bold text-gray-700 mb-1">{t('goldLoan.email')}</label>
             <input 
               type="email" 
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black"
               placeholder={t('goldLoan.email')}
               required
             />
@@ -326,7 +326,7 @@ const visibleTestimonials = testimonials.slice(
             <label className="block text-sm font-bold text-left text-gray-700 mb-1">{t('goldLoan.goldWeight')}</label>
             <input 
               type="number" 
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black"
               placeholder={t('goldLoan.goldWeight')}
               min="0"
               step="0.01"
@@ -338,7 +338,7 @@ const visibleTestimonials = testimonials.slice(
             <label className="block text-sm text-left font-bold text-gray-700 mb-1">{t('goldLoan.loanAmount')}</label>
             <input 
               type="number" 
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black"
               placeholder={t('goldLoan.loanAmount')}
               min="0"
               required
@@ -396,6 +396,10 @@ const visibleTestimonials = testimonials.slice(
     </motion.div>
 ))}
 </section>
+
+
+
+
       {/* Gold Loan Calculator */}
 
 <section className="py-16  bg-gradient-to-b from-amber-50 to-white">
@@ -844,6 +848,9 @@ const visibleTestimonials = testimonials.slice(
       </motion.div>
     </div>
   </div>
+
+     {/* Live Chat Button (fixed position) */}
+        <LiveChat />
 </section>
     </div>
   );

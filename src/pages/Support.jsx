@@ -240,7 +240,6 @@ function Support() {
           </div>
         {/* </div> */}
           </div>
-          
         
           {/* FAQ List */}
           <div className="space-y-4">
