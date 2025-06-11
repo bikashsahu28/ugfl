@@ -19,6 +19,7 @@ import LoanApplicationForm from './components/LoanApplicationForm';
 import History from './pages/History';
 import Mission from './pages/Mission';
 import Leadership from './pages/Leadership';
+import CalculatorComponent from './components/CalculatorComponent';
 
 function App() {
   return (
@@ -45,7 +46,7 @@ function App() {
             <Route path="/about/history" element={<History />} />
             <Route path="/about/mission" element={<Mission />} />
             <Route path="/about/leadership" element={<Leadership />} />
-
+<Route path="/calculators" element={<CalculatorComponent />} />
           </Routes>
         </main>
         <SocialButtons />

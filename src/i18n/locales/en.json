@@ -888,5 +888,47 @@
     "customers": "Happy Customers",
     "loans": "Gold Loans Disbursed"
   }
+
+
+  ,
+  "calculator": {
+    "title": "Unigold Finance Gold Loan Calculator",
+    "weightLabel": "Gold Weight (in grams)",
+    "weightPlaceholder": "Enter gold weight",
+    "purityLabel": "Gold Purity",
+    "schemeLabel": "Select Loan Scheme",
+    "calculateBtn": "Calculate Loan Amount"
+  },
+  "purityOptions": {
+    "22K": "22 Karat (91.6% pure)",
+    "20K": "20 Karat (83.3% pure)",
+    "18K": "18 Karat (75.0% pure)"
+  },
+  "result": {
+    "title": "Loan Estimation Result",
+    "weightText": "Gold Weight",
+    "purityText": "Gold Purity",
+    "schemeText": "Selected Scheme",
+    "rateText": "Rate per gram",
+    "loanAmount": "Maximum Loan Amount"
+  },
+  "disclaimer": {
+    "note": "Final loan amount subject to verification of gold purity and weight at our branch.",
+    "fees": "Interest rates and processing fees may apply as per company policy."
+  },
+  "emptyState": {
+    "title": "No calculation yet",
+    "description": "Enter your details and click calculate to see results"
+  },
+  "common": {
+    "note": "Note",
+    "pure": "pure",
+    "grams": "grams",
+    "rupeeSymbol": "₹"
+  },
+  "validation": {
+    "enterValidWeight": "Please enter valid gold weight"
+  
+}
      
 }
