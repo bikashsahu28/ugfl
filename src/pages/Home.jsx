@@ -12,7 +12,7 @@ import GoldLoanCalculator from '../components/CalculatorComponent';
 function Home() {
   const [goldPrice, setGoldPrice] = useState(null);
   const [goldWeight, setGoldWeight] = useState(10);
-  const [purity, setPurity] = useState(22);
+  const [purity, setPurity] = useState(22); 
   const { t } = useTranslation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -22,7 +22,7 @@ function Home() {
   // Adding these scroll effects at the component level
 
   useEffect(() => {
-    setGoldPrice(6319.50);
+    setGoldPrice(6428.50);
     
     const interval = setInterval(() => {
       const randomChange = (Math.random() - 0.5) * 10;

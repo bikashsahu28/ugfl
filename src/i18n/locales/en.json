@@ -375,6 +375,9 @@
                 "24K": "24K Gold"
               }
             },
+             "footer": {
+    "secured": "Your information is securely encrypted and protected "
+  },
             "submit": "Submit Application",
             "processing": "Processing..."
           },

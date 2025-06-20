@@ -22,12 +22,6 @@ function Process() {
     <div className="bg-gradient-to-b from-amber-50 to-white">
    
       {/* Hero Section */}
-      {/* <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold  font-bold  text-center text-amber-700 mb-4">{t('process.title')}</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          {t('process.subtitle')}
-        </p>
-      </div> */}
       
 <div className="bg-gradient-to-r from-yellow-600 to-yellow-800 py-12 text-center relative overflow-hidden">
   <div className="absolute inset-0 opacity-20">
@@ -55,69 +49,108 @@ function Process() {
       {/* Process Steps */}
       <div className="space-y-20">
         {/* Eligibility Section */}
-       
-        <section className="bg-gradient-to-r from-yellow-50 to-red-200 rounded-xl shadow-md p-8">
-                    <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="md:w-1/2">
-              <img 
-                src="../image/img1.jpeg" 
-                alt={t('process.eligibility.title')}
-                className="rounded-lg w-full h-auto"
-              />
-            </div>
-            <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold text-gold-600 mb-4">
-                {t('process.eligibility.title')}
-              </h2>
-              <p className="text-gray-700 mb-6">
-                {t('process.eligibility.description')}
-              </p>
-              <ul className="space-y-3">
-                {[1, 2, 3].map((item) => (
-                  <li key={item} className="flex items-start">
-                    <svg className="h-6 w-6 text-gold-500 mr-2 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-700">{t(`process.eligibility.point${item}`)}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
+       <section className="bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-2xl shadow-lg overflow-hidden p-0 border border-yellow-200 hover:shadow-xl transition-shadow duration-300">
+  <div className="flex flex-col md:flex-row gap-0 items-stretch min-h-[400px]">
+    {/* Image Section (Left) */}
+    <div className="md:w-1/2 relative overflow-hidden group">
+      <img 
+        src="../image/img1.jpeg" 
+        alt={t('process.eligibility.title')}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    </div>
 
-        {/* Documents Section */}     
-        <section className="bg-gradient-to-r from-red-200 to-yellow-100 rounded-xl shadow-md p-8">
-          <div className="flex flex-col md:flex-row-reverse gap-8 items-center">
-            <div className="md:w-1/2">
-              <img 
-                src="../image/img1.jpeg" 
-                alt={t('process.documents.title')}
-                className="rounded-lg w-full h-auto"
-              />
+    {/* Content Section (Right) */}
+    <div className="md:w-1/2 p-8 flex flex-col justify-center bg-white">
+      <div className="mb-6">
+        <span className="inline-block bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-1 rounded-full mb-3">
+          Eligibility Criteria
+        </span>
+        <h2 className="text-3xl font-bold text-gray-800 mb-4 leading-tight">
+          {t('process.eligibility.title')}
+        </h2>
+        <p className="text-gray-600 mb-6">
+          {t('process.eligibility.description')}
+        </p>
+      </div>
+
+      <ul className="space-y-4">
+        {[1, 2, 3].map((item) => (
+          <li 
+            key={item} 
+            className="flex items-start bg-yellow-50/50 p-4 rounded-lg border-l-4 border-yellow-400 hover:bg-yellow-50 transition-colors duration-200"
+          >
+            <div className="flex-shrink-0 mt-0.5">
+              <svg className="h-5 w-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
             </div>
-            <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold text-gold-600 mb-4">
-                {t('process.documents.title')}
-              </h2>
-              <p className="text-gray-700 mb-6">
-                {t('process.documents.description')}
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {['idProof', 'addressProof', 'goldDetails'].map((doc) => (
-                  <div key={doc} className="bg-white bg-gradient-to-b from-amber-50 to-white p-4 rounded-lg shadow-sm">
-                    <h3 className="font-semibold text-gold-700 mb-2">
-                      {t(`process.documents.${doc}.title`)}
-                    </h3>
-                    <p className="text-sm text-gray-600">
-                      {t(`process.documents.${doc}.examples`)}
-                    </p>
-                  </div>
-                ))}
+            <span className="ml-3 text-gray-700 font-medium">
+              {t(`process.eligibility.point${item}`)}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+        {/* Documents Section */}  
+        <section className="bg-gradient-to-br from-amber-100 to-yellow-50 rounded-2xl shadow-lg overflow-hidden border border-amber-200 hover:shadow-xl transition-all duration-300">
+  <div className="flex flex-col md:flex-row-reverse gap-0 min-h-[450px]">
+    {/* Image Section (Right) - Enhanced */}
+    <div className="md:w-1/2 relative group overflow-hidden">
+      <img 
+        src="../image/img1.jpeg" 
+        alt={t('process.documents.title')}
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    </div>
+
+    {/* Content Section (Left) - Premium Styling */}
+    <div className="md:w-1/2 p-10 flex flex-col justify-center bg-white">
+      <div className="mb-8">
+        <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full mb-4 tracking-wider">
+          REQUIRED DOCUMENTS
+        </span>
+        <h2 className="text-3xl font-bold text-gray-800 mb-4">
+          {t('process.documents.title')}
+        </h2>
+        <p className="text-gray-600 mb-8 leading-relaxed">
+          {t('process.documents.description')}
+        </p>
+      </div>
+
+      {/* Document Cards Grid - Enhanced */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {['idProof', 'addressProof', 'goldDetails'].map((doc) => (
+          <div 
+            key={doc} 
+            className="bg-gradient-to-br from-white to-amber-50 p-5 rounded-xl border border-amber-100 shadow-sm hover:shadow-md hover:border-amber-200 transition-all duration-300 group"
+          >
+            <div className="flex items-start">
+              <div className="bg-amber-100/80 p-2 rounded-lg mr-4 group-hover:bg-amber-200 transition-colors">
+                <svg className="w-5 h-5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-800 mb-2">
+                  {t(`process.documents.${doc}.title`)}
+                </h3>
+                <p className="text-sm text-gray-600 leading-snug">
+                  {t(`process.documents.${doc}.examples`)}
+                </p>
               </div>
             </div>
           </div>
-        </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>   
+
 
         {/* Application Steps */}
 
@@ -167,7 +200,7 @@ function Process() {
 </section>
 
         {/* FAQ Section */}
-        <section className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl shadow-lg p-10">
+        <section className="bg-gradient-to-br from-yellow-300 to-amber-50 rounded-2xl shadow-lg p-10">
   <div className="text-center mb-12">
     <h2 className="text-4xl font-bold text-amber-700 mb-4">
       {t('process.faq.title')}
