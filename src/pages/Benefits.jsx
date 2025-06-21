@@ -64,12 +64,6 @@ function Benefits() {
     <div className="bg-gradient-to-b from-amber-50 to-white">
  
       {/* Hero Section */}
-      {/* <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold text-amber-700 mb-4">{t('benefits.title')}</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          {t('benefits.subtitle')}
-        </p>
-      </div> */}
       <div className="bg-gradient-to-r from-yellow-600 to-yellow-800 py-12 text-center relative overflow-hidden mb-16">
   <div className="absolute inset-0 opacity-20">
     <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" }}></div>
@@ -108,19 +102,44 @@ function Benefits() {
       </div>
 
       {/* Key Features Section */}
-      <div className="bg-amber-50 rounded-xl p-8 md:p-12 mb-16">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
-          {t('benefits.featuresTitle')}
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {features.map((feature, index) => (
-            <div key={index} className="flex items-start">
-              <FiCheckCircle className="text-amber-600 mt-1 mr-3 flex-shrink-0" />
-              <p className="text-gray-700">{feature}</p>
-            </div>
-          ))}
+      
+<div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl p-8 md:p-12 mb-16 shadow-lg border border-amber-200">
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-4xl font-bold text-center text-gray-900 mb-6">
+      <span className="relative inline-block">
+        <span className="relative z-10">{t('benefits.featuresTitle')}</span>
+        <span className="absolute bottom-2 left-0 w-full h-3 bg-amber-300 opacity-30 -rotate-1"></span>
+      </span>
+    </h2>
+    
+    <p className="text-lg text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+      Discover how our solution delivers exceptional value and transforms your experience
+    </p>
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {features.map((feature,index) => (
+        <div 
+          key={index} 
+          className="group flex items-start bg-white/80 hover:bg-white transition-all duration-300 rounded-xl p-5 shadow-sm hover:shadow-md border border-amber-100"
+        >
+          <div className="bg-amber-100 p-2 rounded-lg mr-4 group-hover:bg-amber-200 transition-colors duration-300">
+            <FiCheckCircle className="text-amber-700 text-xl" />
+          </div>
+          <div>
+            <p className="text-gray-600">{feature}</p>
+          </div>
         </div>
-      </div>
+      ))}
+    </div>
+     
+    <div className="mt-12 text-center">
+      <button className="bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+        Get Started Today
+      </button>
+    </div>
+  </div>
+</div>
+
 
       {/* Testimonials Section */}
       <div className="mb-16">

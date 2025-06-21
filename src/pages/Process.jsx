@@ -172,10 +172,10 @@ function Process() {
     .map(({step, image}, index) => (
       <div
         key={step}
-        className="bg-gradient-to-b from-amber-50 to-white rounded-2xl shadow-lg border-t-4 border-amber-500 relative bg-gray-50 p-8 rounded-xl shadow-sm text-center transform hover:scale-105 transition-transform duration-300"
+        className="bg-gradient-to-b from-amber-200 to-white rounded-2xl shadow-lg border-t-4 border-amber-500 relative bg-gray-50 p-8 rounded-xl shadow-sm text-center transform hover:scale-105 transition-transform duration-300"
       >
         {/* Icon Placeholder */}
-        <div className="w-16 h-16 mx-auto mb-4">
+        <div className="w-17 h-17 mx-auto mb-4">
           <img
             src={image} 
             alt={`Step ${step}`} 
@@ -184,7 +184,7 @@ function Process() {
         </div>
         {/* Step Number */}
 <div className="bg-gradient-to-r from-gold-500 to-gold-700 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-md">
-  <span className="text-amber-300 [text-shadow:_0_1px_0_rgb(255_255_255_/_40%)]">
+  <span className="text-red-700 [text-shadow:_0_1px_0_rgb(255_255_255_/_40%)]">
     {step}
   </span>
 </div>

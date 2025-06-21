@@ -599,6 +599,12 @@
         "3": "Transparent pricing with no hidden fees",
         "4": "Renewal facility available"
       },
+     "Fheading":{
+      "1": "Quick Processing",
+      "2": "Best Rates",
+      "3": "Safe Storage",
+      "4": "Flexible Repayment"
+     },
       "testimonialsTitle": "What Our Customers Say",
       "testimonials": {
         "1": {

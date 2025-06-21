@@ -84,20 +84,7 @@ function ValueAddedServices() {
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white">
   
-        {/* Hero Section */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold text-amber-700 mb-4">
-            {t('services.title')}
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t('services.subtitle')}
-          </p>
-        </motion.div> */}
+        {/* Hero Section */}      
 <motion.div
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
@@ -127,8 +114,6 @@ function ValueAddedServices() {
     </div>
   </div>
 </motion.div>
-
-
     <div className="max-w-7xl mx-auto px-4 py-16"> 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -162,7 +147,7 @@ function ValueAddedServices() {
         </div>
 
         {/* Why Choose Our Value-Added Services */}
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -187,10 +172,10 @@ function ValueAddedServices() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Customer Testimonials */}
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -216,93 +201,177 @@ function ValueAddedServices() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
-
-        {/* Enhanced CTA Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl p-8 md:p-12 text-center mb-16"
-        >
-          <h2 className="text-3xl font-bold text-white mb-4">
-            {t('services.cta.title')}
-          </h2>
-          <p className="text-amber-100 mb-8 max-w-2xl mx-auto">
-            {t('services.cta.subtitle')}
-          </p>
-          <div className="flex flex-col md:flex-row justify-center gap-4">
-            <button className="bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-50 transition shadow-lg">
-              {t('services.cta.getStarted')}
-            </button>
-            <button className="bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-50 transition shadow-lg">
-              {t('services.cta.speakAdvisor')}
-            </button>
-            <button className="bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-50 transition shadow-lg">
-              {t('services.cta.visitBranch')}
-            </button>
-          </div>
-        </motion.div>
-
-        {/* FAQs Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold text-amber-700 text-center mb-8">
-            {t('faqs.title')}
-          </h2>
-          <div className="space-y-6">
-            {faqs.map((faq) => (
-              <div key={faq.id} className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Contact / Support Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h2 className="text-3xl font-bold text-amber-700 mb-8">
-            {t('contact.title')}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <FiPhone className="w-8 h-8 text-amber-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                {t('contact.phone.title')}
-              </h3>
-              <p className="text-gray-600">{t('contact.phone.number')}</p>
+        </div>
+{/* faq sec tion */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+  className="my-20 "
+>
+  <div className="text-center mb-12">
+    <h2 className="text-3xl md:text-4xl font-bold  text-amber-700   mb-4">
+      {t('faqs.title')}
+    </h2>
+    <div className="w-20 h-1 bg-amber-500 mx-auto"></div>
+    <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+      {t('faqs.subtitle')}
+    </p>
+  </div>
+  
+  <div className="max-w-4xl mx-auto space-y-4">
+    {faqs.map((faq) => (
+      <motion.div 
+        key={faq.id}
+        whileHover={{ scale: 1.01 }}
+        className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+      >
+        <details className="group">
+          <summary className="list-none p-6 cursor-pointer flex justify-between items-center">
+            <h3 className="text-lg font-semibold text-gray-800 group-hover:text-amber-600 transition-colors">
+              {faq.question}
+            </h3>
+            <div className="text-amber-500 transform group-open:rotate-180 transition-transform">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <FiMail className="w-8 h-8 text-amber-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                {t('contact.email.title')}
-              </h3>
-              <p className="text-gray-600">{t('contact.email.address')}</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <button className="bg-amber-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-amber-600 transition">
-                {t('contact.requestCallback')}
-              </button>
-              <p className="text-gray-600 mt-4">{t('contact.callbackDescription')}</p>
-            </div>
+          </summary>
+          <div className="px-6 pb-6 pt-0 text-gray-600">
+            {faq.answer}
           </div>
-          <button className="bg-amber-500 text-white font-semibold px-8 py-3 rounded-lg hover:bg-amber-600 transition">
-            {t('contact.bookAppointment')}
-          </button>
-        </motion.div>
+        </details>
+      </motion.div>
+    ))}
+  </div>
+</motion.div>
+
+{/* Contact / Support Info */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+  className="my-20"
+>
+  {/* <div className="text-center mb-12">
+    <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+      {t('contact.title')}
+    </h2>
+    <div className="w-20 h-1 bg-amber-500 mx-auto"></div>
+    <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+      {t('contact.subtitle')}
+    </p>
+  </div> */}
+  
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    {/* Phone Card */}
+    <motion.div 
+      whileHover={{ y: -5 }}
+      className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-amber-500"
+    >
+      <div className="bg-amber-50 w-16 h-16 rounded-full flex items-center justify-center text-amber-600 mx-auto mb-6">
+        <FiPhone className="w-6 h-6" />
+      </div>
+      <h3 className="text-xl font-semibold text-center text-gray-800 mb-3">
+        {t('contact.phone.title')}
+      </h3>
+      <p className="text-gray-600 text-center mb-6">
+        {t('contact.phone.number')}
+      </p>
+      <div className="text-center">
+        <button className="text-amber-600 font-medium hover:text-amber-700 transition-colors">
+          {t('contact.callNow')}
+        </button>
+      </div>
+    </motion.div>
+    
+    {/* Email Card */}
+    <motion.div 
+      whileHover={{ y: -5 }}
+      className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-amber-500"
+    >
+      <div className="bg-amber-50 w-16 h-16 rounded-full flex items-center justify-center text-amber-600 mx-auto mb-6">
+        <FiMail className="w-6 h-6" />
+      </div>
+      <h3 className="text-xl font-semibold text-center text-gray-800 mb-3">
+        {t('contact.email.title')}
+      </h3>
+      <p className="text-gray-600 text-center mb-6">
+        {t('contact.email.address')}
+      </p>
+      <div className="text-center">
+        <button className="text-amber-600 font-medium hover:text-amber-700 transition-colors">
+          {t('contact.sendMessage')}
+        </button>
+      </div>
+    </motion.div>
+    
+    {/* Callback Card */}
+    <motion.div 
+      whileHover={{ y: -5 }}
+      className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-amber-500"
+    >
+      <div className="bg-amber-50 w-16 h-16 rounded-full flex items-center justify-center text-amber-600 mx-auto mb-6">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+      </div>
+      <h3 className="text-xl font-semibold text-center text-gray-800 mb-3">
+        {t('contact.callback.title')}
+      </h3>
+      <p className="text-gray-600 text-center mb-6">
+        {t('contact.callbackDescription')}
+      </p>
+      <div className="text-center">
+        <button className="bg-amber-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-amber-600 transition w-full">
+          {t('contact.requestCallback')}
+        </button>
+      </div>
+    </motion.div>
+  </div>
+  
+</motion.div>
+          {/* Enhanced CTA Section */}
+<motion.div
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+  className="relative overflow-hidden rounded-3xl p-10 md:p-16 my-20"
+>
+  <div className="absolute inset-0 bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 opacity-95"></div>
+  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')] opacity-40"></div>
+  <div className="relative z-10 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+      {t('services.cta.title')}
+    </h2>
+    <p className="text-amber-100 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+      {t('services.cta.subtitle')}
+    </p>
+    <div className="flex flex-col md:flex-row justify-center gap-4">
+      <motion.button 
+        whileHover={{ y: -2, boxShadow: "0 10px 20px rgba(0,0,0,0.1)" }}
+        className="bg-white text-amber-600 font-semibold px-8 py-4 rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-md"
+      >
+        {t('services.cta.getStarted')}
+      </motion.button>
+      <motion.button 
+        whileHover={{ y: -2, boxShadow: "0 10px 20px rgba(0,0,0,0.1)" }}
+        className="bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-xl hover:bg-white hover:bg-opacity-10 transition-all duration-300 shadow-md"
+      >
+        {t('services.cta.speakAdvisor')}
+      </motion.button>
+    </div>
+    <div className="mt-8 flex justify-center">
+      <div className="flex items-center text-amber-100">
+        <FiPhone className="mr-2" />
+        <span className="font-medium">{t('services.cta.hotline')}</span>
+      </div>
+    </div>
+  </div>
+</motion.div>
       </div>
     </div>
   );
