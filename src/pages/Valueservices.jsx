@@ -247,23 +247,18 @@ function ValueAddedServices() {
   </div>
 </motion.div>
 
-{/* Contact / Support Info */}
+
+{/* contacts / Support Info */}
 <motion.div
   initial={{ opacity: 0, y: 20 }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6 }}
   viewport={{ once: true }}
   className="my-20"
->
-  {/* <div className="text-center mb-12">
-    <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-      {t('contact.title')}
-    </h2>
-    <div className="w-20 h-1 bg-amber-500 mx-auto"></div>
-    <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-      {t('contact.subtitle')}
-    </p>
-  </div> */}
+>  
+  <h2 className="text-3xl font-bold text-amber-700 text-center mb-12">
+    {t('contacts.title')}
+  </h2>
   
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
     {/* Phone Card */}
@@ -275,14 +270,14 @@ function ValueAddedServices() {
         <FiPhone className="w-6 h-6" />
       </div>
       <h3 className="text-xl font-semibold text-center text-gray-800 mb-3">
-        {t('contact.phone.title')}
+        {t('contacts.phone.title')}
       </h3>
       <p className="text-gray-600 text-center mb-6">
-        {t('contact.phone.number')}
+        {t('contacts.phone.number')}
       </p>
       <div className="text-center">
         <button className="text-amber-600 font-medium hover:text-amber-700 transition-colors">
-          {t('contact.callNow')}
+          {t('contacts.callNow')}
         </button>
       </div>
     </motion.div>
@@ -296,14 +291,14 @@ function ValueAddedServices() {
         <FiMail className="w-6 h-6" />
       </div>
       <h3 className="text-xl font-semibold text-center text-gray-800 mb-3">
-        {t('contact.email.title')}
+        {t('contacts.email.title')}
       </h3>
       <p className="text-gray-600 text-center mb-6">
-        {t('contact.email.address')}
+        {t('contacts.email.address')}
       </p>
       <div className="text-center">
         <button className="text-amber-600 font-medium hover:text-amber-700 transition-colors">
-          {t('contact.sendMessage')}
+          {t('contacts.sendMessage')}
         </button>
       </div>
     </motion.div>
@@ -319,19 +314,18 @@ function ValueAddedServices() {
         </svg>
       </div>
       <h3 className="text-xl font-semibold text-center text-gray-800 mb-3">
-        {t('contact.callback.title')}
+        {t('contacts.callback.title')}
       </h3>
       <p className="text-gray-600 text-center mb-6">
-        {t('contact.callbackDescription')}
+        {t('contacts.callback.description')}
       </p>
       <div className="text-center">
         <button className="bg-amber-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-amber-600 transition w-full">
-          {t('contact.requestCallback')}
+          {t('contacts.requestCallback')}
         </button>
       </div>
     </motion.div>
   </div>
-  
 </motion.div>
           {/* Enhanced CTA Section */}
 <motion.div
@@ -363,12 +357,6 @@ function ValueAddedServices() {
       >
         {t('services.cta.speakAdvisor')}
       </motion.button>
-    </div>
-    <div className="mt-8 flex justify-center">
-      <div className="flex items-center text-amber-100">
-        <FiPhone className="mr-2" />
-        <span className="font-medium">{t('services.cta.hotline')}</span>
-      </div>
     </div>
   </div>
 </motion.div>

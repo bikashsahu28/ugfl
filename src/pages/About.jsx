@@ -1,5 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { GiNewShoot, GiTransparentTubes } from 'react-icons/gi';
+import { AiFillCustomerService } from 'react-icons/ai';
+import { MdOutlineSecurity } from 'react-icons/md';
 
 function About() {
   const { t } = useTranslation();
@@ -56,19 +59,7 @@ function About() {
 </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 py-3">
-        {/* <motion.h1 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center mb-12 text-amber-600"
-        >
-          {t('about.title')}
-          <p className="text-lg text-gray-700 mt-8 max-w-4xl mx-auto">
-            {t('about.overview')}
-          </p>
-        </motion.h1> */}
+
 {/* Growth Story - New Section */}
         <motion.div
           initial="hidden"
@@ -81,11 +72,7 @@ function About() {
           <h2 className="text-3xl font-bold mb-6 text-amber-700 text-center">{t('about.growth.title')}</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Founding */}
-            {/* <div className="bg-white p-6 rounded-xl shadow-md border-t-4 border-amber-400">
-              <h3 className="text-xl font-bold text-amber-600 mb-3">{t('about.growth.founding.title')}</h3>
-              <p className="text-gray-600">{t('about.growth.founding.description')}</p>
-            </div> */}
+          
 <div className="bg-white p-6 rounded-xl shadow-md border-t-4 border-amber-400 hover:shadow-lg transition-shadow duration-300">
   <h3 className="text-xl font-bold text-amber-600 mb-3 flex items-center">
     <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -165,7 +152,7 @@ function About() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-bold mb-6 text-amber-700">{t('about.journey.title')}</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center text-amber-700">{t('about.journey.title')}</h2>
           <p className="text-gray-600 mb-8 text-lg">{t('about.journey.description')}</p>
           <div className="grid md:grid-cols-4 gap-6">
             {Object.entries(t('about.journey.milestones', { returnObjects: true })).map(([year, milestone]) => (
@@ -190,7 +177,7 @@ function About() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-bold mb-8 text-amber-700">{t('about.whyUs.title')}</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-amber-700">{t('about.whyUs.title')}</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {Object.entries(t('about.whyUs.points', { returnObjects: true })).map(([key, value]) => (
               <div key={key} className="bg-white p-6 rounded-xl shadow-md">
@@ -218,7 +205,7 @@ function About() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-bold mb-8 text-amber-700">{t('about.values.title')}</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-amber-700">{t('about.values.title')}</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {Object.entries(t('about.values.list', { returnObjects: true })).map(([key, value]) => (
               <motion.div 
@@ -228,11 +215,18 @@ function About() {
               >
                 <div className="bg-amber-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
                   {value.icon === 'integrity' && (
-                    <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  )}
-                  {/* Add other icons for different values */}
+  <MdOutlineSecurity className="w-8 h-8 text-amber-600 flex-shrink-0" />
+)}
+          {value.icon === 'transparency' && (
+  <GiTransparentTubes className="w-8 h-8 text-amber-600 flex-shrink-0" />
+)}
+{value.icon === 'customer' && (
+  <AiFillCustomerService className="w-8 h-8 text-amber-600 flex-shrink-0" />
+)}
+{value.icon === 'innovation' && (
+  <GiNewShoot className="w-8 h-8 text-amber-600 flex-shrink-0" />
+)}
+
                 </div>
                 <h3 className="font-semibold text-lg mb-2 text-gray-800">{value.title}</h3>
                 <p className="text-gray-600 text-sm">{value.description}</p>
@@ -250,9 +244,9 @@ function About() {
           variants={fadeIn}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold mb-8 text-amber-700">{t('about.leadership.title')}</h2>
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <p className="text-gray-600 text-lg mb-6">{t('about.leadership.description')}</p>
+          <h2 className="text-3xl font-bold mb-8 text-center text-amber-700">{t('about.leadership.title')}</h2>
+          <div className="bg-white rounded-xl shadow-lg p-2 ">
+            <p className="text-gray-600 text-center text-lg mb-6">{t('about.leadership.description')}</p>
             <div className="grid md:grid-cols-3 gap-8 mt-8">
               {Object.entries(t('about.leadership.team', { returnObjects: true })).map(([key, member]) => (
                 <div key={key} className="text-center">

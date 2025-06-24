@@ -137,10 +137,10 @@
     "title": "Our Gold Journey",
     "description": "From a single branch to becoming one of the most trusted gold loan providers in the region, our growth reflects our commitment to customer satisfaction.",
     "milestones": {
-      "2010": "Founded with a vision to revolutionize gold loans",
-      "2014": "Crossed ₹100 crore in gold loan disbursements",
-      "2018": "Launched mobile gold loan services",
-      "2023": "Served over 50,000 happy customers"
+      "April 2023": "Founded with a vision to revolutionize gold loans",
+      "January  2024": "Crossed ₹100 crore in gold loan disbursements",
+      "May 2024": "Launched Loan at home gold loan services",
+      "June 2025": "Served over 50,000 happy customers with 230 cores AUM"
     }
   },
   
@@ -733,8 +733,6 @@
         "quote": "Working with them was a game-changer; their dedication and creativity are unmatched."
       }
     }
-
-
     ,
       "contact": {
         "heroTitle": "We're Here to Help",
@@ -795,38 +793,132 @@
         "preferredTime": "Preferred Time",
         "selectTime": "Select Time Slot",
         "scheduleNow": "Schedule Now"
-      }
-    
-          
+      },
+   
       
-    ,  "hero": {
-      "title": "Our Journey",
-      "subtitle": "Discover the legacy of UniGold Finance, built on trust and excellence in gold loan services."
+
+
+"overview": {
+    "title": "Our Journey Through Time",
+    "description": "Discover the rich history and milestones that shaped our organization into what it is today.",
+    "cta1": "Quick Overview",
+    "cta2": "Learn More"
+  },
+  "intro": {
+    "title": "Our Story Begins",
+    "description": "From humble beginnings to becoming an industry leader, our journey has been marked by innovation, dedication, and a commitment to excellence.",
+    "vision": {
+      "title": "Vision",
+      "description": "To be the most trusted financial partner for generations to come."
     },
-    "overview": {
-      "title": "About UniGold Finance",
-      "description": "Founded in 2005, UniGold Finance has grown to become a trusted name in gold loan services, empowering millions with accessible and transparent financial solutions. With a commitment to customer satisfaction, we have expanded across India, blending tradition with innovation."
+    "mission": {
+      "title": "Mission",
+      "description": "Empowering communities through accessible financial solutions and exceptional service."
     },
-    "timeline": {
-      "title": "Milestones",
-      "milestone1": {
-        "title": "Founded UniGold Finance",
-        "description": "Established our first branch in Mumbai, introducing accessible gold loans to empower communities."
-      },
-      "milestone2": {
-        "title": "Expanded to 50 Branches",
-        "description": "Reached 50 branches across India, strengthening our presence in urban and rural areas."
-      },
-      "milestone3": {
-        "title": "Award for Excellence",
-        "description": "Received the National Finance Award for outstanding customer service and innovation."
-      },
-      "milestone4": {
-        "title": "Digital Transformation",
-        "description": "Launched online loan applications and customer portals, enhancing accessibility."
-      }
+    "values": {
+      "title": "Values",
+      "description": "Integrity, Innovation, Customer Focus, and Social Responsibility guide every decision we make."
+    }
+  },
+  "timeline": {
+    "title": "Our Historical Timeline",
+    "subtitle": "Key moments that defined our growth and success"
+  },
+  "history": {
+    "founding": {
+      "year": "1995",
+      "title": "The Foundation",
+      "description": "Established with just 10 employees and a single branch, we began our journey to serve local communities."
     },
-    
+    "milestone1": {
+      "year": "2002",
+      "title": "First Major Expansion",
+      "description": "Opened 5 new branches across the state, marking our first phase of growth."
+    },
+    "expansion": {
+      "year": "2010",
+      "title": "Statewide Presence",
+      "description": "Became the first local financial institution to have branches in all districts of our state."
+    },
+    "present": {
+      "year": "2023",
+      "title": "Digital Transformation",
+      "description": "Launched our mobile banking platform, serving over 1 million customers digitally."
+    }
+  },
+  "stats": {
+    "title": "By The Numbers",
+    "subtitle": "Our impact in the communities we serve",
+    "customers": {
+      "value": "1.2M+",
+      "label": "Happy Customers"
+    },
+    "branches": {
+      "value": "150+",
+      "label": "Branches"
+    },
+    "employees": {
+      "value": "2,500+",
+      "label": "Dedicated Employees"
+    },
+    "loans": {
+      "value": "₹5,000Cr+",
+      "label": "Loans Disbursed"
+    }
+  },
+  "leadership": {
+    "title": "Meet Our Leaders",
+    "subtitle": "The visionary team guiding our organization forward",
+    "ceo": {
+      "name": "Rajesh Sharma",
+      "position": "CEO & Managing Director",
+      "bio": "With 25+ years in financial services, he has guided our strategic vision since 2010."
+    },
+    "cto": {
+      "name": "Priya Patel",
+      "position": "Chief Technology Officer",
+      "bio": "Digital transformation expert who joined us from a leading tech firm in 2018."
+    },
+    "cfo": {
+      "name": "Amit Kumar",
+      "position": "Chief Financial Officer",
+      "bio": "Financial strategist with expertise in sustainable growth models."
+    },
+    "coo": {
+      "name": "Sunita Reddy",
+      "position": "Chief Operations Officer",
+      "bio": "Operations specialist who streamlined our branch network efficiency."
+    }
+  },
+  "testimonials": {
+    "title": "What Our Customers Say",
+    "subtitle": "Trusted by individuals and businesses across the region",
+    "testimonial1": {
+      "quote": "The personalized service and local understanding makes banking with them a pleasure.",
+      "name": "Vikram Mehta",
+      "position": "Small Business Owner"
+    },
+    "testimonial2": {
+      "quote": "Their digital banking platform is as good as any national bank, but with better customer care.",
+      "name": "Ananya Das",
+      "position": "College Professor"
+    },
+    "testimonial3": {
+      "quote": "When I needed an agricultural loan quickly, they understood my needs and processed it faster than expected.",
+      "name": "Harish Nayak",
+      "position": "Farmer"
+    }
+  },
+  "cta": {
+    "title": "Become Part of Our Story",
+    "description": "Whether you're looking for financial services or career opportunities, we welcome you to join our growing family.",
+    "primary": "Open an Account",
+    "secondary": "Contact Us"
+  },
+
+   
+  
+
   "gallery": {
     "title": "Gallery of Trust and Service",
     "subtitle": "Take a look at our journey through customer service, community engagement, and operational excellence.",
@@ -862,9 +954,13 @@
     },
     "stats": {
       "title": "Our Impact",
+      "subtitle": "Key achievements that reflect our commitment to excellence",
       "customers": { "value": "1M+", "label": "Customers Served" },
       "branches": { "value": "100+", "label": "Branches Nationwide" },
-      "loans": { "value": "500K+", "label": "Loans Disbursed" }
+      "loans": { "value": "500K+", "label": "Loans Disbursed" },
+      "employees":{"value": "₹230Cr+",
+        "label": "Total Loan Amount Disbursed"
+      }
     }
        
     
@@ -939,5 +1035,76 @@
     "enterValidWeight": "Please enter valid gold weight"
   
 }
-     
+   ,"contacts": {
+  "title": "Get in Touch",
+  "phone": {
+    "title": "Call Us",
+    "number": "+1-800-123-4567"
+  },
+  "email": {
+    "title": "Email Us",
+    "address": "support@financeapp.com"
+  },
+  "callback": {
+    "title": "Request Callback",
+    "description": "Our team will reach out within 24 hours."
+  },
+  "callNow": "Call Now",
+  "sendMessage": "Send Message",
+  "requestCallback": "Request Callback"
+}  ,
+  "mission": {
+    "hero": {
+      "title": "Our Guiding Mission",
+      "subtitle": "Discover the principles that drive our organization forward"
+    },
+    "statement": {
+      "title": "Our Mission Statement",
+      "content": "To empower individuals and businesses through innovative financial solutions while maintaining the highest standards of integrity and community responsibility."
+    },
+    "purpose": {
+      "title": "Our Purpose",
+      "content": "We exist to create meaningful financial opportunities that help our customers achieve their dreams while contributing positively to our communities."
+    },
+    "difference": {
+      "title": "What Makes Us Different",
+      "content": "Unlike traditional financial institutions, we combine cutting-edge technology with personalized service to deliver solutions that truly meet our customers' needs."
+    },
+    "values": {
+      "title": "Our Core Values",
+      "subtitle": "The fundamental beliefs that guide our actions",
+      "integrity": {
+        "title": "Integrity",
+        "content": "We conduct all our business with honesty, transparency, and ethical behavior."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "content": "We continuously seek better ways to serve our customers through creative solutions."
+      },
+      "community": {
+        "title": "Community",
+        "content": "We believe in giving back and creating positive change in the areas we serve."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "content": "We strive for the highest standards in everything we do, from service to operations."
+      }
+    },
+    "approach": {
+      "title": "Our Approach",
+      "content": "We combine traditional values with modern solutions to create a banking experience that's both trustworthy and innovative:",
+      "points": {
+        "1": "Customer-first philosophy in all decisions",
+        "2": "Local understanding with global standards",
+        "3": "Sustainable growth that benefits all stakeholders"
+      }
+    },
+    "cta": {
+      "title": "Join Our Mission",
+      "subtitle": "Become part of a financial institution that truly cares about your success",
+      "primary": "Open an Account",
+      "secondary": "Learn More"
+    }
+  }
+
 }
