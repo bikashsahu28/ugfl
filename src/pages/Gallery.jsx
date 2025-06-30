@@ -51,16 +51,24 @@ function Gallery() {
 
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white">
-    <div className="max-w-7xl mx-auto px-4 py-12 space-y-16">
-      {/* Main Gallery Section */}
-      <section>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">{t('gallery.title')}</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+       <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ backgroundImage: 
+            "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" }}></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+            {t('gallery.title')}
+          </h1>
+          <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
             {t('gallery.subtitle')}
           </p>
         </div>
-
+        {/* <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-amber-50 to-transparent"></div> */}
+      </div>
+    <div className="max-w-7xl mx-auto px-4 py-12 space-y-16">
+      {/* Main Gallery Section */}
+      <section>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryItems.map((item) => (
             <div key={item.id} className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">

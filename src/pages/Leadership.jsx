@@ -2,9 +2,34 @@ import { useTranslation } from 'react-i18next';
 
 function Leadership() {
   const { t } = useTranslation();
-
+  const testimonialsl = [
+    { id: 1, image: '../image/img1.jpeg' },
+    { id: 2, image: '../image/img3.jpeg' },
+    { id: 3, image: '../image/img5.jpeg' },
+    { id: 4, image: '../image/img3.jpeg' },
+    { id: 5, image: '../image/img3.jpeg' },
+  ];
+  
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white">
+      {/* hero Section */}
+            <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ backgroundImage: 
+            "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" }}></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+            {t('leadership.heros.title')}
+          </h1>
+          <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
+            {t('leadership.heros.subtitle')}
+          </p>
+        </div>
+        {/* <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-amber-50 to-transparent"></div> */}
+      </div>
+
+
     {/* Leadership Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
@@ -17,7 +42,8 @@ function Leadership() {
             <div key={leader} className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
               <div className="relative overflow-hidden h-64">
                 <img 
-                  src={`../image/leader-${leader}.jpg`} 
+                  // src={`../image/leader-${leader}.jpg`}// ../image/img3.jpeg
+                  src={t(`leadership.${leader}.picture`)} 
                   alt={t(`leadership.${leader}.name`)}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -48,8 +74,8 @@ function Leadership() {
       {/* Testimonials Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-gray-50 rounded-xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">{t('testimonials.title')}</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">{t('testimonials.subtitle')}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">{t('testimonialsl.title')}</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">{t('testimonialsl.subtitle')}</p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -63,17 +89,22 @@ function Leadership() {
                 ))}
               </div>
               <blockquote className="text-gray-600 mb-6 italic">
-                "{t(`testimonials.testimonial${testimonial}.quote`)}"
+                "{t(`testimonialsl.testimonial${testimonial}.quote`)}"
               </blockquote>
               <div className="flex items-center">
-                <img 
-                  src={`../image/client-${testimonial}.jpg`} 
-                  alt={t(`testimonials.testimonial${testimonial}.name`)}
+                {/* <img 
+                  src={`../image/client-${testimonial}.jpeg`} 
+                  alt={t(`testimonialsl.testimonial${testimonial}.name`)}
                   className="w-12 h-12 rounded-full object-cover mr-4"
-                />
+                /> */}
+                <img 
+        src={`/images/client-${testimonial}.jpeg`}  // Updated path
+        alt={t(`testimonialsl.testimonial${testimonial}.name`)}
+        className="w-12 h-12 rounded-full object-cover mr-4"
+      />
                 <div>
-                  <p className="font-semibold text-gray-800">{t(`testimonials.testimonial${testimonial}.name`)}</p>
-                  <p className="text-sm text-gray-500">{t(`testimonials.testimonial${testimonial}.position`)}</p>
+                  <p className="font-semibold text-gray-800">{t(`testimonialsl.testimonial${testimonial}.name`)}</p>
+                  <p className="text-sm text-gray-500">{t(`testimonialsl.testimonial${testimonial}.position`)}</p>
                 </div>
               </div>
             </div>

@@ -20,6 +20,7 @@ import History from './pages/History';
 import Mission from './pages/Mission';
 import Leadership from './pages/Leadership';
 import CalculatorComponent from './components/CalculatorComponent';
+import FAQSections from './components/mainfaq';
 
 function App() {
   return (
@@ -46,7 +47,9 @@ function App() {
             <Route path="/about/history" element={<History />} />
             <Route path="/about/mission" element={<Mission />} />
             <Route path="/about/leadership" element={<Leadership />} />
-<Route path="/calculators" element={<CalculatorComponent />} />
+            <Route path="/calculators" element={<CalculatorComponent />} />
+            <Route path="/mainfaq" element={<FAQSections />} />
+
           </Routes>
         </main>
         <SocialButtons />

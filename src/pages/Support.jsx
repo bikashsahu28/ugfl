@@ -8,9 +8,6 @@ import LiveChat from '../components/LiveChat';
 function Support() {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
-  const [isChatOpen, setIsChatOpen] = useState(false);
-  const [chatMessages, setChatMessages] = useState([]);
-  const [messageInput, setMessageInput] = useState('');
   const [selectedFaqCategory, setSelectedFaqCategory] = useState('all');
 
   // Sample FAQ data
@@ -104,24 +101,25 @@ function Support() {
     return matchesSearch && matchesCategory;
   });
 
-  const handleSendMessage = () => {
-    if (messageInput.trim()) {
-      // Add user message
-      setChatMessages([...chatMessages, { sender: 'user', text: messageInput }]);
-      setMessageInput('');
-      
-      // Simulate bot response after delay
-      setTimeout(() => {
-        setChatMessages(prev => [...prev, { 
-          sender: 'bot', 
-          text: 'Thank you for your message. Our customer support team will respond shortly. In the meantime, you might find answers in our FAQ section.' 
-        }]);
-      }, 1000);
-    }
-  };
+
 
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
+      <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ backgroundImage: 
+            "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" }}></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+            {t('gallery.title')}
+          </h1>
+          <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
+            {t('gallery.subtitle')}
+          </p>
+        </div>
+        {/* <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-amber-50 to-transparent"></div> */}
+      </div>
       <div className="max-w-7xl mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold text-center mb-2 text-amber-800">{t('support.title')}</h1>
         <p className="text-center text-gray-600 mb-8">{t('support.subtitle')}</p>
