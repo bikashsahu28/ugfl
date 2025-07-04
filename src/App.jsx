@@ -21,6 +21,9 @@ import Mission from './pages/Mission';
 import Leadership from './pages/Leadership';
 import CalculatorComponent from './components/CalculatorComponent';
 import FAQSections from './components/mainfaq';
+import Galleryes from './pages/Galleryes';
+import Button from './components/Button';
+import Icons from './components/Icons';
 
 function App() {
   return (
@@ -49,7 +52,9 @@ function App() {
             <Route path="/about/leadership" element={<Leadership />} />
             <Route path="/calculators" element={<CalculatorComponent />} />
             <Route path="/mainfaq" element={<FAQSections />} />
-
+            <Route path="/galleryes" element={<Galleryes />} />
+            <Route path="/btn" element={<Button />} />
+            <Route path="/icons" element={<Icons />} />
           </Routes>
         </main>
         <SocialButtons />

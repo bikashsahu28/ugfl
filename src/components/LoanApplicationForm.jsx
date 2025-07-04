@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Swal from 'sweetalert2';
 import { motion } from 'framer-motion';
+import axios from 'axios';
 
 const LoanApplicationForm = () => {
   const { t } = useTranslation();
@@ -103,54 +104,102 @@ const LoanApplicationForm = () => {
 
 
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (validateForm()) {
-    setIsSubmitting(true);
+// const handleSubmit = async (e) => {
+//   e.preventDefault();
+//   if (validateForm()) {
+//     setIsSubmitting(true);
     
-    try {
-      const response = await fetch('http://localhost:3000/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+//     try {
+//       const response = await fetch('http://localhost:3000/', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(formData),
+//       });
 
-      if (!response.ok) {
-        throw new Error('Failed to submit application');
-      }
+//       if (!response.ok) {
+//         throw new Error('Failed to submit application');
+//       }
 
-      const result = await response.json();
-      console.log('Form submitted successfully:', result.data);
+//       const result = await response.json();
+//       console.log('Form submitted successfully:', result.data);
       
-      setSubmitSuccess(true);
-      setErrors({});
-      setFormData(initialFormState);
+//       setSubmitSuccess(true);
+//       setErrors({});
+//       setFormData(initialFormState);
       
-      await Swal.fire({
-        title: t('LoanApplicationForm.success.title'),
-        text: t('LoanApplicationForm.success.message'),
-        icon: "success",
-        // ... rest of your Swal config
-      });
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      await Swal.fire({
-        title: 'Error',
-        text: error.message || 'Failed to submit application',
-        icon: "error",
-        confirmButtonColor: "#f59e0b",
-      });
-    } finally {
-      if (isMounted) {
-        setIsSubmitting(false);
+//       await Swal.fire({
+//         title: t('LoanApplicationForm.success.title'),
+//         text: t('LoanApplicationForm.success.message'),
+//         icon: "success",
+//         // ... rest of your Swal config
+//       });
+//     } catch (error) {
+//       console.error('Error submitting form:', error);
+//       await Swal.fire({
+//         title: 'Error',
+//         text: error.message || 'Failed to submit application',
+//         icon: "error",
+//         confirmButtonColor: "#f59e0b",
+//       });
+//     } finally {
+//       if (isMounted) {
+//         setIsSubmitting(false);
+//       }
+//     }
+//   }
+// };
+
+   const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      setIsSubmitting(true);
+      
+      try {
+        // Simulate API call
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        if (!isMounted) return;
+        await axios.post('http://localhost:3000/api/postloan', formData);
+        console.log('Form submitted:', formData);
+        setSubmitSuccess(true);
+        setErrors({});
+        setFormData(initialFormState);
+        
+        await Swal.fire({
+          title: t('LoanApplicationForm.success.title'),
+          text: t('LoanApplicationForm.success.message'),
+          icon: "success",
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown animate__faster'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp animate__faster'
+          },
+          background: '#fff',
+          backdrop: `
+            rgba(245, 158, 11, 0.4)
+            url("/images/nyan-cat.gif")
+            left top
+            no-repeat
+          `,
+          confirmButtonColor: "#f59e0b",
+          confirmButtonText: t('LoanApplicationForm.success.button'),
+          customClass: {
+            container: 'shadow-xl rounded-xl'
+          },
+          
+        }
+      );
+
+      } finally {
+        if (isMounted) {
+          setIsSubmitting(false);
+        }
       }
     }
-  }
-};
-
-  
+  };
   
   return (
     <motion.div

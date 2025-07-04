@@ -4,6 +4,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import NavDropdown from './NavDropdown';
 import LanguageDropdown from './LanguageDropdown';
+import Button from './Button';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -100,9 +101,12 @@ function Navbar() {
             <div className="ml-2">
               <LanguageDropdown />
             </div>
-            <button className="primary-button ml-2" onClick={() => navigate('/LoanApplicationForm')} >{t('nav.applyNow')}</button>
-          </div>
+            {/* <button className="primary-button ml-2" onClick={() => navigate('/LoanApplicationForm')} >{t('nav.applyNow')}</button> */}
+            {/* <Button className="primary-button ml-2" onClick={() => navigate('/LoanApplicationForm')} >{t('nav.applyNow')} </Button> */}
+            <Button />
 
+          </div>
+ 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center space-x-2">
             <LanguageDropdown />

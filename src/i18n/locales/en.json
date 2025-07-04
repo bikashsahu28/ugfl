@@ -456,8 +456,8 @@
                   "excerpt": "UniGold Finance expands its presence with a new flagship branch in Mumbai's financial district."
                 },
                 "quarterlyResults": {
-                  "title": "Record Quarterly Results",
-                  "excerpt": "Company reports 25% growth in gold-backed investments for Q3 2023."
+                  "title": "Record Quarterly Results Announced",
+                  "excerpt": "Company reports 25% growth in gold-backed investments for Q3 2023, reflecting strong investor demand. The surge highlights gold's appeal as a safe-haven asset amid market volatility."
                 },
                 "readMore": "Read more"
               },
@@ -471,6 +471,14 @@
                   "location": "Delhi Convention Center"
                 },
                 "annualMeeting": {
+                  "title": "Annual Investor Meeting",
+                  "location": "Virtual Event"
+                },
+                "annualMeeting1": {
+                  "title": "Annual Investor Meeting",
+                  "location": "Virtual Event"
+                },
+                "annualMeeting2": {
                   "title": "Annual Investor Meeting",
                   "location": "Virtual Event"
                 }

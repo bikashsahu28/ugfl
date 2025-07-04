@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import Icons from './Icons';
 
 function Footer() {
   const { t } = useTranslation();
@@ -11,6 +12,7 @@ function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">UniGold Finance</h3>
             <p className="text-gray-400">{t('footer.tagline')}</p>
+            <Icons />
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h4>
