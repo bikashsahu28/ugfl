@@ -21,58 +21,152 @@ function Gallery() {
  const categories = [
     {
       id: 1,
-      name: 'Opening Ceremony',
+      name: 'Anniversary',
       images: [
-        { id: 1, image: '../image/img3.jpeg', title: t('gallery.officeOpening') },
-        { id: 2, url: 'https://source.unsplash.com/random/300x200?nature2', title: 'Nature 2' },
-        { id: 3, url: 'https://source.unsplash.com/random/300x200?nature3', title: 'Nature 3' },
+        { id: 1, image: '../Aniversery/anniversery30.JPEG', title: t('gallery.officeOpening') },
+        // { id: 2, image: '../web pic/Aniversery/anniversery1.jpeg' , title: 'Nature 2' },
+        { id: 2, image: '../Aniversery/anniversery1.JPEG' , title: 'Nature 2' },
+        { id: 3, image: '../Aniversery/anniversery2.JPEG' , title: 'Nature 3' },
+        { id: 4, image: '../Aniversery/anniversery3.JPEG' , title: 'Nature 4' },
+        { id: 5, image: '../Aniversery/anniversery31.JPEG' , title: 'Nature 5' },
+        { id: 6, image: '../Aniversery/anniversery5.JPEG' , title: 'Nature 6' },
+        { id: 7, image: '../Aniversery/anniversery6.JPEG' , title: 'Nature 7' },
+        { id: 8, image: '../Aniversery/anniversery7.JPEG' , title: 'Nature 8' },
+        { id: 9, image: '../Aniversery/anniversery8.JPEG' , title: 'Nature 9' },
+        { id: 10, image: '../Aniversery/anniversery9.JPEG' , title: 'Nature 10' },
+        { id: 11, image: '../Aniversery/anniversery10.JPEG' , title: 'Nature 11' },
+        { id: 12, image: '../Aniversery/anniversery11.JPEG' , title: 'Nature 12' },
+        { id: 13, image: '../Aniversery/anniversery12.JPEG' , title: 'Nature 13' },
+        { id: 14, image: '../Aniversery/anniversery13.JPEG' , title: 'Nature 14' },
+        { id: 15, image: '../Aniversery/anniversery14.JPEG' , title: 'Nature 15' },
+        { id: 16, image: '../Aniversery/anniversery15.JPEG' , title: 'Nature 16' },
+        { id: 17, image: '../Aniversery/anniversery16.JPEG' , title: 'Nature 17' },
+        { id: 18, image: '../Aniversery/anniversery17.JPEG' , title: 'Nature 18' },
+        { id: 19, image: '../Aniversery/anniversery18.JPEG' , title: 'Nature 19' },
+        { id: 20, image: '../Aniversery/anniversery19.JPEG' , title: 'Nature 20' },
+        { id: 21, image: '../Aniversery/anniversery20.JPEG' , title: 'Nature 21' },
+        { id: 22, image: '../Aniversery/anniversery21.JPEG' , title: 'Nature 22' },
+        { id: 23, image: '../Aniversery/anniversery22.JPEG' , title: 'Nature 23' },
+        { id: 24, image: '../Aniversery/anniversery23.JPEG' , title: 'Nature 24' },
+        { id: 25, image: '../Aniversery/anniversery24.JPEG' , title: 'Nature 25' },
+        { id: 26, image: '../Aniversery/anniversery25.JPEG' , title: 'Nature 26' },
+        { id: 27, image: '../Aniversery/anniversery26.JPEG' , title: 'Nature 27' },
+        { id: 28, image: '../Aniversery/anniversery4.JPEG' , title: 'Nature 28' },
+        { id: 29, image: '../Aniversery/anniversery28.JPEG' , title: 'Nature 29' },
+        { id: 30, image: '../Aniversery/anniversery29.JPEG' , title: 'Nature 30' },
+
+
       ]
     },
     {
       id: 2,
-      name: 'Animals',
+      name: 'Award',
       images: [
-        { id: 4, url: 'https://source.unsplash.com/random/300x200?animal1', title: 'Animal 1' },
-        { id: 5, url: 'https://source.unsplash.com/random/300x200?animal2', title: 'Animal 2' },
-        { id: 6, url: 'https://source.unsplash.com/random/300x200?animal3', title: 'Animal 3' },
+        { id: 31, image: '../Award/award1.JPG' , title: 'Award 1' },
+        { id: 32, image: '../Award/award2.JPG' , title: 'Award 2' },
+        { id: 33, image: '../Award/award3.JPG' , title: 'Award 3' },
+        { id: 34, image: '../Award/award4.JPG' , title: 'Award 4' },
+        { id: 35, image: '../Award/award5.JPG' , title: 'Award 5' },
+        { id: 36, image: '../Award/award6.JPG' , title: 'Award 6' },
+        { id: 37, image: '../Award/award7.JPG' , title: 'Award 7' },
+        { id: 38, image: '../Award/award8.JPG' , title: 'Award 8' },
+        { id: 39, image: '../Award/award9.JPG' , title: 'Award 9' },
+        { id: 40, image: '../Award/award10.JPG' , title: 'Award 10' },
+        { id: 41, image: '../Award/award11.JPG' , title: 'Award 11' },
+        { id: 42, image: '../Award/award12.JPG' , title: 'Award 12' },
+        { id: 43, image: '../Award/award13.JPG' , title: 'Award 13' },
+        { id: 44, image: '../Award/award14.JPG' , title: 'Award 14' },
+        { id: 45, image: '../Award/award15.JPG' , title: 'Award 15' },
+        { id: 46, image: '../Award/award16.JPG' , title: 'Award 16' },
+        { id: 47, image: '../Award/award17.JPG' , title: 'Award 17' },
+        { id: 48, image: '../Award/award18.JPG' , title: 'Award 18' },
+        { id: 49, image: '../Award/award19.JPG' , title: 'Award 19' },
+        { id: 50, image: '../Award/award20.JPG' , title: 'Award 20' },
+        { id: 51, image: '../Award/award21.JPG' , title: 'Award 21' },
       ]
     },
     {
       id: 3,
-      name: 'Cities',
+      name: 'Inauguration',
       images: [
-        { id: 7, url: 'https://source.unsplash.com/random/300x200?city1', title: 'City 1' },
-        { id: 8, url: 'https://source.unsplash.com/random/300x200?city2', title: 'City 2' },
-        { id: 9, url: 'https://source.unsplash.com/random/300x200?city3', title: 'City 3' },
+        { id: 52, image: '../Inaguration/BARAMUNDA.png' , title: 'BARAMUNDA 1' },
+        { id: 53, image: '../Inaguration/BUXI BAZAR.png' , title: 'BUXI BAZAR 2' },
+        { id: 54, image: '../Inaguration/CDA.png' , title: 'CDA 3' },
+        { id: 55, image: '../Inaguration/JAYDEV VIHAR.png' , title: 'JAYDEV VIHAR 4' },
+        { id: 56, image: '../Inaguration/BUXI BAZAR.png' , title: 'BUXI BAZAR 5' },
+        { id: 57, image: '../Inaguration/LINK ROAD.png' , title: 'LINK ROAD 6' },
+        { id: 58, image: '../Inaguration/REMUNA BRANCH.png' , title: 'REMUNA BRANCH 7' },
+
+
+        
       ]
     },
     {
       id: 4,
-      name: 'Food',
+      name: 'Marketing',
       images: [
-        { id: 10, url: 'https://source.unsplash.com/random/300x200?food1', title: 'Food 1' },
-        { id: 11, url: 'https://source.unsplash.com/random/300x200?food2', title: 'Food 2' },
-        { id: 12, url: 'https://source.unsplash.com/random/300x200?food3', title: 'Food 3' },
+        { id: 59, image: '../marketing/01.jpg' , title: 'Marketing 1' },
+        { id: 60, image: '../marketing/18.jpg' , title: 'Marketing 2' },
+        { id: 61, image: '../marketing/03.jpg' , title: 'Marketing 3' },
+        { id: 62, image: '../marketing/04.jpg' , title: 'Marketing 4' },
+        { id: 63, image: '../marketing/05.jpg' , title: 'Marketing 5' },
+        { id: 64, image: '../marketing/06.jpg' , title: 'Marketing 6' },
+        { id: 65, image: '../marketing/07.jpg' , title: 'Marketing 7' },
+        { id: 66, image: '../marketing/08.jpg' , title: 'Marketing 8' },
+        { id: 67, image: '../marketing/09.jpg' , title: 'Marketing 9' },
+        { id: 68, image: '../marketing/10.jpg' , title: 'Marketing 10' },
+        { id: 69, image: '../marketing/11.jpg' , title: 'Marketing 11' },
+        { id: 70, image: '../marketing/12.jpg' , title: 'Marketing 12' },
+        { id: 71, image: '../marketing/13.jpg' , title: 'Marketing 13' },
+        { id: 72, image: '../marketing/14.jpg' , title: 'Marketing 14' },
+        { id: 73, image: '../marketing/15.jpg' , title: 'Marketing 15' },
+        { id: 74, image: '../marketing/16.jpg' , title: 'Marketing 16' },
+        { id: 75, image: '../marketing/17.jpg' , title: 'Marketing 17' },
+        { id: 76, image: '../marketing/02.jpg' , title: 'Marketing 18' },
       ]
     },
     {
       id: 5,
-      name: 'Sports',
+      name: 'Meetings',
       images: [
-        { id: 13, url: 'https://source.unsplash.com/random/300x200?sports1', title: 'Sports 1' },
-        { id: 14, url: 'https://source.unsplash.com/random/300x200?sports2', title: 'Sports 2' },
-        { id: 15, url: 'https://source.unsplash.com/random/300x200?sports3', title: 'Sports 3' },
+        { id: 77, image: '../meeting/meeting1.JPG' , title: 'meeting 1' },
+        { id: 78, image: '../meeting/meeting2.JPG' , title: 'meeting 2' },
+        { id: 79, image: '../meeting/meeting3.JPG' , title: 'meeting 3' },
+        { id: 80, image: '../meeting/meeting4.JPG' , title: 'meeting 4' },
+        { id: 81, image: '../meeting/meeting5.jpg' , title: 'meeting 5' },
+        { id: 82, image: '../meeting/meeting6.jpg' , title: 'meeting 6' },
+        { id: 83, image: '../meeting/meeting7.jpg' , title: 'meeting 7' },
+        { id: 84, image: '../meeting/meeting8.jpg' , title: 'meeting 8' },
+        { id: 85, image: '../meeting/meeting9.jpg' , title: 'meeting 9' },
+        { id: 86, image: '../meeting/meeting10.jpg' , title: 'meeting 10' },
+        { id: 87, image: '../meeting/meeting11.jpg' , title: 'meeting 11' },
+        { id: 88, image: '../meeting/meeting12.jpg' , title: 'meeting 12' },
       ]
     },
     {
       id: 6,
-      name: 'Technology',
+      name: 'Sports Events',
       images: [
-        { id: 16, url: 'https://source.unsplash.com/random/300x200?tech1', title: 'Tech 1' },
-        { id: 17, url: 'https://source.unsplash.com/random/300x200?tech2', title: 'Tech 2' },
-        { id: 18, url: 'https://source.unsplash.com/random/300x200?tech3', title: 'Tech 3' },
+        { id: 89, image: '../Cricket/sport.jpg' , title: 'sport 1' },
+        { id: 90, image: '../Cricket/sport1.jpg' , title: 'sport 2' },
+        { id: 91, image: '../Cricket/sport2.jpg' , title: 'sport 3' },
+        { id: 92, image: '../Cricket/sport3.jpg' , title: 'sport 4' },
+        { id: 93, image: '../Cricket/sport4.jpg' , title: 'sport 5' },
+        { id: 94, image: '../Cricket/sport5.jpg' , title: 'sport 6' },
+        { id: 95, image: '../Cricket/sport6.jpg' , title: 'sport 7' },
+        { id: 96, image: '../Cricket/sport7.jpg' , title: 'sport 8' },
+        { id: 97, image: '../Cricket/sport8.jpg' , title: 'sport 9' },
       ]
-    }
+    },
+    // {
+    //   id: 7,
+    //   name: 'Sports Events',
+    //   images: [
+    //     { id: 16, url: 'https://source.unsplash.com/random/300x200?sports1', title: 'Sports 1' },
+    //     { id: 17, url: 'https://source.unsplash.com/random/300x200?sports2', title: 'Sports 2' },
+    //     { id: 18, url: 'https://source.unsplash.com/random/300x200?sports3', title: 'Sports 3' },
+    //   ]
+    // }
   ];
     const [activeCategory, setActiveCategory] = useState(categories[0]);
   const [showModal, setShowModal] = useState(false);
@@ -165,8 +259,9 @@ function Gallery() {
       </section> */}
 <section>
       <div className="min-h-screen bg-gray-100 p-4 md:p-8">
-        <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Image Gallery</h1>
-        
+        {/* <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Image Gallery</h1> */}
+                <h1 className="text-3xl font-bold text-amber-700 text-center mb-4">Image Gallery</h1>
+
         {/* Category Navigation */}
         <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
           {categories.map(category => (
