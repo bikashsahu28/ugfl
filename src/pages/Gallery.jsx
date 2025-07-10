@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { GiSplitCross } from 'react-icons/gi';
+import { MdOutlineArrowBackIos } from 'react-icons/md';
 
 function Gallery() {
   const { t } = useTranslation();
@@ -234,93 +237,89 @@ function Gallery() {
         </div>
         {/* <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-amber-50 to-transparent"></div> */}
       </div>
-    <div className="max-w-7xl mx-auto px-4 py-12 space-y-16">
+    <div className="max-w-7xl mx-auto px-4 py-1 space-y-16">
       {/* Main Gallery Section */}
-      {/* <section>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryItems.map((item) => (
-            <div key={item.id} className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-              <img 
-                src={item.image} 
-                alt={item.title}
-                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-6">
-                <div>
-                  <span className="inline-block px-3 py-1 bg-gold-600 text-white text-sm rounded-full mb-2">
-                    {t(`categories.${item.category}`)}
-                  </span>
-                  <h3 className="text-white text-xl font-semibold">{item.title}</h3>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section> */}
-<section>
-      <div className="min-h-screen bg-gray-100 p-4 md:p-8">
+      <section>
+      <div className="min-h-screen  p-4 md:p-8">
         {/* <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Image Gallery</h1> */}
-                <h1 className="text-3xl font-bold text-amber-700 text-center mb-4">Image Gallery</h1>
-
+                {/* <h1 className="text-3xl font-bold text-amber-700 text-center mb-4">Image Gallery</h1> */}
+ <div className="text-center mb-12">
+      <h1 className="text-4xl font-bold text-gray-800 mb-2">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-800">
+          Premium Gallery
+        </span>
+      </h1>
+      <p className="text-gray-600 max-w-2xl mx-auto">
+        Explore our curated collection of quality images across various categories
+      </p>
+    </div>
         {/* Category Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
-          {categories.map(category => (
-            <button
-              key={category.id}
-              className={`px-4 py-2 rounded-lg transition-colors ${
-                activeCategory.id === category.id 
-                  ? 'bg-green-500 text-white' 
-                  : 'bg-gray-200 hover:bg-gray-300 text-gray-800'
-              }`}
-              onClick={() => handleCategoryClick(category)}
-            >
-              {category.name}
-            </button>
-          ))}
-        </div>
+         <div className="flex flex-wrap justify-center gap-3 mb-12">
+      {categories.map(category => (
+        <button
+          key={category.id}
+          className={`px-5 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 ${
+            activeCategory.id === category.id 
+              ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg' 
+              : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md'
+          } font-medium`}
+          onClick={() => handleCategoryClick(category)}
+        >
+          {category.name}
+        </button>
+      ))}
+    </div>
         
         {/* Image Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {activeCategory.images.map(image => (
-            <div 
-              key={image.id} 
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-              onClick={() => handleImageClick(image.id)}
-            >
-              <img 
-                src={image.image}  
-                alt={image.title} 
-                className="w-full h-48 object-cover"
-              />
-              <p className="p-4 text-center font-semibold">{image.title}</p>
-            </div>
-          ))}
+           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      {activeCategory.images.map(image => (
+        <div 
+          key={image.id} 
+          className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
+          onClick={() => handleImageClick(image.id)}
+        >
+          <div className="relative overflow-hidden h-60">
+            <img 
+              src={image.image}  
+              alt={image.title} 
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </div>
+          <div className="p-5">
+            <h3 className="font-semibold text-lg text-gray-800 mb-1">{image.title}</h3>
+            <p className="text-sm text-gray-500">View details</p>
+          </div>
         </div>
-        
+      ))}
+    </div>
         {/* Modal */}
         {showModal && (
           <div 
-            className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50 p-4 backdrop-blur-sm animate-fadeIn"
             onClick={closeModal}
           >
             <div 
               className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative"
               onClick={e => e.stopPropagation()}
             >
+              
               <button 
-                className="absolute top-4 right-4 text-3xl text-gray-600 hover:text-gray-900 z-10"
-                onClick={closeModal}
-              >
-                &times;
-              </button>
+  className="absolute top-4 right-4 text-3xl text-gray-700 hover:text-amber-600
+   bg-white/70 hover:bg-white/90 rounded-full p-1 backdrop-blur-sm z-10 transition-all duration-300 shadow-md"
+  onClick={closeModal}
+>
+  <GiSplitCross />
+</button>
               
               <div className="flex items-center justify-center h-full p-4">
-                <button 
-                  className="bg-black bg-opacity-50 text-white rounded-full w-10 h-10 flex items-center justify-center mr-2 hover:bg-opacity-70"
-                  onClick={handlePrev}
-                >
-                  &lt;
-                </button>
+               
+            <button 
+    className="absolute left-4 text-gray-700 hover:text-amber-600 bg-white/70 hover:bg-white/90 rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-sm z-10 transition-all duration-300 shadow-md hover:scale-110"
+    onClick={handlePrev}
+  >
+    <FaArrowLeft className="text-xl hover:scale-120" />
+  </button>
                 
                 <div className="flex-1 flex justify-center max-h-[80vh]">
                   <img 
@@ -329,13 +328,14 @@ function Gallery() {
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>
-                
-                <button 
-                  className="bg-black bg-opacity-50 text-white rounded-full w-10 h-10 flex items-center justify-center ml-2 hover:bg-opacity-70"
-                  onClick={handleNext}
-                >
-                  &gt;
-                </button>
+               
+ <button 
+    className="absolute right-4 text-gray-700 hover:text-amber-600 bg-white/70 hover:bg-white/90 rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-sm z-10 transition-all duration-300 shadow-md hover:scale-110"
+    onClick={handleNext} 
+  >
+    <FaArrowRight className="text-xl hover:scale-120" />
+  </button>
+
               </div>
               
               <div className="p-4 text-center border-t border-gray-200">
@@ -354,7 +354,7 @@ function Gallery() {
 
       <section className="bg-gray-50  rounded-xl p-8 md:p-12 max-w-7xl mx-auto">
   <div className="text-center mb-16">
-    <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('news.title')}</h2>
+    <h2 className="text-4xl font-bold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-800">{t('news.title')}</h2>
     <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
       {t('news.subtitle')}
     </p>
@@ -597,17 +597,11 @@ function Gallery() {
     </div>
 
     <div className="text-center mt-12">
-      {/* <button className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D4AF37] transition-all">
-        View All Events
-        <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-        </svg>
-      </button> */}
     </div>
   </div>
 </section>
       {/* testiment Section */}
-<section className="bg-gold-50 rounded-xl p-12">
+<section className="bg-gold-50 rounded-xl p-1">
   <div className="text-center mb-12">
     <h2 className="text-3xl font-bold text-amber-700 text-center mb-4">{t('testiment.title')}</h2>
     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
