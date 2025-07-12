@@ -7,7 +7,7 @@ const FaqItem = ({ question, answer }) => {
   return (
     <div className="border border-gray-200 rounded-lg overflow-hidden transition-all duration-200 hover:shadow-sm">
       <button
-        className="w-full px-6 py-4 text-left flex justify-between items-center bg-white hover:bg-gray-50 transition-colors"
+        className="w-full px-6 py-4 text-left flex justify-between items-center bg-white hover:bg-amber-100 transition-colors"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
@@ -86,71 +86,71 @@ const FAQSections = () => {
   });
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-gray-900 mb-3">{t('faq.title')}</h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          {t('faq.subtitle')}
-        </p>
-      </div>
+    <section className="mb-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+  <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold  text-center text-amber-700 mb-2">{t('faq.title')}</h2>
+    <p className="text-gray-600 max-w-2xl mx-auto">
+      {t('faq.subtitle')}
+    </p>
+  </div>
 
-      <div className="mb-8">
-        {/* Search Bar */}
-        <div className="relative mb-6">
-          <input
-            type="text"
-            placeholder={t('faq.searchPlaceholder')}
-            className="w-full px-5 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <button className="absolute right-3 top-3 text-gray-400 hover:text-amber-600">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </button>
-        </div>
+  <div className="mb-6">
+    {/* FAQ Categories and Search Bar */}
+    <div className="flex flex-wrap gap-2 mb-4">
+      {faqCategories.map(category => (
+        <button
+          key={category.id}
+          className={`px-4 py-2 rounded-full text-sm font-medium ${
+            selectedFaqCategory === category.id
+              ? 'bg-amber-600 text-white'
+              : 'bg-amber-100 text-amber-800 hover:bg-amber-200'
+          }`}
+          onClick={() => setSelectedFaqCategory(category.id)}
+        >
+          {category.name}
+        </button>
+      ))}
+    </div>
 
-        {/* FAQ Categories */}
-        <div className="flex flex-wrap gap-3 justify-center mb-8">
-          {faqCategories.map(category => (
-            <button
-              key={category.id}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                selectedFaqCategory === category.id 
-                  ? 'bg-amber-600 text-white shadow-sm' 
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-              onClick={() => setSelectedFaqCategory(category.id)}
-            >
-              {category.name}
-            </button>
-          ))}
-        </div>
-      </div>
+    {/* Search Bar */}
+    <div className="relative">
+      <input
+        type="text"
+        placeholder={t('faq.searchPlaceholder')}
+        className="w-full px-4 py-3 rounded-lg border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+      <button className="absolute right-3 top-3 text-amber-600">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </button>
+    </div>
+  </div>
 
-      {/* FAQ List */}
-      <div className="space-y-4">
-        {filteredFaqs.length > 0 ? (
-          filteredFaqs.map(faq => (
-            <FaqItem key={faq.id} question={faq.question} answer={faq.answer} />
-          ))
-        ) : (
-          <div className="text-center py-10">
-            <svg
-              className="mx-auto h-12 w-12 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <h3 className="mt-2 text-lg font-medium text-gray-900">{t('faq.noResults.title')}</h3>
-            <p className="mt-1 text-gray-500">{t('faq.noResults.description')}</p>
-          </div>
-        )}
+  {/* FAQ List */}
+  <div className="space-y-4">
+    {filteredFaqs.length > 0 ? (
+      filteredFaqs.map(faq => (
+        <FaqItem key={faq.id} question={faq.question} answer={faq.answer} />
+      ))
+    ) : (
+      <div className="text-center py-8 text-gray-500">
+        <svg
+          className="mx-auto h-12 w-12 text-gray-400"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <h3 className="mt-2 text-lg font-medium text-gray-900">{t('faq.noResults.title')}</h3>
+        <p className="mt-1 text-gray-500">{t('faq.noResults.description')}</p>
       </div>
-    </section>
+    )}
+  </div>
+</section>
   );
 };
 

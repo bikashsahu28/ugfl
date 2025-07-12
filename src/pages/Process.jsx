@@ -149,8 +149,7 @@ function Process() {
       </div>
     </div>
   </div>
-</section>   
-
+</section>
 
         {/* Application Steps */}
 

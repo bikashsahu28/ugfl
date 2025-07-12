@@ -8,6 +8,7 @@ import HomeCarousel from '../components/HomeCarousel';
 import LoanPopup from '../components/LoanPopup';
 import LiveChat from '../components/LiveChat';
 import GoldLoanCalculator from '../components/CalculatorComponent';
+import FAQSections from '../components/mainfaq';
 
 function Home() {
   const [goldPrice, setGoldPrice] = useState(null);
@@ -253,13 +254,18 @@ const visibleTestimonials = testimonials.slice(
         <span className="relative z-10">{t('hero1.cta.applyOnline')}</span>
         <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
       </button>
-      <Link 
-        to="/calculator" 
-        className="relative overflow-hidden group bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:text-primary-dark transition-all duration-300 text-lg shadow-lg hover:shadow-xl border-2 border-transparent hover:border-white/30"
-      >
-        <span className="relative z-10">{t('hero1.cta.checkEligibility')}</span>
-        <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-      </Link>
+      <button 
+    onClick={() => {
+      const calculatorSection = document.getElementById('gold-loan-calculator');
+      if (calculatorSection) {
+        calculatorSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }}
+    className="relative overflow-hidden group bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:text-primary-dark transition-all duration-300 text-lg shadow-lg hover:shadow-xl border-2 border-transparent hover:border-white/30"
+  >
+    <span className="relative z-10">{t('hero1.cta.checkEligibility')}</span>
+    <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+  </button>
     </motion.div>
 
     {/* Modal (already properly internationalized) */}
@@ -397,8 +403,10 @@ const visibleTestimonials = testimonials.slice(
     </motion.div>
 ))}
 </section>
-
-<GoldLoanCalculator/>
+{/* Gold Loan Calculator Section */}
+<section className="py-16  " id="gold-loan-calculator">
+  <GoldLoanCalculator />
+</section>
       {/* How It Works Section */}
 
 <section className="py-16 bg-gray-50 " ref={ref}>
@@ -561,41 +569,8 @@ const visibleTestimonials = testimonials.slice(
       </div>
     </section>
       {/* Existing Features Section */}
-      {/* <section ref={ref} className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            variants={fadeIn}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h2 className="text-3xl font-bold text-center mb-12">{t('features.title')}</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold mb-4">{t('features.quickProcessing.title')}</h3>
-                <p>{t('features.quickProcessing.description')}</p>
-              </div>
-              <div className="text-center p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold mb-4">{t('features.bestRates.title')}</h3>
-                <p>{t('features.bestRates.description')}</p>
-              </div>
-              <div className="text-center p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold mb-4">{t('features.safeStorage.title')}</h3>
-                <p>{t('features.safeStorage.description')}</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section> */}
-
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50 
-      bg-gradient-to-b from-amber-50 to-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold  text-center text-amber-700 mb-12">Frequently Asked Questions</h2>
-          <FAQ />
-        </div>
-      </section>
+              <section className="py-1 bg-white relative bg-gradient-to-b from-amber-50 to-white"><FAQSections /></section>
 
       {/* Map Section */}
 <section className="py-16 bg-white">

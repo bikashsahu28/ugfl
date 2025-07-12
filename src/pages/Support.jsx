@@ -4,6 +4,7 @@ import FaqItem from '../components/FaqItem';
 import SupportCard from '../components/SupportCard';
 import ContactMethod from '../components/ContactMethod';
 import LiveChat from '../components/LiveChat';
+import FAQSections from '../components/mainfaq';
 
 function Support() {
   const { t } = useTranslation();
@@ -221,7 +222,6 @@ function Support() {
               </button>
             ))} 
             {/* Search Bar */}
-        {/* <div className="max-w-2xl mx-auto mb-8"> */}
           <div className="relative">
             <input
               type="text"
@@ -236,7 +236,6 @@ function Support() {
               </svg>
             </button>
           </div>
-        {/* </div> */}
           </div>
         
           {/* FAQ List */}
@@ -250,8 +249,7 @@ function Support() {
             )}
           </div>
         </section>
-        
-        {/* Live Chat Button (fixed position) */}
+          {/* Live Chat Button (fixed position) */}
         <LiveChat />
       
       </div>
