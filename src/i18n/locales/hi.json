@@ -1092,6 +1092,37 @@
       "primary": "खाता खोलें",
       "secondary": "अधिक जानें"
     }
-  }
+  },
+  "support": {
+  "title": "Get Support",
+  "subtitle": "We're here to assist you with any inquiries or support you need",
+  "contactSection": {
+      "title": "हमारी सहायता टीम से संपर्क करें",
+      "description": "आपके गोल्ड लोन से संबंधित किसी भी प्रश्न में सहायता के लिए हमारी ग्राहक सेवा 24/7 उपलब्ध है।",
+      "form": {
+        "title": "हमें एक संदेश भेजें",
+        "fields": {
+          "name": "नाम",
+          "email": "ईमेल",
+          "subject": "विषय",
+          "message": "संदेश"
+        },
+        "button": "संदेश भेजें"
+      }
+    },
+    "toolsSection": {
+      "title": "लोन उपकरण और कैलकुलेटर",
+      "description": "अपने गोल्ड लोन की योजना बनाने और वित्तीय विवरण समझने के लिए हमारे कैलकुलेटर का उपयोग करें।",
+      "calculatorButton": "कैलकुलेटर खोलें",
+      "statusCheck": {
+        "title": "लोन आवेदन स्थिति जांच",
+        "description": "अपने मौजूदा लोन आवेदन की स्थिति जांचें।",
+        "placeholder": "आवेदन संदर्भ संख्या",
+        "button": "स्थिति जांचें"
+      }
+    }
+
+}
+
 
 }

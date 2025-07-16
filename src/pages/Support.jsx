@@ -4,7 +4,6 @@ import FaqItem from '../components/FaqItem';
 import SupportCard from '../components/SupportCard';
 import ContactMethod from '../components/ContactMethod';
 import LiveChat from '../components/LiveChat';
-import FAQSections from '../components/mainfaq';
 
 function Support() {
   const { t } = useTranslation();
@@ -53,46 +52,7 @@ function Support() {
     },
   ];
 
-  // Sample contact methods
-  const contactMethods = [
-    {
-      icon: 'phone',
-      title: 'Phone Support',
-      description: 'Call our 24/7 customer support line',
-      details: '+1 (800) 123-4567',
-      action: 'Call Now'
-    },
-    {
-      icon: 'email',
-      title: 'Email Support',
-      description: 'Send us an email and we\'ll respond within 24 hours',
-      details: 'support@goldloanprovider.com',
-      action: 'Send Email'
-    },
-    {
-      icon: 'branch',
-      title: 'Branch Visit',
-      description: 'Find a branch near you for in-person support',
-      details: 'Over 200 locations nationwide',
-      action: 'Find Branch'
-    }
-  ];
 
-  // Sample loan calculators
-  const loanCalculators = [
-    {
-      title: 'Loan Amount Calculator',
-      description: 'Estimate how much you can borrow based on your gold value'
-    },
-    {
-      title: 'EMI Calculator',
-      description: 'Calculate your monthly installment payments'
-    },
-    {
-      title: 'Interest Calculator',
-      description: 'See how much interest you\'ll pay over the loan term'
-    }
-  ];
 
   // Filter FAQs based on search and category
   const filteredFaqs = faqs.filter(faq => {
@@ -113,98 +73,74 @@ function Support() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-            {t('gallery.title')}
+            {t('support.title')}
           </h1>
           <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
-            {t('gallery.subtitle')}
+            {t('support.subtitle')}
           </p>
         </div>
-        {/* <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-amber-50 to-transparent"></div> */}
       </div>
       <div className="max-w-7xl mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold text-center mb-2 text-amber-800">{t('support.title')}</h1>
         <p className="text-center text-gray-600 mb-8">{t('support.subtitle')}</p>
         
-        
-
+      
         {/* Contact Section - First Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Contact Our Support Team</h2>
-          <p className="text-gray-600 mb-8">Our customer support is available 24/7 to assist you with any questions regarding your gold loan.</p>
-          
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {contactMethods.map((method, index) => (
-              <ContactMethod 
-                key={index}
-                icon={method.icon}
-                title={method.title}
-                description={method.description}
-                details={method.details}
-                action={method.action}
-              />
-            ))}
-          </div>
-          
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-4">Send Us a Message</h3>
-            <form className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-gray-700 mb-1">Name</label>
-                  <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" />
-                </div>
-                <div>
-                  <label className="block text-gray-700 mb-1">Email</label>
-                  <input type="email" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" />
-                </div>
-              </div>
+<section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-6">{t('support.contactSection.title')}</h2>
+        <p className="text-gray-600 mb-8">{t('support.contactSection.description')}</p>
+        
+        {/* Contact methods grid would go here */}
+        
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h3 className="text-xl font-semibold mb-4">{t('support.contactSection.form.title')}</h3>
+          <form className="space-y-4">
+            <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-gray-700 mb-1">Subject</label>
+                <label className="block text-gray-700 mb-1">{t('support.contactSection.form.fields.name')}</label>
                 <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" />
               </div>
               <div>
-                <label className="block text-gray-700 mb-1">Message</label>
-                <textarea rows="4" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                <label className="block text-gray-700 mb-1">{t('support.contactSection.form.fields.email')}</label>
+                <input type="email" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" />
               </div>
-              <button type="submit" className="bg-amber-600 text-white px-6 py-2 rounded-md hover:bg-amber-700 transition-colors">
-                Send Message
-              </button>
-            </form>
-          </div>
-        </section>
-
-        {/* Tools Section - Second Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Loan Tools & Calculators</h2>
-          <p className="text-gray-600 mb-8">Use our calculators to plan your gold loan and understand the financial details.</p>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {loanCalculators.map((tool, index) => (
-              <SupportCard 
-                key={index}
-                title={tool.title}
-                description={tool.description}
-                buttonText="Open Calculator"
-              />
-            ))}
-          </div>
-          
-          <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-4">Loan Application Status Check</h3>
-            <p className="text-gray-600 mb-4">Check the status of your existing loan application.</p>
-            <div className="flex flex-col md:flex-row gap-4">
-              <input 
-                type="text" 
-                placeholder="Application Reference Number" 
-                className="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" 
-              />
-              <button className="bg-amber-600 text-white px-6 py-2 rounded-md hover:bg-amber-700 transition-colors whitespace-nowrap">
-                Check Status
-              </button>
             </div>
-          </div>
-        </section>
+            <div>
+              <label className="block text-gray-700 mb-1">{t('support.contactSection.form.fields.subject')}</label>
+              <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" />
+            </div>
+            <div>
+              <label className="block text-gray-700 mb-1">{t('support.contactSection.form.fields.message')}</label>
+              <textarea rows="4" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+            </div>
+            <button type="submit" className="bg-amber-600 text-white px-6 py-2 rounded-md hover:bg-amber-700 transition-colors">
+              {t('support.contactSection.form.button')}
+            </button>
+          </form>
+        </div>
+      </section>
 
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-6">{t('support.toolsSection.title')}</h2>
+        <p className="text-gray-600 mb-8">{t('support.toolsSection.description')}</p>
+        
+        {/* Calculators grid would go here */}
+        
+        <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+          <h3 className="text-xl font-semibold mb-4">{t('support.toolsSection.statusCheck.title')}</h3>
+          <p className="text-gray-600 mb-4">{t('support.toolsSection.statusCheck.description')}</p>
+          <div className="flex flex-col md:flex-row gap-4">
+            <input 
+              type="text" 
+              placeholder={t('support.toolsSection.statusCheck.placeholder')} 
+              className="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" 
+            />
+            <button className="bg-amber-600 text-white px-6 py-2 rounded-md hover:bg-amber-700 transition-colors whitespace-nowrap">
+              {t('support.toolsSection.statusCheck.button')}
+            </button>
+          </div>
+        </div>
+      </section>
         {/* FAQ Section - Third Section */}
         
         <section className="mb-12">

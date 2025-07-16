@@ -1162,6 +1162,34 @@
     "title": "No questions found",
     "description": "Try adjusting your search or filter criteria"
   }
-}
-
+},
+"support": {
+  "title": "Get Support",
+  "subtitle": "We're here to assist you with any inquiries or support you need",
+  "contactSection": {
+      "title": "Contact Our Support Team",
+      "description": "Our customer support is available 24/7 to assist you with any questions regarding your gold loan.",
+      "form": {
+        "title": "Send Us a Message",
+        "fields": {
+          "name": "Name",
+          "email": "Email",
+          "subject": "Subject",
+          "message": "Message"
+        },
+        "button": "Send Message"
+      }
+    },
+    "toolsSection": {
+      "title": "Loan Tools & Calculators",
+      "description": "Use our calculators to plan your gold loan and understand the financial details.",
+      "calculatorButton": "Open Calculator",
+      "statusCheck": {
+        "title": "Loan Application Status Check",
+        "description": "Check the status of your existing loan application.",
+        "placeholder": "Application Reference Number",
+        "button": "Check Status"
+      }
+    }
+  }
 }

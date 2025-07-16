@@ -1092,6 +1092,36 @@
       "primary": "ଖାତା ଖୋଲନ୍ତୁ",
       "secondary": "ଅଧିକ ଜାଣନ୍ତୁ"
     }
-  }
+  },
+  "support": {
+  "title": "Get Support",
+  "subtitle": "We're here to assist you with any inquiries or support you need",
+  "contactSection": {
+      "title": "ଆମର ସହାୟତା ଦଳକୁ ଯୋଗାଯୋଗ କରନ୍ତୁ",
+      "description": "ଆପଣଙ୍କ ସ୍ୱର୍ଣ୍ଣ ଋଣ ସମ୍ବନ୍ଧୀୟ କୌଣସି ପ୍ରଶ୍ନରେ ସାହାଯ୍ୟ ପାଇଁ ଆମର ଗ୍ରାହକ ସହାୟତା 24/7 ଉପଲବ୍ଧ |",
+      "form": {
+        "title": "ଆମକୁ ଏକ ବାର୍ତ୍ତା ପଠାନ୍ତୁ",
+        "fields": {
+          "name": "ନାମ",
+          "email": "ଇମେଲ୍",
+          "subject": "ବିଷୟ",
+          "message": "ବାର୍ତ୍ତା"
+        },
+        "button": "ବାର୍ତ୍ତା ପଠାନ୍ତୁ"
+      }
+    },
+    "toolsSection": {
+      "title": "ଋଣ ସାଧନ ଏବଂ କ୍ୟାଲକୁଲେଟର୍",
+      "description": "ଆପଣଙ୍କ ସ୍ୱର୍ଣ୍ଣ ଋଣ ଯୋଜନା କରିବା ଏବଂ ଆର୍ଥିକ ବିବରଣୀ ବୁଝିବା ପାଇଁ ଆମର କ୍ୟାଲକୁଲେଟର୍ ବ୍ୟବହାର କରନ୍ତୁ |",
+      "calculatorButton": "କ୍ୟାଲକୁଲେଟର୍ ଖୋଲନ୍ତୁ",
+      "statusCheck": {
+        "title": "ଋଣ ଆବେଦନ ସ୍ଥିତି ଯାଞ୍ଚ",
+        "description": "ଆପଣଙ୍କର ବିଦ୍ୟମାନ ଋଣ ଆବେଦନର ସ୍ଥିତି ଯାଞ୍ଚ କରନ୍ତୁ |",
+        "placeholder": "ଆବେଦନ ସନ୍ଦର୍ଭ ସଂଖ୍ୟା",
+        "button": "ସ୍ଥିତି ଯାଞ୍ଚ କରନ୍ତୁ"
+      }
+    }
+
+}
 
 }
