@@ -24,6 +24,7 @@ import FAQSections from './components/mainfaq';
 import Galleryes from './pages/Galleryes';
 import Button from './components/Button';
 import Icons from './components/Icons';
+import BranchLocator from './components/BranchLocator';
 
 function App() {
   return (
@@ -55,6 +56,8 @@ function App() {
             <Route path="/galleryes" element={<Galleryes />} />
             <Route path="/btn" element={<Button />} />
             <Route path="/icons" element={<Icons />} />
+            <Route path="/branch-locator" element={<BranchLocator />} />
+
           </Routes>
         </main>
         <SocialButtons />
