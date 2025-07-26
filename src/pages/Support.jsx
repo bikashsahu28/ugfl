@@ -90,7 +90,7 @@ function Support() {
       description: 'Securely submit required documents',
       icon: '📄',
       link: '/upload'
-    }
+    } 
   ];
 
   // Contact methods
@@ -98,7 +98,7 @@ function Support() {
     {
       title: 'Phone Support',
       description: '24/7 customer service hotline',
-      details: '+1 (800) 123-4567',
+      details: '9777700511',
       icon: '📞',
       action: 'Call Now'
     },
@@ -158,20 +158,20 @@ function Support() {
         <div className="border-b border-gray-200 mb-8">
           <nav className="-mb-px flex space-x-8">
             <button
-              onClick={() => setActiveTab('faq')}
-              className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${activeTab === 'faq' ? 'border-amber-500 text-amber-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
-            >
-              FAQ Center
-            </button>
+  onClick={() => setActiveTab('faq')}
+  className={`whitespace-nowrap py-4 px-1 border-b-2 font-bold text-sm ${activeTab === 'faq' ? 'border-amber-500 text-amber-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
+>
+  FAQ Center
+</button>
             <button
               onClick={() => setActiveTab('contact')}
-              className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${activeTab === 'contact' ? 'border-amber-500 text-amber-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
+              className={`whitespace-nowrap py-4 px-1 border-b-2 font-bold text-sm ${activeTab === 'contact' ? 'border-amber-500 text-amber-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
             >
               Contact Options
             </button>
             <button
               onClick={() => setActiveTab('resources')}
-              className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${activeTab === 'resources' ? 'border-amber-500 text-amber-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
+              className={`whitespace-nowrap py-4 px-1 border-b-2 font-bold text-sm ${activeTab === 'resources' ? 'border-amber-500 text-amber-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
             >
               Help Resources
             </button>
@@ -280,23 +280,57 @@ function Support() {
                 <p className="text-gray-600 mb-8">We're here to help you with any questions or concerns about your gold loan. Choose the most convenient way to reach us.</p>
                 
                 {/* Contact Methods Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                  {contactMethods.map((method, index) => (
-                    <div key={index} className="border border-gray-100 rounded-lg p-6 hover:shadow-md transition-shadow">
-                      <div className="text-4xl mb-4">{method.icon}</div>
-                      <h3 className="text-lg font-semibold mb-2">{method.title}</h3>
-                      <p className="text-gray-500 text-sm mb-3">{method.description}</p>
-                      <p className="text-gray-700 mb-4">{method.details}</p>
-                      <button className="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center">
-                        {method.action}
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </button>
-                    </div>
-                  ))}
-                </div>
-                
+<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+{contactMethods.map((method, index) => (
+<div key={index} className="border border-gray-100 rounded-lg p-6 hover:shadow-md transition-shadow">
+  <div className="text-4xl mb-4">{method.icon}</div>
+  <h3 className="text-lg font-semibold mb-2">{method.title}</h3>
+  <p className="text-gray-500 text-sm mb-3">{method.description}</p>
+  <p className="text-gray-700 mb-4">{method.details}</p>
+  {method.title === 'Phone Support' ? (
+    <a 
+      href={`tel:${method.details}`} 
+      className="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center"
+    >
+      {method.action}
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  ) : method.title === 'Email Us' ? (
+    <a 
+      href={`mailto:${method.details}`} 
+      className="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center"
+    >
+      {method.action}
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  ) : method.title === 'Visit Branch' ? (
+    <a 
+      href="/branch-locator" 
+      className="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center"
+    >
+      {method.action}
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  ) : (
+    <a 
+      href="/gallery" 
+      className="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center"
+    >
+      {method.action}
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  )}
+</div>
+))}
+</div>
                 {/* Contact Form */}
                 <div className="bg-gray-50 rounded-lg p-6">
                   <h3 className="text-xl font-semibold mb-6">Send Us a Message</h3>
