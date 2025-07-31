@@ -596,7 +596,7 @@ const visibleTestimonials = testimonials.slice(
               </svg>
             </div>
             <div>
-              <h4 className="font-semibold text-lg mb-1">Our Location</h4>
+              <h4 className="font-semibold text-lg mb-1">Corporate Office</h4>
               <p className="text-gray-600">1st Floor, Ridge Residency Complex,
               Baramunda, Bhubaneswar<br/>Odisha 751024, India</p>
             </div>
