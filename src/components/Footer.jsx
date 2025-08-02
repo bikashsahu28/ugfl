@@ -26,6 +26,7 @@ function Footer() {
             <ul className="space-y-2 text-gray-400">
               <li>Email: info@unigold.com</li>
               <li>Phone: 1800-123-4567</li>
+              <li><Link to="/privacy-policy" className="text-gray-400 hover:text-white">Privacy policy</Link></li>
             </ul>
           </div>
           <div>
