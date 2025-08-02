@@ -27,6 +27,7 @@ import Icons from './components/Icons';
 import BranchLocator from './components/BranchLocator';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import FairPracticeCode from './components/FairPracticeCode';
+import GrievanceRedressalPolicy from './components/GrievanceRedressalPolicy';
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
             <Route path="/branch-locator" element={<BranchLocator />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/fair-practice-code" element={<FairPracticeCode />} />
+            <Route path="/grievance-redressal-policy" element={<GrievanceRedressalPolicy />} />
 
           </Routes>
         </main>

@@ -5,6 +5,11 @@ import Icons from './Icons';
 function Footer() {
   const { t } = useTranslation();
 
+  // Function to open PDF
+  const openPoshPolicy = () => {
+    window.open('../PoshPolicy/POSH-policy-final.pdf', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 py-12">
@@ -27,6 +32,10 @@ function Footer() {
               <li>Email: info@unigold.com</li>
               <li>Phone: 1800-123-4567</li>
               <li><Link to="/privacy-policy" className="text-gray-400 hover:text-white">Privacy policy</Link></li>
+              <li><Link to="/fair-practice-code" className="text-gray-400 hover:text-white">Fair Practice Code</Link></li>
+              <li onClick={openPoshPolicy} className="text-gray-400 hover:text-white cursor-pointer">Posh Policy</li>
+              <li><Link to="/grievance-redressal-policy" className="text-gray-400 hover:text-white">Grievance Redressal Policy</Link></li>
+ 
             </ul>
           </div>
           <div>
