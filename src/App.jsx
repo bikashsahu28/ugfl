@@ -28,6 +28,10 @@ import BranchLocator from './components/BranchLocator';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import FairPracticeCode from './components/FairPracticeCode';
 import GrievanceRedressalPolicy from './components/GrievanceRedressalPolicy';
+import OmbudsmantSchemeSalientFeatures from './components/OmbudsmantSchemeSalientFeatures';
+import RBIDisclaimer from './components/RBIDisclaimer';
+import CustomerAwareness from './components/CustomerAwareness';
+import TermsAndConditions from './components/Terms&conditions';
 
 function App() {
   return (
@@ -39,7 +43,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/services" element={<Services />} />
-
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/support" element={<Support />} />
             <Route path="/career" element={<Career />} />
@@ -63,6 +66,10 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/fair-practice-code" element={<FairPracticeCode />} />
             <Route path="/grievance-redressal-policy" element={<GrievanceRedressalPolicy />} />
+            <Route path="/ombudsman-scheme-salient-features" element={<OmbudsmantSchemeSalientFeatures />} />
+            <Route path="/rbi-disclaimer" element={<RBIDisclaimer />} />
+            <Route path="/customer-awareness" element={<CustomerAwareness />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
 
           </Routes>
         </main>

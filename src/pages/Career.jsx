@@ -7,6 +7,7 @@ import {
 } from 'react-icons/fa';
 import { Disclosure } from '@headlessui/react';
 import { FaChevronDown, FaBriefcase } from 'react-icons/fa';
+import { ArrowRight, Clock, DollarSign, MapPin } from 'lucide-react';
 function Career() {
   const container = {
     hidden: { opacity: 0 },
@@ -101,6 +102,170 @@ function Career() {
       ]
     }
   ];
+  // ==============================================================================
+const jobs = [
+    {
+      id: 1,
+      title: "Branch Manager",
+      department: "Operations",
+      location: "Mumbai, Maharashtra",
+      type: "Full-time",
+      salary: "₹8-12 LPA",
+      experience: "5+ years",
+      posted: "2 days ago",
+      description: "Lead and manage branch operations, drive business growth, and ensure exceptional customer service.",
+      responsibilities: [
+        "Oversee daily branch operations and staff management",
+        "Achieve business targets and revenue goals",
+        "Maintain compliance with regulatory requirements",
+        "Develop customer relationships and expand business"
+      ],
+      requirements: [
+        "Bachelor's degree in Finance, Business Administration, or related field",
+        "5+ years of experience in financial services",
+        "Strong leadership and team management skills",
+        "Excellent communication and customer service abilities"
+      ]
+    },
+    {
+      id: 2,
+      title: "Loan Officer",
+      department: "Sales",
+      location: "Delhi, NCR",
+      type: "Full-time",
+      salary: "₹4-7 LPA",
+      experience: "2+ years",
+      posted: "1 week ago",
+      description: "Process gold loan applications, evaluate collateral, and provide exceptional customer service.",
+      responsibilities: [
+        "Process loan applications and documentation",
+        "Evaluate gold collateral and determine loan amounts",
+        "Provide excellent customer service and support",
+        "Meet sales targets and business goals"
+      ],
+      requirements: [
+        "Diploma or degree in Finance, Banking, or related field",
+        "2+ years of experience in lending or financial services",
+        "Strong attention to detail and organizational skills",
+        "Excellent interpersonal and communication skills"
+      ]
+    },
+    {
+      id: 3,
+      title: "Senior Gold Appraiser",
+      department: "Operations",
+      location: "Bangalore, Karnataka",
+      type: "Full-time",
+      salary: "₹6-9 LPA",
+      experience: "3+ years",
+      posted: "3 days ago",
+      description: "Conduct professional gold appraisal, ensure accurate valuation, and maintain quality standards.",
+      responsibilities: [
+        "Perform accurate gold appraisal and valuation",
+        "Ensure quality standards and consistency",
+        "Train junior appraisers and support staff",
+        "Maintain appraisal records and documentation"
+      ],
+      requirements: [
+        "Certified Gold Appraiser qualification",
+        "3+ years of experience in gold appraisal",
+        "In-depth knowledge of gold purity and market trends",
+        "Attention to detail and precision in work"
+      ]
+    },
+    {
+      id: 4,
+      title: "Customer Service Executive",
+      department: "Customer Support",
+      location: "Hyderabad, Telangana",
+      type: "Full-time",
+      salary: "₹3-5 LPA",
+      experience: "1+ years",
+      posted: "5 days ago",
+      description: "Handle customer inquiries, resolve issues, and provide exceptional service to our valued customers.",
+      responsibilities: [
+        "Handle customer calls and inquiries",
+        "Resolve customer issues and complaints",
+        "Process account updates and information requests",
+        "Maintain customer satisfaction and loyalty"
+      ],
+      requirements: [
+        "Diploma or degree in any discipline",
+        "1+ years of experience in customer service",
+        "Excellent communication and problem-solving skills",
+        "Proficiency in English and regional languages"
+      ]
+    },
+    {
+      id: 5,
+      title: "Field Executive",
+      department: "Sales",
+      location: "Chennai, Tamil Nadu",
+      type: "Full-time",
+      salary: "₹3.5-6 LPA",
+      experience: "1+ years",
+      posted: "4 days ago",
+      description: "Generate leads, conduct field visits, and promote our gold loan services to potential customers.",
+      responsibilities: [
+        "Generate leads and prospects for gold loans",
+        "Conduct field visits and customer meetings",
+        "Promote company services and products",
+        "Achieve sales targets and business goals"
+      ],
+      requirements: [
+        "Diploma or degree in any discipline",
+        "1+ years of field sales experience",
+        "Own vehicle and valid driving license",
+        "Excellent communication and persuasion skills"
+      ]
+    },
+    {
+      id: 6,
+      title: "Operations Manager",
+      department: "Operations",
+      location: "Pune, Maharashtra",
+      type: "Full-time",
+      salary: "₹7-10 LPA",
+      experience: "4+ years",
+      posted: "1 week ago",
+      description: "Oversee operations across multiple branches, ensure efficiency, and implement process improvements.",
+      responsibilities: [
+        "Manage operations across multiple branches",
+        "Implement process improvements and efficiency measures",
+        "Ensure compliance with operational standards",
+        "Develop and train operations staff"
+      ],
+      requirements: [
+        "Bachelor's degree in Business, Operations, or related field",
+        "4+ years of operations management experience",
+        "Strong analytical and problem-solving skills",
+        "Leadership and team development abilities"
+      ]
+    }
+  ];
+
+  // const [activeTab, setActiveTab] = useState('all');
+  // const [selectedJob, setSelectedJob] = useState(null);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  //   email: '',
+  //   phone: '',
+  //   position: '',
+  //   experience: '',
+  //   resume: null
+  // });
+  // const handleJobClick = (job) => {
+  //   setSelectedJob(job);
+  //   setFormData(prev => ({ ...prev, position: job.title }));
+  //   setIsModalOpen(true);
+  // };
+
+  // const departments = ["all", "operations", "sales", "customer-support", "finance"];
+
+
+  // ==============================================================================
+
 
   const benefits = [
     {
@@ -132,11 +297,27 @@ function Career() {
 
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white">
-    <div className="max-w-7xl mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold text-center mb-6">Build Your Career With Us</h1>
-      <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-        Join Unigold Finance and be part of a team that's transforming gold loans with innovation and integrity
-      </p>
+      {/* Hero Section */}
+<div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
+  <div className="absolute inset-0 opacity-20">
+    <div 
+      className="absolute top-0 left-0 w-full h-full bg-repeat" 
+      style={{ 
+        backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" 
+      }}
+      
+    ></div>
+  </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+      Build Your Career With Us
+    </h1>
+    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
+      Join Unigold Finance and be part of a team that's transforming gold loans with innovation and integrity
+    </p>
+  </div>
+</div>
+    <div className="max-w-7xl mx-auto px-4 py-16">    
  {/* Benefits */}
 <section className="why-join py-16 bg-white">
 <div className="max-w-7xl mx-auto px-4">
@@ -164,6 +345,67 @@ key={index}
     </div>
   </div>
 </section>
+
+
+<section id="jobs" className="py-20 bg-gradient-to-b from-white to-red-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Current Openings</h3>
+            <p className="text-lg text-gray-600">Find your perfect role in our growing organization</p>
+          </div>
+          <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {jobs.map((job) => (
+          <div 
+            key={job.id} 
+            className="bg-white rounded-xl shadow-lg border border-amber-100 overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div className="p-8">
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">{job.title}</h4>
+                  <p className="text-amber-600 font-semibold">{job.department}</p>
+                </div>
+                <div className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                  {job.type}
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-6 mb-4 text-sm text-gray-600">
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 text-amber-600" />
+                  {job.location}
+                </div>
+                <div className="flex items-center gap-2">
+                  <DollarSign className="h-4 w-4 text-amber-600" />
+                  {job.salary}
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="h-4 w-4 text-amber-600" />
+                  {job.experience}
+                </div>
+              </div>
+              
+              <p className="text-gray-700 mb-6">{job.description}</p>
+              
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-500">{job.posted}</span>
+                <button
+                  onClick={() => handleJobClick(job)}
+                  className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
+                >
+                  Apply Now
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+        </div>
+      </section>
+
 <div className="w-full bg-gray-100 py-16">
   <motion.div
     variants={container}

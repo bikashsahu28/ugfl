@@ -29,13 +29,17 @@ function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">{t('footer.contact')}</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>Email: info@unigold.com</li>
-              <li>Phone: 1800-123-4567</li>
+              {/* <li>Email: info@unigold.com</li>
+              <li>Phone: 1800-123-4567</li> */}
               <li><Link to="/privacy-policy" className="text-gray-400 hover:text-white">Privacy policy</Link></li>
               <li><Link to="/fair-practice-code" className="text-gray-400 hover:text-white">Fair Practice Code</Link></li>
               <li onClick={openPoshPolicy} className="text-gray-400 hover:text-white cursor-pointer">Posh Policy</li>
               <li><Link to="/grievance-redressal-policy" className="text-gray-400 hover:text-white">Grievance Redressal Policy</Link></li>
- 
+              <li><Link to="/ombudsman-scheme-salient-features" className="text-gray-400 hover:text-white">Ombudsman Scheme Salient Features</Link></li>
+              <li><Link to="/rbi-disclaimer" className="text-gray-400 hover:text-white">RBI Disclaimer</Link></li>
+              <li><Link to="/customer-awareness" className="text-gray-400 hover:text-white">Customer Awareness</Link></li>
+              <li><Link to="/terms-and-conditions" className="text-gray-400 hover:text-white">Terms and Conditions</Link></li>
+
             </ul>
           </div>
           <div>

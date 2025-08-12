@@ -88,7 +88,7 @@ const FAQSections = () => {
   return (
     <section className="mb-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
   <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold  text-center text-amber-700 mb-2">{t('faq.title')}</h2>
+              <h2 className="text-3xl font-bold  text-center text-yellow-600 mb-2">{t('faq.title')}</h2>
     <p className="text-gray-600 max-w-2xl mx-auto">
       {t('faq.subtitle')}
     </p>

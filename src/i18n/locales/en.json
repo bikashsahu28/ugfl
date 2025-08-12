@@ -310,7 +310,7 @@
           },
           "instantDisbursal": {
             "title": "Instant Disbursal",
-            "desc": "Get cash in hand within 30 minutes"
+            "desc": "Get cash in hand within 15 minutes"
           },
           "safeStorage": {
             "title": "Safe Storage",

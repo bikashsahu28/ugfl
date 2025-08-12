@@ -124,7 +124,7 @@ const visibleTestimonials = testimonials.slice(
       {/* Why Choose Us Section */}
       <section className="py-16 bg-gray-50 bg-gradient-to-b from-amber-50 to-white">
   <div className="max-w-7xl mx-auto px-4">
-    <h2 className="text-3xl font-bold  text-center text-amber-700 mb-12">{t('whyChooseUs.title')}</h2>
+    <h2 className="text-3xl font-bold  text-center text-yellow-600 mb-12">{t('whyChooseUs.title')}</h2>
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       <div className="text-center rounded-xl shadow-lg overflow-hidden border-t-4 border-amber-500 hover:shadow-xl transition-all 
       duration-300 hover:-translate-y-1 group p-6 rounded-lg bg-white shadow-lg">
@@ -153,7 +153,7 @@ const visibleTestimonials = testimonials.slice(
     </div>
     <div className="mt-12 text-center">
       <p className="text-xl font-medium">
-        {t('whyChooseUs.trusted')} <span className="text-primary font-bold">50,000+</span> {t('whyChooseUs.customers')}
+        {t('whyChooseUs.trusted')} <span className="text-primary font-bold">30,000+</span> {t('whyChooseUs.customers')}
       </p>
     </div>
   </div>
@@ -418,7 +418,7 @@ const visibleTestimonials = testimonials.slice(
       viewport={{ once: true }}
     >
       {/* <h2 className=" text-center text-3xl md:text-5xl font-bold text-amber-700 mb-12"> */}
-      <h2 className="text-3xl font-bold  text-center text-amber-700 mb-12">
+      <h2 className="text-3xl font-bold  text-center text-yellow-600  mb-12">
       
         How It Works</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
@@ -485,7 +485,7 @@ const visibleTestimonials = testimonials.slice(
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold  text-center text-amber-700 mb-12">What Our Customers Say</h2>
+          <h2 className="text-3xl font-bold  text-center text-yellow-600 mb-12">What Our Customers Say</h2>
           
           <div className="relative">
             <button 
@@ -568,14 +568,15 @@ const visibleTestimonials = testimonials.slice(
         </motion.div>
       </div>
     </section>
-      {/* Existing Features Section */}
+
+
       {/* FAQ Section */}
               <section className="py-1 bg-white relative bg-gradient-to-b from-amber-50 to-white"><FAQSections /></section>
 
       {/* Map Section */}
 <section className="py-16 bg-white">
   <div className="max-w-7xl mx-auto px-4">
-    <h2 className="text-3xl font-bold  text-center text-amber-700 mb-12">Visit Us</h2>
+    <h2 className="text-3xl font-bold  text-center text-yellow-600 mb-12">Visit Us</h2>
     
     <div className="grid md:grid-cols-2 gap-8 items-center">
       {/* Contact Info Card */}

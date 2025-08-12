@@ -65,18 +65,13 @@ function Navbar() {
     alt="Unigold Finance Logo"
     className="h-10 w-auto object-contain rounded-lg"
   />
-  {/* <Link to="/" className="flex flex-col items-center text-center">
-    <span className="text-2xl font-bold text-primary">
-      UNIGOLD FINANCE<span className="align-super text-xs">™</span>
-    </span>
-    <span className="text-sm text-secondary -mt-1">GOLD LOAN</span>
-  </Link> */}
+
   <Link to="/" className="flex flex-col items-center text-center">
   <span className="text-xl sm:text-2xl font-bold text-primary leading-tight">
     UNIGOLD FINANCE
     <span className="align-super text-[10px] sm:text-xs">™</span>
   </span>
-  <span className="text-xs sm:text-sm text-secondary -mt-0.5 sm:-mt-1">
+  <span className="text-xs sm:text-sm text-secondary font-bold -mt-0.5 sm:-mt-1">
     GOLD LOAN
   </span>
 </Link>
@@ -84,15 +79,23 @@ function Navbar() {
 </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+          <div className="hidden lg:flex items-center font-bold space-x-1 xl:space-x-2">
             {navItems.map((item) => (
               item.dropdown ? (
-                <NavDropdown key={item.path} item={item} />
+                // <NavDropdown key={item.path}  className="font-bold " item={item} />
+                <NavDropdown 
+        key={item.path}  
+        className="font-bold" 
+        item={{
+          ...item,
+          title: <span className="font-bold">{item.title}</span>
+        }} 
+      />
               ) : (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm  transition-colors duration-200"
                 >
                   {item.title}
                 </Link>
@@ -101,8 +104,6 @@ function Navbar() {
             <div className="ml-2">
               <LanguageDropdown />
             </div>
-            {/* <button className="primary-button ml-2" onClick={() => navigate('/LoanApplicationForm')} >{t('nav.applyNow')}</button> */}
-            {/* <Button className="primary-button ml-2" onClick={() => navigate('/LoanApplicationForm')} >{t('nav.applyNow')} </Button> */}
             <Button />
 
           </div>

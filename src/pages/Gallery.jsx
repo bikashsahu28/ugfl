@@ -161,15 +161,6 @@ function Gallery() {
         { id: 97, image: '../Cricket/sport8.jpg' , title: 'sport 9' },
       ]
     },
-    // {
-    //   id: 7,
-    //   name: 'Sports Events',
-    //   images: [
-    //     { id: 16, url: 'https://source.unsplash.com/random/300x200?sports1', title: 'Sports 1' },
-    //     { id: 17, url: 'https://source.unsplash.com/random/300x200?sports2', title: 'Sports 2' },
-    //     { id: 18, url: 'https://source.unsplash.com/random/300x200?sports3', title: 'Sports 3' },
-    //   ]
-    // }
   ];
     const [activeCategory, setActiveCategory] = useState(categories[0]);
   const [showModal, setShowModal] = useState(false);
