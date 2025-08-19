@@ -14,16 +14,6 @@ function Navbar() {
   const navigate = useNavigate();
   const navItems = [
     {
-      title: t('nav.services'),
-      path: '/services',
-      dropdown: [
-        { title: t('Gold Loan Services '), path: '/services/loans' },
-        { title: t('Loan Application Process'), path: '/services/process' },
-        { title: t('Benefits of Gold Loans'), path: '/services/benefits' },
-        { title: t('Value-Added Services'), path: '/services/valueservices' }
-      ]
-    },
-    {
       title: t('nav.about'),
       path: '/about',
       dropdown: [
@@ -33,11 +23,21 @@ function Navbar() {
         { title: t('Leadership'), path: '/about/leadership' }
       ]
     },
+    {
+      title: t('nav.services'),
+      path: '/services',
+      dropdown: [
+        { title: t('Gold Loan Services '), path: '/services/loans' },
+        { title: t('Loan Application Process'), path: '/services/process' },
+        { title: t('Benefits of Gold Loans'), path: '/services/benefits' },
+        { title: t('Value-Added Services'), path: '/services/valueservices' }
+      ]
+    },
     { title: t('nav.gallery'), path: '/gallery' },
-    { title: t('nav.support'), path: '/support' },
+    { title: t('nav.team'), path: '/team' },
     { title: t('nav.career'), path: '/career' },
-    { title: t('nav.contact'), path: '/contact' },
-    { title: t('nav.team'), path: '/team' }
+    // { title: t('nav.contact'), path: '/contact' },
+    { title: t('nav.support'), path: '/support' },
   ];
 
   useEffect(() => {

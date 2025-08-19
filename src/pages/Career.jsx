@@ -6,10 +6,10 @@ import {
 } from 'react-icons/fa';
 import {  FaBriefcase } from 'react-icons/fa';
 import { ArrowRight, Clock, DollarSign, MapPin } from 'lucide-react';
-
-
+import { Link } from 'react-router-dom';
 
 function Career() {
+
 
   // ==============================================================================
 const jobs = [
@@ -331,13 +331,21 @@ const jobs = [
               
               <div className="flex justify-between items-center">
                 <span className="text-sm text-gray-500">{job.posted}</span>
-                <button
+                {/* <button
                   onClick={() => handleJobClick(job)}
                   className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
                 >
                   Apply Now
                   <ArrowRight className="h-4 w-4" />
-                </button>
+                </button> */}
+
+                <Link
+  to="/job-application"
+  className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
+>
+  Apply Now
+  <ArrowRight className="h-4 w-4" />
+</Link>
               </div>
             </div>
           </div>

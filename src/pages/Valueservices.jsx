@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { FiShield, FiPieChart, FiTrendingUp, FiChevronRight, FiPhone, FiMail } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import { BsGraphUpArrow } from 'react-icons/bs';
 
 function ValueAddedServices() {
   const { t } = useTranslation();
@@ -147,7 +148,7 @@ function ValueAddedServices() {
         </div>
 
         {/* Why Choose Our Value-Added Services */}
-        <div
+        {/* <div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -172,8 +173,54 @@ function ValueAddedServices() {
               </motion.div>
             ))}
           </div>
+        </div> */}
+<div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+  className="mb-16 container mx-auto px-4 max-w-7xl"
+>
+  <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl shadow-xl overflow-hidden border border-amber-200 p-8">
+    <div className="flex items-center mb-8">
+      <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-xl flex items-center justify-center mr-4">
+        {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg> */}
+        <div className='text-white'>
+          <BsGraphUpArrow />
         </div>
 
+      </div>
+      <div>
+        <h2 className="text-3xl font-bold text-gray-800">{t('whyChoose.title')}</h2>
+        <p className="text-gray-600 mt-1">Discover why we're the trusted choice for gold loans</p>
+      </div>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {whyChoose.map((reason, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-xl p-6 cursor-default transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 hover:border-amber-200 group"
+        >
+          <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-lg flex items-center justify-center mb-4 group-hover:from-amber-500 group-hover:to-yellow-600 transition-all duration-300">
+            <FiChevronRight className="text-white text-xl" />
+          </div>
+          <h3 className="font-semibold text-gray-800 mb-2 text-lg">Advantage {index + 1}</h3>
+          <p className="text-gray-600 leading-relaxed">{reason}</p>
+          <div className="mt-4 pt-4 border-t border-gray-100 flex justify-end">
+            <span className="text-xs text-amber-600 bg-amber-100 px-2 py-1 rounded-full">Gold Loan</span>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</div>
         {/* Customer Testimonials */}
         <div
           initial={{ opacity: 0, y: 20 }}
@@ -203,7 +250,7 @@ function ValueAddedServices() {
           </div>
         </div>
 {/* faq sec tion */}
-<motion.div
+{/* <motion.div
   initial={{ opacity: 0, y: 20 }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6 }}
@@ -245,7 +292,7 @@ function ValueAddedServices() {
       </motion.div>
     ))}
   </div>
-</motion.div>
+</motion.div> */}
 
 
 {/* contacts / Support Info */}

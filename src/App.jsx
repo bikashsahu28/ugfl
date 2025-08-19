@@ -32,6 +32,7 @@ import OmbudsmantSchemeSalientFeatures from './components/OmbudsmantSchemeSalien
 import RBIDisclaimer from './components/RBIDisclaimer';
 import CustomerAwareness from './components/CustomerAwareness';
 import TermsAndConditions from './components/Terms&conditions';
+import JobApplicationForm from './components/JobApplicationForm';
 
 function App() {
   return (
@@ -70,6 +71,7 @@ function App() {
             <Route path="/rbi-disclaimer" element={<RBIDisclaimer />} />
             <Route path="/customer-awareness" element={<CustomerAwareness />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/job-application" element={<JobApplicationForm />} />
 
           </Routes>
         </main>

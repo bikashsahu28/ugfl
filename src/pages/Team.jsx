@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { FaHandshake, FaGem, FaShieldAlt, FaChartLine, FaLinkedin, FaEnvelope, FaTwitter, FaUserTie } from 'react-icons/fa';
+import { FaHandshake, FaGem, FaShieldAlt, FaChartLine, FaLinkedin, FaEnvelope, FaTwitter, FaUserTie, FaCircle } from 'react-icons/fa';
 
 function Team() {
   const { t } = useTranslation();
@@ -52,16 +52,43 @@ function Team() {
     <div className="bg-gradient-to-b from-amber-50 to-white"> 
 
       {/* Hero Section */}
-      <section className="bg-primary text-white py-16 text-center">
+      {/* <section className="bg-primary text-white py-16 text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h1 className="text-5xl font-bold mb-4">Our Trusted Team</h1>
           <p className="text-lg">Meet the experienced professionals behind Unigold Finance who ensure your gold assets are in safe hands</p>
         </div>
-      </section>
+      </section> */}
+      <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
+  {/* Background pattern using icons */}
+  <div className="absolute inset-0 opacity-5">
+    <div className="w-full h-full flex flex-wrap">
+      {Array.from({ length: 150 }).map((_, i) => (
+        <FaCircle
+          key={i}
+          className="text-white"
+          style={{
+            fontSize: "55px",
+            margin: "22px", 
+          }}
+        />
+      ))}
+    </div>
+  </div>
+
+  {/* Content */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+      Our Trusted Team
+    </h1>
+    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
+      Meet the experienced professionals behind Unigold Finance who ensure your gold assets are in safe hands
+    </p>
+  </div>
+</div>
 
 
       {/* Company Values */}
-      <section className="py-16 bg-gray-100">
+      {/* <section className="py-16 bg-gray-100">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Commitment to You</h2>
@@ -90,7 +117,72 @@ function Team() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <div className="container mx-auto px-4 py-16 max-w-7xl">
+  <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl shadow-xl overflow-hidden border border-amber-200">
+    <div className="p-8">
+      <div className="flex items-center mb-12">
+        <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-xl flex items-center justify-center mr-6">
+          <FaHandshake className="text-white text-2xl" />
+        </div>
+        <div>
+          <h1 className="text-3xl font-bold text-gray-800">Our Commitment to You</h1>
+          <p className="text-gray-600 mt-2">At Unigold Finance, we combine financial expertise with ethical practices to provide the best gold loan experience</p>
+        </div>
+      </div>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Integrity Card */}
+        <div className="bg-white rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 hover:border-amber-200 group">
+          <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:from-amber-500 group-hover:to-yellow-600 transition-all duration-300">
+            <FaHandshake className="text-white text-3xl" />
+          </div>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3">Integrity</h3>
+          <p className="text-gray-600 mb-4">Honest valuations and transparent transactions</p>
+          {/* <div className="mt-4 pt-4 border-t border-gray-100">
+            <span className="text-xs text-amber-600 bg-amber-100 px-3 py-1 rounded-full">Core Value</span>
+          </div> */}
+        </div>
+
+        {/* Expertise Card */}
+        <div className="bg-white rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 hover:border-amber-200 group">
+          <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:from-amber-500 group-hover:to-yellow-600 transition-all duration-300">
+            <FaGem className="text-white text-3xl" />
+          </div>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3">Expertise</h3>
+          <p className="text-gray-600 mb-4">Certified professionals with gold valuation expertise</p>
+          {/* <div className="mt-4 pt-4 border-t border-gray-100">
+            <span className="text-xs text-amber-600 bg-amber-100 px-3 py-1 rounded-full">Core Value</span>
+          </div> */}
+        </div>
+
+        {/* Security Card */}
+        <div className="bg-white rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 hover:border-amber-200 group">
+          <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:from-amber-500 group-hover:to-yellow-600 transition-all duration-300">
+            <FaShieldAlt className="text-white text-3xl" />
+          </div>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3">Security</h3>
+          <p className="text-gray-600 mb-4">Bank-grade vaults with 24/7 surveillance</p>
+          {/* <div className="mt-4 pt-4 border-t border-gray-100">
+            <span className="text-xs text-amber-600 bg-amber-100 px-3 py-1 rounded-full">Core Value</span>
+          </div> */}
+        </div>
+
+        {/* Growth Card */}
+        <div className="bg-white rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 hover:border-amber-200 group">
+          <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:from-amber-500 group-hover:to-yellow-600 transition-all duration-300">
+            <FaChartLine className="text-white text-3xl" />
+          </div>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3">Growth</h3>
+          <p className="text-gray-600 mb-4">Helping customers achieve financial flexibility</p>
+          {/* <div className="mt-4 pt-4 border-t border-gray-100">
+            <span className="text-xs text-amber-600 bg-amber-100 px-3 py-1 rounded-full">Core Value</span>
+          </div> */}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
       {/* Leadership Team */}
       <section className="py-16">

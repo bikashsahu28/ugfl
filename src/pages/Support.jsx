@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import FaqItem from '../components/FaqItem';
 import LiveChat from '../components/LiveChat';
+import { FaCircle } from 'react-icons/fa';
 
 function Support() {
   const { t } = useTranslation();
@@ -112,7 +113,7 @@ function Support() {
     {
       title: 'Visit Branch',
       description: 'Find a location near you',
-      details: '200+ branches nationwide',
+      details: '20+ branches nationwide',
       icon: '🏦',
       action: 'Locate Branch'
     },
@@ -136,7 +137,7 @@ function Support() {
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-24 text-center overflow-hidden">
+      {/* <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-24 text-center overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ 
             backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" 
@@ -150,8 +151,35 @@ function Support() {
             {t('support.subtitle')}
           </p>
         </div>
+      </div> */}
+      
+<div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
+      {/* Background pattern using icons */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="w-full h-full flex flex-wrap">
+          {Array.from({ length: 150 }).map((_, i) => (
+            <FaCircle
+              key={i}
+              className="text-white "
+              style={{
+                fontSize: "55px",
+                margin: "22px",
+              }}
+            />
+          ))}
+        </div>
       </div>
 
+      {/* Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+          {t("support.title")}
+        </h1>
+        <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
+          {t("support.subtitle")}
+        </p>
+      </div>
+    </div>
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Tab Navigation */}
