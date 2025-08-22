@@ -16,15 +16,9 @@ function HomeCarousel() {
       // description: t('carousel.slide1.description'),
     },
     {
-      // image: "https://images.unsplash.com/photo-1624365169364-0640dd10e180",
-      // title: t('carousel.slide2.title'),
-      // description: t('carousel.slide2.description'),
       image: "../image/003.jpeg",
     },
     {
-      // image: "https://images.unsplash.com/photo-1610375461246-83df859d849d",
-      // title: t('carousel.slide3.title'),
-      // description: t('carousel.slide3.description'),
       image: "../image/002.jpeg",
     },
   ];
@@ -42,7 +36,9 @@ function HomeCarousel() {
       }}
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
-      className="h-[500px] w-full"
+      // className="h-[500px] w-full"
+        className="h-[500px] sm:h-[500px] md:h-[500px] w-full"
+
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index}>
@@ -50,7 +46,8 @@ function HomeCarousel() {
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover"
+              // className="w-full h-full object-cover"
+              className='w-full h-full object-fill'
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8  mt-10">
               <h2 className="text-4xl font-bold mb-4">{slide.title}</h2>

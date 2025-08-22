@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion ,useScroll, useTransform} from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import FAQ from '../components/FAQ';
 import HomeCarousel from '../components/HomeCarousel';
 import LoanPopup from '../components/LoanPopup';
 import LiveChat from '../components/LiveChat';

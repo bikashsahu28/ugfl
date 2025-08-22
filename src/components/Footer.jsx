@@ -45,9 +45,9 @@ function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">{t('footer.address')}</h4>
             <p className="text-gray-400">
-              123 Finance Street<br />
-              Mumbai, Maharashtra<br />
-              India - 400001
+              1st Floor, Ridge Residency Complex,
+              Baramunda, Bhubaneswar<br />
+              Odisha - 751003
             </p>
           </div>
         </div>

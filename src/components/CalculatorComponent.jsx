@@ -1,209 +1,430 @@
-// This component is a Gold Loan Calculator for Unigold Finance, allowing users to calculate the maximum loan amount based on gold weight, purity, and selected loan scheme.
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useState, useEffect } from "react";
+import { Calculator, Coins, TrendingUp, Clock, Percent, DollarSign, ArrowRight, Gem, Scale, List } from "lucide-react";
 
 const GoldLoanCalculator = () => {
-  const { t, i18n } = useTranslation();
-  const [goldWeight, setGoldWeight] = useState('');
-  const [purity, setPurity] = useState('22');
-  const [selectedScheme, setSelectedScheme] = useState('Unigold Super Stability Loan');
-  const [result, setResult] = useState(null);
+  const [ornaments, setOrnaments] = useState([{ id: 1, quantity: 1, weight: '', carat: '22' }]);
+  const [interestRate, setInterestRate] = useState("12");
+  const [loanTenure, setLoanTenure] = useState("12");
+  const [loanToValue, setLoanToValue] = useState("75");
+  const [monthlyEMI, setMonthlyEMI] = useState(0);
+  const [totalInterest, setTotalInterest] = useState(0);
+  const [totalPayment, setTotalPayment] = useState(0);
+  const [loanEligibility, setLoanEligibility] = useState(0);
+  const [goldValue, setGoldValue] = useState(0);
 
-  const schemeData = {
-    'Unigold Super Stability Loan': 6278,
-    'Unigold Maximum Delight Loan': 6278,
-    'Unigold Super Comfort Loan': 6278,
-    'Unigold Comfort Plus Loan': 6278,
-    'Unigold Super Easy Loan': 6278,
-    'Unigold Easy Loan': 6026,
-    'Unigold High Value Loan': 5859,
-    'Unigold Smart Loan': 5441
+  // Current gold price per gram (can be updated based on market)
+  const currentGoldPricePerGram = 9200; // INR per gram
+
+  // Carat purity factors
+  const caratFactors = {
+    '24': 1.0,
+    '22': 0.9167,
+    '21': 0.875,
+    '18': 0.75,
+    '14': 0.583,
+    '10': 0.4167
   };
 
-  const purityFactors = {
-    '22': 1,       // 91.6% pure
-    '20': 0.909,   // 83.3% pure (20/22)
-    '18': 0.818    // 75.0% pure (18/22)
+  const caratOptions = [
+    { value: '24', label: '24 Carat (99.9% Pure)' },
+    { value: '22', label: '22 Carat (91.67% Pure)' },
+    { value: '21', label: '21 Carat (87.5% Pure)' },
+    { value: '18', label: '18 Carat (75% Pure)' },
+    { value: '14', label: '14 Carat (58.3% Pure)' },
+    { value: '10', label: '10 Carat (41.67% Pure)' }
+  ];
+
+  const addOrnament = () => {
+    const newId = Math.max(...ornaments.map(o => o.id)) + 1;
+    setOrnaments([...ornaments, { id: newId, quantity: 1, weight: '', carat: '22' }]);
   };
 
-  const calculateLoan = (e) => {
-    e.preventDefault();
-    if (!goldWeight || isNaN(goldWeight) || goldWeight <= 0) {
-      alert(t('validation.enterValidWeight'));
-      return;
+  const removeOrnament = (id) => {
+    if (ornaments.length > 1) {
+      setOrnaments(ornaments.filter(ornament => ornament.id !== id));
     }
-
-    const purityFactor = purityFactors[purity];
-    const schemeRate = schemeData[selectedScheme];
-    const maxLoanAmount = (goldWeight * purityFactor * schemeRate).toFixed(0);
-
-    setResult({
-      maxLoanAmount,
-      scheme: selectedScheme,
-      rate: schemeRate,
-      purity: purity,
-      weight: goldWeight
-    });
   };
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
+  const updateOrnament = (id, field, value) => {
+    setOrnaments(ornaments.map(ornament => 
+      ornament.id === id ? { ...ornament, [field]: value } : ornament
+    ));
+  };
+
+  // Calculate EMI using the standard formula: EMI = P × r × (1 + r)^n / ((1 + r)^n - 1)
+  const calculateEMI = (principal, rate, tenure) => {
+    const monthlyRate = rate / 100 / 12;
+    const emi = principal * monthlyRate * Math.pow(1 + monthlyRate, tenure) / (Math.pow(1 + monthlyRate, tenure) - 1);
+    return emi;
+  };
+
+  const calculateGoldValue = () => {
+    let totalValue = 0;
+    
+    ornaments.forEach(ornament => {
+      if (ornament.weight && ornament.quantity) {
+        const weight = parseFloat(ornament.weight);
+        const quantity = parseInt(ornament.quantity) || 1;
+        const caratFactor = caratFactors[ornament.carat] || 0;
+        
+        // Calculate value for this ornament type
+        const ornamentValue = weight * quantity * currentGoldPricePerGram * caratFactor;
+        totalValue += ornamentValue;
+      }
+    });
+    
+    return totalValue;
+  };
+
+  const handleCalculate = () => {
+    const value = calculateGoldValue();
+    setGoldValue(value);
+    
+    // Calculate loan eligibility
+    const eligibility = (value * parseFloat(loanToValue)) / 100;
+    setLoanEligibility(eligibility);
+    
+    // Calculate EMI and other values
+    const emi = calculateEMI(eligibility, parseFloat(interestRate), parseInt(loanTenure));
+    const total = emi * parseInt(loanTenure);
+    const interest = total - eligibility;
+    
+    setMonthlyEMI(emi);
+    setTotalInterest(interest);
+    setTotalPayment(total);
+  };
+
+  const resetCalculator = () => {
+    setOrnaments([{ id: 1, quantity: 1, weight: '', carat: '22' }]);
+    setInterestRate("12");
+    setLoanTenure("12");
+    setLoanToValue("75");
+    setGoldValue(0);
+    setLoanEligibility(0);
+    setMonthlyEMI(0);
+    setTotalInterest(0);
+    setTotalPayment(0);
+  };
+
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat('en-IN', {
+      style: 'currency',
+      currency: 'INR',
+      minimumFractionDigits: 2,
+    }).format(amount);
   };
 
   return (
-    <div className="container mx-auto p-4 max-w-5xl">
-      {/* <div className="flex justify-end mb-4 space-x-2">
-        <button 
-          onClick={() => changeLanguage('en')}
-          className={`px-3 py-1 rounded ${i18n.language === 'en' ? 'bg-yellow-600 text-white' : 'bg-gray-200'}`}
-        >
-          English
-        </button>
-        <button 
-          onClick={() => changeLanguage('hi')}
-          className={`px-3 py-1 rounded ${i18n.language === 'hi' ? 'bg-yellow-600 text-white' : 'bg-gray-200'}`}
-        >
-          हिंदी
-        </button>
-        <button 
-          onClick={() => changeLanguage('or')}
-          className={`px-3 py-1 rounded ${i18n.language === 'or' ? 'bg-yellow-600 text-white' : 'bg-gray-200'}`}
-        >
-          ଓଡ଼ିଆ
-        </button>
-      </div> */}
-
-      <h2 className="text-2xl font-bold text-center text-yellow-600 mb-8">
-        {t('calculator.title')}
-      </h2>
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+      {/* Header */}
       
-      <div className="flex flex-col md:flex-row gap-6">
-        {/* Calculator Form - Left Side */}
-        <div className="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6">
-          <form onSubmit={calculateLoan} className="space-y-4">
-            <div className="form-group">
-              <label htmlFor="goldWeight" className="block text-sm font-medium text-gray-700 mb-1">
-                {t('calculator.weightLabel')}
-              </label>
-              <input
-                type="number"
-                id="goldWeight"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
-                value={goldWeight}
-                onChange={(e) => setGoldWeight(e.target.value)}
-                placeholder={t('calculator.weightPlaceholder')}
-                step="0.01"
-                min="0"
-                required
-              />
+
+      <div className="max-w-7xl mx-auto px-1 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Calculator Form */}
+          <div className="bg-white rounded-2xl shadow-2xl p-8 border border-amber-100">
+            <div className="flex items-center space-x-2 mb-6">
+              <Calculator className="h-6 w-6 text-amber-600" />
+              <h2 className="text-2xl font-bold text-gray-800">Calculate Your Gold Loan</h2>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="purity" className="block text-sm font-medium text-gray-700 mb-1">
-                {t('calculator.purityLabel')}
-              </label>
-              <select
-                id="purity"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
-                value={purity}
-                onChange={(e) => setPurity(e.target.value)}
-              >
-                <option value="22">{t('purityOptions.22K')}</option>
-                <option value="20">{t('purityOptions.20K')}</option>
-                <option value="18">{t('purityOptions.18K')}</option>
-              </select>
-            </div>
+            <div className="space-y-6">
+              {/* Ornaments Section */}
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-gray-800 flex items-center">
+                    <List className="h-5 w-5 mr-2 text-amber-600" />
+                    Gold Ornaments
+                  </h3>
+                  <button
+                    onClick={addOrnament}
+                    className="bg-amber-100 text-amber-700 px-3 py-1 rounded-lg text-sm font-medium hover:bg-amber-200 transition-colors duration-200"
+                  >
+                    + Add Ornament
+                  </button>
+                </div>
 
-            <div className="form-group">
-              <label htmlFor="scheme" className="block text-sm font-medium text-gray-700 mb-1">
-                {t('calculator.schemeLabel')}
-              </label>
-              <select
-                id="scheme"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
-                value={selectedScheme}
-                onChange={(e) => setSelectedScheme(e.target.value)}
-              >
-                {Object.keys(schemeData).map((scheme) => (
-                  <option key={scheme} value={scheme}>
-                    {scheme} ({t('common.rupeeSymbol')}{schemeData[scheme]}/gram)
-                  </option>
+                {ornaments.map((ornament, index) => (
+                  <div key={ornament.id} className="bg-gray-50 rounded-xl p-4 space-y-3 border border-gray-200">
+                    <div className="flex items-center justify-between">
+                      <h4 className="font-medium text-gray-700">Ornament {index + 1}</h4>
+                      {ornaments.length > 1 && (
+                        <button
+                          onClick={() => removeOrnament(ornament.id)}
+                          className="text-red-500 hover:text-red-700 text-sm font-medium"
+                        >
+                          Remove
+                        </button>
+                      )}
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                      <div className="space-y-1">
+                        <label className="text-sm font-medium text-gray-600">Quantity</label>
+                        <input
+                          type="number"
+                          min="1"
+                          value={ornament.quantity}
+                          onChange={(e) => updateOrnament(ornament.id, 'quantity', e.target.value)}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm"
+                        />
+                      </div>
+                      
+                      <div className="space-y-1">
+                        <label className="text-sm font-medium text-gray-600">Weight (grams)</label>
+                        <div className="relative">
+                          <input
+                            type="number"
+                            step="0.01"
+                            value={ornament.weight}
+                            onChange={(e) => updateOrnament(ornament.id, 'weight', e.target.value)}
+                            placeholder="0.00"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm pl-6"
+                          />
+                          <span className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">g</span>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-1">
+                        <label className="text-sm font-medium text-gray-600">Carat</label>
+                        <select
+                          value={ornament.carat}
+                          onChange={(e) => updateOrnament(ornament.id, 'carat', e.target.value)}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm"
+                        >
+                          {caratOptions.map(option => (
+                            <option key={option.value} value={option.value}>
+                              {option.label}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                  </div>
                 ))}
-              </select>
+              </div>
+
+              {/* Gold Market Information */}
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                <div className="flex items-center space-x-2 mb-2">
+                  <Gem className="h-4 w-4 text-amber-600" />
+                  <h4 className="font-medium text-amber-800">Current Gold Rate</h4>
+                </div>
+                <p className="text-sm text-amber-700">
+                  <strong>₹{currentGoldPricePerGram.toLocaleString()}</strong> per gram (24 Carat)
+                </p>
+                <p className="text-xs text-amber-600 mt-1">
+                  Prices are subject to market fluctuations
+                </p>
+              </div>
+
+              {/* Loan to Value Ratio */}
+              <div className="space-y-2">
+                <label className="flex items-center text-sm font-medium text-gray-700">
+                  <Percent className="h-4 w-4 mr-2 text-amber-600" />
+                  Loan to Value Ratio ({loanToValue}%)
+                </label>
+                <input
+                  type="range"
+                  min="50"
+                  max="90"
+                  step="5"
+                  value={loanToValue}
+                  onChange={(e) => setLoanToValue(e.target.value)}
+                  className="w-full h-2 bg-amber-100 rounded-lg appearance-none cursor-pointer slider"
+                />
+                <div className="flex justify-between text-xs text-gray-500">
+                  <span>50%</span>
+                  <span>75%</span>
+                  <span>90%</span>
+                </div>
+              </div>
+
+              {/* Interest Rate */}
+              <div className="space-y-2">
+                <label className="flex items-center text-sm font-medium text-gray-700">
+                  <Percent className="h-4 w-4 mr-2 text-amber-600" />
+                  Annual Interest Rate ({interestRate}%)
+                </label>
+                <input
+                  type="range"
+                  min="8"
+                  max="18"
+                  step="0.5"
+                  value={interestRate}
+                  onChange={(e) => setInterestRate(e.target.value)}
+                  className="w-full h-2 bg-amber-100 rounded-lg appearance-none cursor-pointer slider"
+                />
+                <div className="flex justify-between text-xs text-gray-500">
+                  <span>8%</span>
+                  <span>12%</span>
+                  <span>18%</span>
+                </div>
+              </div>
+
+              {/* Loan Tenure */}
+              <div className="space-y-2">
+                <label className="flex items-center text-sm font-medium text-gray-700">
+                  <Clock className="h-4 w-4 mr-2 text-amber-600" />
+                  Loan Tenure ({loanTenure} months)
+                </label>
+                <select
+                  value={loanTenure}
+                  onChange={(e) => setLoanTenure(e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 text-lg"
+                >
+                  <option value="1">1 months</option>
+                  <option value="3">3 months</option>
+                  <option value="6">6 months</option>
+                  <option value="9">9 months</option>
+                  <option value="12">12 months</option>
+                  <option value="18">18 months</option>
+                  <option value="24">24 months</option>
+                  <option value="36">36 months</option>
+                  <option value="48">48 months</option>
+                  <option value="60">60 months</option>
+                </select>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex space-x-3 pt-4">
+                <button
+                  onClick={resetCalculator}
+                  className="flex-1 bg-gray-100 text-gray-700 py-3 px-6 rounded-xl font-medium hover:bg-gray-200 transition-colors duration-200"
+                >
+                  Reset
+                </button>
+                <button
+                  onClick={handleCalculate}
+                  className="flex-1 bg-gradient-to-r from-amber-700 to-yellow-500 text-white py-3 px-6 rounded-xl font-medium hover:from-amber-600 hover:to-yellow-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Results Section */}
+          <div className="space-y-6">
+            {/* Gold Valuation Card */}
+            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-amber-100">
+              <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                <Scale className="h-5 w-5 mr-2 text-amber-600" />
+                Gold Valuation
+              </h3>
+              
+              <div className="space-y-4">
+                <div className="flex justify-between items-center py-3 border-b border-gray-100">
+                  <span className="text-gray-600">Total Ornaments</span>
+                  <span className="font-semibold text-lg text-gray-800">{ornaments.length}</span>
+                </div>
+                
+                <div className="flex justify-between items-center py-3 border-b border-gray-100">
+                  <span className="text-gray-600">Total Weight</span>
+                  <span className="font-semibold text-lg text-gray-800">
+                    {ornaments.reduce((total, o) => {
+                      const weight = parseFloat(o.weight) || 0;
+                      const quantity = parseInt(o.quantity) || 1;
+                      return total + (weight * quantity);
+                    }, 0).toFixed(2)} g
+                  </span>
+                </div>
+                
+                <div className="flex justify-between items-center py-3 border-b border-gray-100">
+                  <span className="text-gray-600">Gold Value</span>
+                  <span className="font-semibold text-lg text-green-600">{formatCurrency(goldValue)}</span>
+                </div>
+                
+                <div className="flex justify-between items-center py-3">
+                  <span className="text-gray-600">Eligible Loan Amount</span>
+                  <span className="font-bold text-xl text-amber-600">{formatCurrency(loanEligibility)}</span>
+                </div>
+              </div>
             </div>
 
-            <button
-              type="submit"
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
-            >
-              {t('calculator.calculateBtn')}
-            </button>
-          </form>
-        </div>
+            {/* Loan Summary Card */}
+            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-amber-100">
+              <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                <TrendingUp className="h-5 w-5 mr-2 text-amber-600" />
+                Loan Summary
+              </h3>
+              
+              <div className="space-y-4">
+                <div className="flex justify-between items-center py-3 border-b border-gray-100">
+                  <span className="text-gray-600">Monthly EMI</span>
+                  <span className="font-semibold text-lg text-amber-600">{formatCurrency(monthlyEMI)}</span>
+                </div>
+                
+                <div className="flex justify-between items-center py-3 border-b border-gray-100">
+                  <span className="text-gray-600">Total Interest</span>
+                  <span className="font-semibold text-lg text-red-600">{formatCurrency(totalInterest)}</span>
+                </div>
+                
+                <div className="flex justify-between items-center py-3">
+                  <span className="text-gray-600">Total Payment</span>
+                  <span className="font-bold text-xl text-green-600">{formatCurrency(totalPayment)}</span>
+                </div>
+              </div>
+            </div>
 
-        {/* Results Panel - Right Side */}
-        <div className="w-full md:w-1/2">
-          <div className="bg-white rounded-lg shadow-md p-6 h-full">
-            {result ? (
-              <div className="h-full flex flex-col">
-                <h3 className="text-xl font-semibold text-yellow-600 mb-4">
-                  {t('result.title')}
-                </h3>
-                
-                <div className="space-y-3 flex-grow">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-sm text-gray-500">{t('result.weightText')}</p>
-                      <p className="font-medium">{result.weight} {t('common.grams')}</p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-500">{t('result.purityText')}</p>
-                      <p className="font-medium">{result.purity}K ({purityFactors[result.purity]*100}% {t('common.pure')})</p>
-                    </div>
+            {/* Benefits Card */}
+            <div className="bg-gradient-to-r from-amber-700 to-yellow-500 rounded-2xl shadow-2xl p-8 text-white">
+              <h3 className="text-xl font-bold mb-4">Why Choose Gold Loan?</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center space-x-3">
+                  <div className="bg-white bg-opacity-20 p-1 rounded-full">
+                    <ArrowRight className="h-4 w-4" />
                   </div>
-                  
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-sm text-gray-500">{t('result.schemeText')}</p>
-                      <p className="font-medium">{result.scheme}</p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-500">{t('result.rateText')}</p>
-                      <p className="font-medium">{t('common.rupeeSymbol')}{result.rate}</p>
-                    </div>
+                  <span>Quick approval within 24 hours</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <div className="bg-white bg-opacity-20 p-1 rounded-full">
+                    <ArrowRight className="h-4 w-4" />
                   </div>
-                  
-                  <div className="mt-4 pt-4 border-t border-gray-200">
-                    <p className="text-sm text-gray-500">{t('result.loanAmount')}</p>
-                    <p className="text-2xl font-bold text-green-600">{t('common.rupeeSymbol')}{result.maxLoanAmount}</p>
+                  <span>Loan up to 90% of gold value</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <div className="bg-white bg-opacity-20 p-1 rounded-full">
+                    <ArrowRight className="h-4 w-4" />
                   </div>
-                </div>
-                
-                <div className="mt-auto pt-4">
-                  <div className="bg-yellow-50 p-3 rounded-md">
-                    <p className="text-xs text-gray-600">
-                      <span className="font-semibold">{t('common.note')}:</span> {t('disclaimer.note')}
-                    </p>
-                    <p className="text-xs text-gray-600 mt-1">
-                      {t('disclaimer.fees')}
-                    </p>
+                  <span>Competitive interest rates starting from 8%</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <div className="bg-white bg-opacity-20 p-1 rounded-full">
+                    <ArrowRight className="h-4 w-4" />
                   </div>
-                </div>
-              </div>
-            ) : (
-              <div className="h-full flex items-center justify-center">
-                <div className="text-center">
-                  <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <h3 className="mt-2 text-sm font-medium text-gray-900">{t('emptyState.title')}</h3>
-                  <p className="mt-1 text-sm text-gray-500">{t('emptyState.description')}</p>
-                </div>
-              </div>
-            )}
+                  <span>No credit score requirement</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
+
+        {/* Footer */}
+        
       </div>
+
+      <style jsx>{`
+        .slider::-webkit-slider-thumb {
+          appearance: none;
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #f59e0b, #d97706);
+          cursor: pointer;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .slider::-moz-range-thumb {
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #f59e0b, #d97706);
+          cursor: pointer;
+          border: none;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+      `}</style>
     </div>
   );
 };
