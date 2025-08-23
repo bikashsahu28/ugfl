@@ -88,7 +88,11 @@ const FAQSections = () => {
   return (
     <section className="mb-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
   <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold  text-center text-yellow-600 mb-2">{t('faq.title')}</h2>
+               <h1 className="text-4xl font-bold text-center text-gray-800 mt-3 mb-3">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-800">
+          {t('faq.title')}
+        </span>
+      </h1>
     <p className="text-gray-600 max-w-2xl mx-auto">
       {t('faq.subtitle')}
     </p>

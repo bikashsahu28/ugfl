@@ -8,6 +8,12 @@ import LoanPopup from '../components/LoanPopup';
 import LiveChat from '../components/LiveChat';
 import GoldLoanCalculator from '../components/CalculatorComponent';
 import FAQSections from '../components/mainfaq';
+import { GrNext } from 'react-icons/gr';
+import { IoChevronBack } from 'react-icons/io5';
+import { PiMoney } from 'react-icons/pi';
+import { GiTakeMyMoney } from 'react-icons/gi';
+import { TbPlayerTrackNext } from 'react-icons/tb';
+import { MdOutlineDoubleArrow } from 'react-icons/md';
 
 function Home() {
   const [goldPrice, setGoldPrice] = useState(null);
@@ -123,8 +129,14 @@ const visibleTestimonials = testimonials.slice(
       {/* Why Choose Us Section */}
       <section className="py-16 bg-gray-50 bg-gradient-to-b from-amber-50 to-white">
   <div className="max-w-7xl mx-auto px-4">
-    <h2 className="text-3xl font-bold  text-center text-yellow-600 mb-12">{t('whyChooseUs.title')}</h2>
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+<h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-800">
+          {t('whyChooseUs.title')}
+        </span>
+      </h1>
+
+     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       <div className="text-center rounded-xl shadow-lg overflow-hidden border-t-4 border-amber-500 hover:shadow-xl transition-all 
       duration-300 hover:-translate-y-1 group p-6 rounded-lg bg-white shadow-lg">
         <div className="text-4xl mb-4">💸</div>
@@ -230,9 +242,8 @@ const visibleTestimonials = testimonials.slice(
       className="inline-block px-6 py-3 mb-10 bg-black/20 rounded-full backdrop-blur-sm border border-yellow-400/30"
     >
       <div className="flex items-center">
-        <svg className="w-6 h-6 mr-2 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-        </svg>
+        <div className='text-yellow-400 w-195 h-19'><GiTakeMyMoney />
+</div>
         <span className="text-xl font-medium">
           {t('hero1.goldRate')} <span className="text-yellow-400 font-bold">₹{goldPrice}/g</span>
         </span>
@@ -403,7 +414,7 @@ const visibleTestimonials = testimonials.slice(
 ))}
 </section>
 {/* Gold Loan Calculator Section */}
-<section className="py-16  " id="gold-loan-calculator">
+<section className="py-0  " id="gold-loan-calculator">
   <GoldLoanCalculator />
 </section>
       {/* How It Works Section */}
@@ -415,11 +426,12 @@ const visibleTestimonials = testimonials.slice(
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-    >
-      {/* <h2 className=" text-center text-3xl md:text-5xl font-bold text-amber-700 mb-12"> */}
-      <h2 className="text-3xl font-bold  text-center text-yellow-600  mb-12">
-      
-        How It Works</h2>
+    >      
+        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-800">
+          How It Works
+        </span>
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
         {processSteps.map((step, index) => (
           <motion.div
@@ -435,9 +447,7 @@ const visibleTestimonials = testimonials.slice(
             <p className="text-gray-600">{step.description}</p>
             {index < processSteps.length - 1 && (
               <div className="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 text-gray-300">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-                </svg>
+                <MdOutlineDoubleArrow className="absolute inset-0 m-auto h-8 w-8" />
               </div>
             )}
           </motion.div>
@@ -484,7 +494,11 @@ const visibleTestimonials = testimonials.slice(
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold  text-center text-yellow-600 mb-12">What Our Customers Say</h2>
+           <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-800">
+          What Our Customers Say
+        </span>
+      </h1>
           
           <div className="relative">
             <button 
@@ -492,9 +506,8 @@ const visibleTestimonials = testimonials.slice(
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-primary text-white p-2 rounded-full shadow-md hover:bg-primary-dark z-10"
               aria-label="Previous testimonials"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
+              <IoChevronBack />
+              
             </button>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -547,9 +560,8 @@ const visibleTestimonials = testimonials.slice(
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-primary text-white p-2 rounded-full shadow-md hover:bg-primary-dark z-10"
               aria-label="Next testimonials"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              
+              <GrNext />
             </button>
           </div>
 
@@ -575,7 +587,11 @@ const visibleTestimonials = testimonials.slice(
       {/* Map Section */}
 <section className="py-16 bg-white">
   <div className="max-w-7xl mx-auto px-4">
-    <h2 className="text-3xl font-bold  text-center text-yellow-600 mb-12">Visit Us</h2>
+    <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-800">
+          Visit Us
+        </span>
+      </h1>
     
     <div className="grid md:grid-cols-2 gap-8 items-center">
       {/* Contact Info Card */}
