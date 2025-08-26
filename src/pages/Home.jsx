@@ -17,8 +17,7 @@ import { MdOutlineDoubleArrow } from 'react-icons/md';
 
 function Home() {
   const [goldPrice, setGoldPrice] = useState(null);
-  const [goldWeight, setGoldWeight] = useState(10);
-  const [purity, setPurity] = useState(22); 
+
   const { t } = useTranslation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -28,24 +27,18 @@ function Home() {
   // Adding these scroll effects at the component level
 
   useEffect(() => {
-    setGoldPrice(6428.50);
+    setGoldPrice(6810.50);
     
     const interval = setInterval(() => {
-      const randomChange = (Math.random() - 0.5) * 10;
+      const randomChange = (Math.random() - 0.5) * 3;
       setGoldPrice(prev => +(prev + randomChange).toFixed(2));
     }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
 
   // Calculate loan amount estimate
-  const loanAmount = goldPrice * goldWeight * (purity / 24) * 0.75; // Assuming 75% LTV
-
   const testimonials = [
   {
     name: "Rajesh Kumar",

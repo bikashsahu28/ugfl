@@ -24,6 +24,15 @@ function Footer() {
             <ul className="space-y-2">
               <li><Link to="/" className="text-gray-400 hover:text-white">{t('nav.home')}</Link></li>
               <li><Link to="/calculator" className="text-gray-400 hover:text-white">{t('nav.calculator')}</Link></li>
+              <li><Link to="/about/company" className="text-gray-400 hover:text-white">{t('nav.about')}</Link></li>
+
+              <li><Link to="/gallery" className="text-gray-400 hover:text-white">{t('nav.gallery')}</Link></li>
+
+              <li><Link to="/team" className="text-gray-400 hover:text-white">{t('nav.team')}</Link></li>
+
+              <li><Link to="/career" className="text-gray-400 hover:text-white">{t('nav.career')}</Link></li>
+
+
             </ul>
           </div>
           <div>

@@ -318,7 +318,7 @@
           },
           "flexibleRepayment": {
             "title": "Flexible Repayment",
-            "desc": "Choose tenure from 3 to 12 months"
+            "desc": "Choose tenure from 1 to 12 months"
           }
         },
         "trusted": "Trusted by",
@@ -508,8 +508,8 @@
                   "eligibility": {
                     "title": "Eligibility Criteria",
                     "description": "Applying for a gold loan with Unigold Finance is simple and inclusive. Our eligibility criteria are designed to accommodate a wide range of customers.",
-                    "point1": "Minimum age requirement: 18 years",
-                    "point2": "Must own gold jewellery, coins, or bars",
+                    "point1": "Minimum age requirement: 21 years",
+                    "point2": "Must own gold jewellery",
                     "point3": "No credit score or income proof required"
                   },
                   "documents": {

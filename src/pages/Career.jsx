@@ -155,27 +155,27 @@ const jobs = [
 
   const benefits = [
     {
-      icon: <FaBriefcase size={30} className="text-primary" />,
+      icon: <FaBriefcase size={30} className="text-white" />,
       title: "Career Growth",
       description: "Clear progression paths in a growing industry"
     },
     {
-      icon: <FaGraduationCap size={30} className="text-primary" />,
+      icon: <FaGraduationCap size={30} className="text-white" />,
       title: "Learning & Development",
       description: "Regular training and skill enhancement programs"
     },
     {
-      icon: <FaUsers size={30} className="text-primary" />,
+      icon: <FaUsers size={30} className="text-white" />,
       title: "Team Culture",
       description: "Collaborative and supportive work environment"
     },
     {
-      icon: <FaLightbulb size={30} className="text-primary" />,
+      icon: <FaLightbulb size={30} className="text-white" />,
       title: "Innovation",
       description: "Opportunity to implement new ideas and processes"
     },
     {
-      icon: <FaHandshake size={30} className="text-primary" />,
+      icon: <FaHandshake size={30} className="text-white" />,
       title: "Work-Life Balance",
       description: "Flexible policies to support your wellbeing"
     }
@@ -211,18 +211,21 @@ const jobs = [
 
   <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
     {/* Section Header */}
-    <div className="text-center mb-16">
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+    {/* <div className="text-center mb-16">
+      <h2 className="text-4xl font-bold text-center text-gray-800 mb-3">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-800">
         Why Partner With Us
-      </h2>
-      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+
+        </span>
+      </h2> */}
+      {/* <p className="text-lg text-gray-600 max-w-2xl mx-auto">
         Join India's fastest-growing gold loan network and unlock unlimited earning potential
-      </p>
-      <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-6 rounded-full"></div>
-    </div>
+      </p> */}
+      {/* <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-6 rounded-full"></div> */}
+    {/* </div> */}
 
     {/* Benefits Grid */}
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-4 gap-6">
       {/* Existing Benefits */}
       {benefits.map((benefit, index) => (
         <div
@@ -235,7 +238,6 @@ const jobs = [
                 {benefit.icon}
               </div>
             </div>
-            
             <h4 className="text-xl font-bold text-gray-900 mb-3">
               {benefit.title}
             </h4>
@@ -278,20 +280,25 @@ const jobs = [
     </div>
 
     {/* CTA Section */}
-    <div className="text-center mt-16">
+    {/* <div className="text-center mt-16">
       <button className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
         Start Earning Today
       </button>
-    </div>
+    </div> */}
   </div>
 </section>
 
 
 {/* current openings  */}
-<section id="jobs" className="py-20 bg-gradient-to-b from-white to-white-50">
+<section id="jobs" className="py-20 bg-gradient-to-b  from-white to-white-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Current Openings</h3>
+            <h3 className="text-4xl font-bold text-center text-gray-800 mb-3">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-800">
+Current Openings
+        </span>
+      </h3>
+            {/* <h3 className="text-3xl font-bold text-gray-900 mb-4">Current Openings</h3> */}
             <p className="text-lg text-gray-600">Find your perfect role in our growing organization</p>
           </div>
           <div className="max-w-7xl mx-auto px-4 py-12">
