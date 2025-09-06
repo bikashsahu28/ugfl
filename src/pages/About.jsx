@@ -3,6 +3,11 @@ import { motion } from 'framer-motion';
 import { GiNewShoot, GiTransparentTubes } from 'react-icons/gi';
 import { AiFillCustomerService } from 'react-icons/ai';
 import { MdOutlineSecurity } from 'react-icons/md';
+import { FaBuilding, FaCircle } from 'react-icons/fa';
+import { BsGraphUpArrow, BsPersonCircle } from 'react-icons/bs';
+import { LuCalendar1 } from 'react-icons/lu';
+import { IoMdEye } from 'react-icons/io';
+import { IoCheckmarkCircleSharp } from 'react-icons/io5';
 
 function About() {
   const { t } = useTranslation();
@@ -23,9 +28,20 @@ function About() {
   transition={{ duration: 0.6 }}
   className="bg-gradient-to-r from-yellow-600 to-yellow-800 py-12 text-center relative overflow-hidden mb-12"
 >
-  <div className="absolute inset-0 opacity-20">
-    <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" }}></div>
-  </div>
+  <div className="absolute inset-0 opacity-5">
+          <div className="w-full h-full flex flex-wrap">
+            {Array.from({ length: 150 }).map((_, i) => (
+              <FaCircle
+                key={i}
+                className="text-white "
+                style={{
+                  fontSize: "55px",
+                  margin: "22px",
+                }}
+              />
+            ))}
+          </div>
+        </div>
   <div className="max-w-7xl mx-auto px-4 relative z-10">
     <motion.h1 
       className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg"
@@ -49,9 +65,8 @@ function About() {
       viewport={{ once: true }}
     >
       <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 text-white font-medium flex items-center">
-        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-        </svg>
+        <FaBuilding className='h-8 w-8 text-white-100' />
+
         Our Story
       </div>
     </motion.div>
@@ -75,9 +90,7 @@ function About() {
           
 <div className="bg-white p-6 rounded-xl shadow-md border-t-4 border-amber-400 hover:shadow-lg transition-shadow duration-300">
   <h3 className="text-xl font-bold text-amber-600 mb-3 flex items-center">
-    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-    </svg>
+    <BsGraphUpArrow className='h-6 w-6 mr-2' />
     {t('about.growth.founding.title')}
   </h3>
   
@@ -89,9 +102,7 @@ function About() {
   <div className="mt-4 pt-4 border-t border-amber-100">
     <div className="flex items-start space-x-3">
       <div className="bg-amber-100 p-2 rounded-full">
-        <svg className="w-5 h-5 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
-        </svg>
+        <LuCalendar1 className='h-6 w-6 text-amber-600' />
       </div>
       <div>
         <h4 className="font-semibold text-gray-800">{t('about.growth.founding.fact1.title')}</h4>
@@ -101,10 +112,7 @@ function About() {
 
     <div className="flex items-start space-x-3 mt-3">
       <div className="bg-amber-100 p-2 rounded-full">
-        <svg className="w-5 h-5 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-          <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
-        </svg>
+        <IoMdEye className='h-6 w-6 text-amber-600' />
       </div>
       <div>
         <h4 className="font-semibold text-gray-800">{t('about.growth.founding.fact2.title')}</h4>
@@ -120,9 +128,7 @@ function About() {
               <ul className="mt-3 space-y-2">
                 {Object.values(t('about.growth.expansion.branches', { returnObjects: true })).map((item, index) => (
                   <li key={index} className="flex items-start">
-                    <svg className="w-5 h-5 text-amber-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                    <IoCheckmarkCircleSharp className='h-5 w-5 text-amber-500 mr-2 mt-0.5' />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -183,9 +189,7 @@ function About() {
               <div key={key} className="bg-white p-6 rounded-xl shadow-md">
                 <div className="flex items-center mb-4">
                   <div className="bg-amber-100 p-3 rounded-full mr-4">
-                    <svg className="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <IoCheckmarkCircleSharp className='h-6 w-6 text-amber-600' />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800">{value.title}</h3>
                 </div>
@@ -253,9 +257,7 @@ function About() {
                   <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-amber-100 overflow-hidden border-4 border-amber-200">
                     {/* Placeholder for team member photo */}
                     <div className="w-full h-full flex items-center justify-center text-amber-600">
-                      <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                      </svg>
+                      <BsPersonCircle className='h-16 w-16 text-amber-600' />
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-gray-800">{member.name}</h3>

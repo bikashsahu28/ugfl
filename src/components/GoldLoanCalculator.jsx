@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import { IoCheckmarkDoneSharp } from 'react-icons/io5';
+import { LuCircleDollarSign } from 'react-icons/lu';
+import { TbBulb } from 'react-icons/tb';
 import { useInView } from 'react-intersection-observer';
 
 const GoldLoanCalculator = () => {
@@ -123,9 +126,7 @@ useEffect(() => {
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex-1">
               <div className="flex items-center gap-3 mb-4">
                 <div className="bg-primary/10 p-2 rounded-lg">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                  <LuCircleDollarSign className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-800">Estimated Loan Amount</h3>
               </div>
@@ -142,15 +143,11 @@ useEffect(() => {
               
               <div className="space-y-3">
                 <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
-                  <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
+                  <IoCheckmarkDoneSharp className="w-5 h-5 text-green-600 flex-shrink-0" />
                   <span className="text-gray-700">Interest rates starting at 0.79% per month</span>
                 </div>
                 <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
-                  <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
+                <IoCheckmarkDoneSharp className="w-5 h-5 text-green-600 flex-shrink-0" />
                   <span className="text-gray-700">No hidden charges or processing fees</span>
                 </div>
               </div>
@@ -160,9 +157,7 @@ useEffect(() => {
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex-1">
               <div className="flex items-center gap-3 mb-4">
                 <div className="bg-primary/10 p-2 rounded-lg">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
+                  <TbBulb className="w-6 h-6 text-primary"  />
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-800">Calculation Formula</h3>
               </div>

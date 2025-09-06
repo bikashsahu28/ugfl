@@ -37,7 +37,7 @@ function HomeCarousel() {
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
       // className="h-[500px] w-full"
-        className="h-[500px] sm:h-[500px] md:h-[500px] w-full"
+        className="h-[500px] sm:h-[500px] w-full md:h-[500px] w-full"
 
     >
       {slides.map((slide, index) => (

@@ -1,25 +1,10 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight, FaCircle } from 'react-icons/fa';
 import { GiSplitCross } from 'react-icons/gi';
-import { MdOutlineArrowBackIos } from 'react-icons/md';
 
 function Gallery() {
   const { t } = useTranslation();
-
-
-//    const [selectedImage, setSelectedImage] = useState(null);
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-// const [currentImageIndex, setCurrentImageIndex] = useState(0);
-//   // Gallery images data
-//   const galleryItems = [
-//     { id: 1, title: t('gallery.officeOpening'), image: '../image/img1.jpeg', category: 'facilities' },
-//     { id: 2, title: t('gallery.teamRetreat'), image: '/../image/img2.jpeg', category: 'events' },
-//     { id: 3, title: t('gallery.awardCeremony'), image: '../image/img3.jpeg', category: 'achievements' },
-//     { id: 4, title: t('gallery.clientEvent'), image: '/../image/img4.jpeg', category: 'events' },
-//     { id: 5, title: t('gallery.charityWork'), image: '../image/img5.jpeg', category: 'csr' },
-//     { id: 6, title: t('gallery.newProduct'), image: '../image/img6.jpeg', category: 'products' },
-//   ];
 
  const categories = [
     {
@@ -162,7 +147,7 @@ function Gallery() {
       ]
     },
   ];
-    const [activeCategory, setActiveCategory] = useState(categories[0]);
+  const [activeCategory, setActiveCategory] = useState(categories[0]);
   const [showModal, setShowModal] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [allImages] = useState(categories.flatMap(cat => cat.images));
@@ -214,10 +199,20 @@ function Gallery() {
     <div className="bg-gradient-to-b from-amber-50 to-white">
       {/* Hero Section */}
        <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ backgroundImage: 
-            "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" }}></div>
-        </div>
+              <div className="absolute inset-0 opacity-5">
+                <div className="w-full h-full flex flex-wrap">
+                  {Array.from({ length: 150 }).map((_, i) => (
+                    <FaCircle
+                      key={i}
+                      className="text-white "
+                      style={{
+                        fontSize: "55px",
+                        margin: "22px",
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
             {t('gallery.title')}
@@ -226,7 +221,6 @@ function Gallery() {
             {t('gallery.subtitle')}
           </p>
         </div>
-        {/* <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-amber-50 to-transparent"></div> */}
       </div>
     <div className="max-w-7xl mx-auto px-4 py-1 space-y-16">
       {/* Main Gallery Section */}
@@ -351,12 +345,14 @@ function Gallery() {
     </p>
   </div>
 
-  <div className="grid  md:grid-cols-2 gap-10">
+  <div className="grid  md:grid-cols-2 gap/-10">
     {newsItems.map((item) => (
       <div
         key={item.id}
-        className="bg-white bg-gradient-to-r from-orange-600 to-yellow-100 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-      >
+        className="bg-white  rounded-xl shadow-md overflow-hidden 
+        relative overflow-hidden h-56 bg-gradient-to-br from-[#D4AF37] to-[#F5D062]
+        hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+    >
         <div className="md:flex ">
           <div className="md:w-2/5">
             <img
@@ -375,34 +371,19 @@ function Gallery() {
               </h3>
               <p className="text-gray-600 mb-6 line-clamp-3">{item.excerpt}</p>
             </div>
-            <button className="inline-flex items-center text-gold-700 hover:text-gold-800 font-medium group">
-              {t('news.readMore')}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 ml-1 transform translate-x-0 group-hover:translate-x-1 transition-transform"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
+
           </div>
         </div>
       </div>
     ))}
   </div>
-</section>
+</section> 
 
       {/* Events Section */}
 <section className="py-2 bg-gray-50">
   <div className="container mx-auto px-4">
     <div className="text-center mb-16">
       <h2 className="text-4xl font-bold text-amber-700 text-center mb-4">{t('events.title')}</h2>
-      <div className="w-20 h-1 bg-[#D4AF37] mx-auto mb-6"></div>
       <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
         {t('events.subtitle')}
       </p>

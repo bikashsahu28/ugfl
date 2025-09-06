@@ -253,7 +253,7 @@ function Team() {
       <section className="py-16 bg-primary text-white">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
           <h3 className="text-2xl font-semibold mb-6 md:mb-0">Ready to get a gold loan with confidence?</h3>
-          <a href="/apply" className="bg-white text-primary font-bold px-6 py-3 rounded hover:bg-gray-100 transition">Apply Now</a>
+          <a href="/career" className="bg-white text-primary font-bold px-6 py-3 rounded hover:bg-gray-100 transition">Apply Now</a>
         </div>
       </section>
     </div>

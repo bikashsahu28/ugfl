@@ -3,9 +3,16 @@ import { useTranslation } from 'react-i18next';
 import FaqItem from '../components/FaqItem';
 import LiveChat from '../components/LiveChat';
 import { FaCircle } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { IoSearchSharp } from 'react-icons/io5';
+import { ImNeutral } from 'react-icons/im';
+import { GoChevronRight } from 'react-icons/go';
+import { FaRegCirclePlay } from 'react-icons/fa6';
+import { TbFileTypePdf } from 'react-icons/tb';
 
 function Support() {
   const { t } = useTranslation();
+    const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFaqCategory, setSelectedFaqCategory] = useState('all');
   const [activeTab, setActiveTab] = useState('faq'); // For tabbed interface
@@ -18,65 +25,144 @@ function Support() {
     { id: 'gold', name: 'Gold Valuation' },
     { id: 'account', name: 'Account Management' },
     { id: 'security', name: 'Security' },
+    { id: 'fees', name: 'Fees & Charges' },
     { id: 'documents', name: 'Documents' },
   ];
 
+  //faq data
   const faqs = [
     {
       id: 1,
-      question: 'How do I apply for a gold loan?',
-      answer: 'You can apply for a gold loan through our website, mobile app, or by visiting any of our branches. You will need to bring your gold items for valuation and provide valid identification documents.',
+      question: "How do I apply for a loan?",
+      answer: "You can apply for a loan through our website or mobile app. Simply create an account, fill out the application form, and submit the required documents. Our team will review your application and get back to you within 24-48 hours.",
       category: 'application'
     },
     {
       id: 2,
-      question: 'What is the interest rate for gold loans?',
-      answer: 'Our gold loan interest rates start at 12% per annum and vary based on the loan amount and tenure. Current rates are displayed on our website and app.',
+      question: "What documents do I need to apply?",
+      answer: "You'll need to provide a government-issued ID, proof of income (pay stubs or tax returns), proof of residence (utility bill or lease agreement), and bank statements from the last 3 months. Additional documents may be required based on the loan type.",
       category: 'application'
     },
     {
       id: 3,
-      question: 'How is the gold value calculated?',
-      answer: 'Gold value is calculated based on the current market price, purity of your gold (measured in karats), and weight. Our certified appraisers will assess your gold items.',
-      category: 'gold'
+      question: "How is the interest rate determined?",
+      answer: "Interest rates are determined based on several factors including your credit score, income level, loan amount, repayment term, and current market conditions. Better credit scores typically qualify for lower interest rates.",
+      category: 'application'
     },
     {
       id: 4,
-      question: 'What happens if I miss a repayment?',
-      answer: 'Late payments may incur penalties. If you anticipate difficulty in repayment, please contact our customer service immediately to discuss restructuring options.',
-      category: 'repayment'
+      question: "How long does approval take?",
+      answer: "Most applications are reviewed within 24-48 hours. Once approved, funds are typically deposited into your account within 1-3 business days. Some applications may require additional verification, which could extend the timeline.",
+      category: 'application'
     },
     {
       id: 5,
-      question: 'How can I check my loan balance?',
-      answer: 'You can check your loan balance through our mobile app, online banking portal, or by contacting our customer service.',
-      category: 'account'
+      question: "Can I apply with bad credit?",
+      answer: "Yes, we consider applicants with all credit types. While having bad credit may affect your interest rate and loan terms, we have options designed for borrowers looking to rebuild their credit. We also offer credit counseling services.",
+      category: 'application'
     },
     {
       id: 6,
-      question: 'What documents do I need to apply?',
-      answer: 'You need a valid government-issued ID, proof of address, and your gold items. Additional documents may be required based on loan amount.',
-      category: 'documents'
+      question: "What are the repayment options?",
+      answer: "We offer flexible repayment options including automatic bank transfers, online payments through our portal, in-person payments at our branches, and mobile app payments. You can choose monthly, bi-weekly, or weekly payment schedules based on your preference.",
+      category: 'repayment'
     },
     {
       id: 7,
-      question: 'Is my gold safe with you?',
-      answer: 'Yes, we store all gold items in secure, insured vaults with 24/7 monitoring and strict access controls.',
+      question: "Can I make early payments?",
+      answer: "Yes, you can make early payments at any time without penalty. Early payments can help you save on interest and pay off your loan faster. You can make partial or full early payments through our website, mobile app, or by contacting customer service.",
+      category: 'repayment'
+    },
+    {
+      id: 8,
+      question: "What happens if I miss a payment?",
+      answer: "If you miss a payment, you'll receive a reminder notification. A late fee may be applied after the grace period. We recommend contacting us immediately if you're having difficulty making a payment - we may be able to offer temporary relief options or adjust your payment plan.",
+      category: 'repayment'
+    },
+    {
+      id: 9,
+      question: "Can I change my payment due date?",
+      answer: "Yes, you can request to change your payment due date once per loan term. The new date must be within the same month as your original due date. You can make this request through our customer portal or by contacting our support team.",
+      category: 'repayment'
+    },
+    {
+      id: 10,
+      question: "How do gold loans work?",
+      answer: "Gold loans use your gold jewelry or coins as collateral. We assess the value of your gold based on current market rates and purity. You can typically borrow up to 75% of the gold's value. Your gold is securely stored until the loan is repaid in full.",
+      category: 'gold'
+    },
+    {
+      id: 11,
+      question: "Is my gold safe with you?",
+      answer: "Absolutely. Your gold is stored in high-security vaults with 24/7 surveillance and insurance coverage. We follow strict protocols for handling and storing collateral. You can request to view security documentation and even schedule a visit to see our storage facilities.",
+      category: 'gold'
+    },
+    {
+      id: 12,
+      question: "What happens if I can't repay my gold loan?",
+      answer: "If you're unable to repay your gold loan, we'll work with you to find a solution before taking any action. If no arrangement can be made, we may sell your gold to recover the loan amount. Any surplus from the sale (after repaying the loan and fees) will be returned to you.",
+      category: 'gold'
+    },
+    {
+      id: 13,
+      question: "How do I reset my password?",
+      answer: "You can reset your password by clicking 'Forgot Password' on the login page. Enter your registered email address, and we'll send you a link to create a new password. For security reasons, this link expires after 24 hours.",
+      category: 'account'
+    },
+    {
+      id: 14,
+      question: "Can I have multiple accounts?",
+      answer: "Each individual is allowed only one primary account. However, you can add authorized users to your account or create separate business accounts if you're applying for business loans. All accounts must be linked to unique identifying information.",
+      category: 'account'
+    },
+    {
+      id: 15,
+      question: "How do I update my personal information?",
+      answer: "You can update most personal information through your account dashboard under 'Profile Settings'. For legal name changes or address changes, you may need to upload supporting documentation for verification purposes.",
+      category: 'account'
+    },
+    {
+      id: 16,
+      question: "What fees are associated with loans?",
+      answer: "Our loans may include an origination fee (typically 1-5% of the loan amount), late payment fees, and returned payment fees. We don't charge prepayment penalties. All fees are clearly disclosed before you accept the loan agreement.",
+      category: 'fees'
+    },
+    {
+      id: 17,
+      question: "Are there any hidden charges?",
+      answer: "No, we believe in complete transparency. All fees and charges are clearly outlined in your loan agreement before you sign. We don't have any hidden fees or surprise charges. If you have questions about any fee, our customer service team is happy to explain.",
+      category: 'fees'
+    },
+    {
+      id: 18,
+      question: "How is my data protected?",
+      answer: "We use bank-level encryption (256-bit SSL) to protect your data. Our systems undergo regular security audits, and we comply with all relevant data protection regulations. We never sell your personal information to third parties.",
       category: 'security'
     },
+    {
+      id: 19,
+      question: "What should I do if I suspect fraud?",
+      answer: "If you suspect any fraudulent activity on your account, please contact our customer service immediately. We take fraud seriously and will investigate any suspicious activity. You can also report fraud to your local authorities.",
+      category: 'security'
+    },
+    {
+      id: 20,
+      question: 'What documents do I need to apply?',
+      answer: 'You need a valid government-issued ID, proof of address, and your gold items. Additional documents may be required based on loan amount.',
+      category: 'documents'
+    }
   ];
-
-  // Support resources
+  // Support resources data
   const supportResources = [
     {
       title: 'Loan Calculator',
       description: 'Estimate your loan amount and repayment schedule',
       icon: '📊',
-      link: '/calculator'
+      link: '/calculators'
     },
     {
       title: 'Gold Price Tracker',
-      description: 'Real-time gold prices and trends',
+      description: 'Real-time gold prices and trends check now',
       icon: '💰',
       link: '/gold-prices'
     },
@@ -84,13 +170,15 @@ function Support() {
       title: 'Branch Locator',
       description: 'Find our nearest branch with directions',
       icon: '📍',
-      link: '/branches'
+      link: '/branch-locator'
     },
     {
       title: 'Document Upload',
       description: 'Securely submit required documents',
       icon: '📄',
-      link: '/upload'
+      // link: '/upload'
+      link: '#downloadable-guides',
+                    isInternal: true
     } 
   ];
 
@@ -106,7 +194,7 @@ function Support() {
     {
       title: 'Email Us',
       description: 'Response within 24 hours',
-      details: 'support@goldloan.com',
+      details: 'care@unigoldfinance.com',
       icon: '✉️',
       action: 'Send Email'
     },
@@ -125,7 +213,9 @@ function Support() {
       action: 'Follow Us'
     }
   ];
-
+ const handleCardClick = (link) => {
+    navigate(link);
+  };
   // Filter FAQs based on search and category
   const filteredFaqs = faqs.filter(faq => {
     const matchesSearch = faq.question.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -136,23 +226,7 @@ function Support() {
 
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
-      {/* Hero Section */}
-      {/* <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-24 text-center overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ 
-            backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" 
-          }}></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-            {t('support.title')}
-          </h1>
-          <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
-            {t('support.subtitle')}
-          </p>
-        </div>
-      </div> */}
-      
+      {/* Hero Section */}      
 <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
       {/* Background pattern using icons */}
       <div className="absolute inset-0 opacity-5">
@@ -185,12 +259,12 @@ function Support() {
         {/* Tab Navigation */}
         <div className="border-b border-gray-200 mb-8">
           <nav className="-mb-px flex space-x-8">
-            <button
-  onClick={() => setActiveTab('faq')}
-  className={`whitespace-nowrap py-4 px-1 border-b-2 font-bold text-sm ${activeTab === 'faq' ? 'border-amber-500 text-amber-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
->
-  FAQ Center
-</button>
+          <button
+            onClick={() => setActiveTab('faq')}
+          className={`whitespace-nowrap py-4 px-1 border-b-2 font-bold text-sm ${activeTab === 'faq' ? 'border-amber-500 text-amber-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
+          >
+            FAQ Center
+          </button>
             <button
               onClick={() => setActiveTab('contact')}
               className={`whitespace-nowrap py-4 px-1 border-b-2 font-bold text-sm ${activeTab === 'contact' ? 'border-amber-500 text-amber-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
@@ -233,34 +307,20 @@ function Support() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden mb-8">
                   <div className="p-6">
                     <h2 className="text-2xl font-bold text-gray-800 mb-6">Frequently Asked Questions</h2>
-                    {/* <div className="relative mb-6">
-                      <input
-                        type="text"
-                        placeholder="Search our knowledge base..."
-                        className="w-full px-5 py-3 pr-12 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                      />
-                      <button className="absolute right-3 top-3 text-gray-400 hover:text-amber-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                      </button>
-                    </div> */}
+
                     <div className="relative mb-6">
-  <input
-    type="text"
-    placeholder="Search our knowledge base..."
-    className="w-full px-6 py-4 rounded-full border-0 shadow-lg focus:outline-none focus:ring-2 focus:ring-amber-500 text-gray-800"
-    value={searchQuery}
-    onChange={(e) => setSearchQuery(e.target.value)}
-  />
-  <button className="absolute right-2 top-2 bg-amber-600 text-white p-2 rounded-full hover:bg-amber-700 transition-colors">
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-    </svg>
-  </button>
-</div>
+                   <input
+                    type="text"
+                    placeholder="Search our knowledge base..."
+                    className="w-full px-6 py-4 rounded-full border-0 shadow-lg focus:outline-none focus:ring-2 focus:ring-amber-500 text-gray-800"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                        <button className="absolute right-2 top-2 bg-amber-600 text-white p-2 rounded-full hover:bg-amber-700 transition-colors">
+                           <IoSearchSharp className="h-6 w-6" />
+
+                        </button>
+                      </div>  
                 
                     <div className="space-y-4">
                       {filteredFaqs.length > 0 ? (
@@ -269,11 +329,11 @@ function Support() {
                         ))
                       ) : (
                         <div className="text-center py-12">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <h3 className="mt-4 text-lg font-medium text-gray-900">No results found</h3>
+                          <div className="text-center py-8 text-gray-500">
+                           <ImNeutral className="mx-auto h-12 w-12 text-gray-400" />
+                          <h3 className="mt-2 text-lg font-medium text-gray-900">No results found</h3>
                           <p className="mt-1 text-gray-500">Try adjusting your search or filter to find what you're looking for.</p>
+                          </div>
                         </div>
                       )}
                     </div>
@@ -288,7 +348,15 @@ function Support() {
                       <p className="text-gray-600 mt-2">Can't find the answer you're looking for? Our team is ready to assist you.</p>
                     </div>
                     <div className="md:w-1/3 flex justify-end">
-                      <button className="bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+                      <button  
+                      onClick={() => {
+                      setActiveTab("contact");
+                     const section = document.getElementById("contact-section");
+                     if (section) {
+                     section.scrollIntoView({ behavior: "smooth" });
+                     }
+                      }}
+                            className="bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
                         Contact Support
                       </button>
                     </div>
@@ -301,7 +369,7 @@ function Support() {
 
         {/* Contact Tab */}
         {activeTab === 'contact' && (
-          <section className="mb-16">
+          <section id="contact-section" className="mb-16">
             <div className="bg-white rounded-xl shadow-md overflow-hidden mb-8">
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6">Contact Our Support Team</h2>
@@ -321,9 +389,8 @@ function Support() {
       className="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center"
     >
       {method.action}
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-      </svg>
+      <GoChevronRight className='h-4 w-4 ml-1' />
+
     </a>
   ) : method.title === 'Email Us' ? (
     <a 
@@ -331,9 +398,7 @@ function Support() {
       className="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center"
     >
       {method.action}
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-      </svg>
+      <GoChevronRight className='h-4 w-4 ml-1' />
     </a>
   ) : method.title === 'Visit Branch' ? (
     <a 
@@ -341,9 +406,7 @@ function Support() {
       className="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center"
     >
       {method.action}
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-      </svg>
+      <GoChevronRight className='h-4 w-4 ml-1' />
     </a>
   ) : (
     <a 
@@ -351,9 +414,7 @@ function Support() {
       className="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center"
     >
       {method.action}
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-      </svg>
+      <GoChevronRight className='h-4 w-4 ml-1' />
     </a>
   )}
 </div>
@@ -369,8 +430,8 @@ function Support() {
                         <input type="text" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                        <input type="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" />
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Mobile</label>
+                        <input type="tel" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" />
                       </div>
                     </div>
                     <div>
@@ -404,13 +465,13 @@ function Support() {
                     <h3 className="text-lg font-semibold mb-4">Branch Hours</h3>
                     <div className="space-y-2 text-gray-600">
                       <div className="flex justify-between">
-                        <span>Monday - Friday</span>
+                        <span>Monday - Saturday</span>
                         <span>9:00 AM - 6:00 PM</span>
                       </div>
-                      <div className="flex justify-between">
+                      {/* <div className="flex justify-between">
                         <span>Saturday</span>
                         <span>10:00 AM - 4:00 PM</span>
-                      </div>
+                      </div> */}
                       <div className="flex justify-between">
                         <span>Sunday</span>
                         <span>Closed</span>
@@ -428,9 +489,7 @@ function Support() {
                     <div className="mt-4 flex justify-end">
                       <button className="text-amber-600 hover:text-amber-700 font-medium flex items-center">
                         View all branches
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
+                        <GoChevronRight className='h-4 w-4 ml-1' />
                       </button>
                     </div>
                   </div>
@@ -449,21 +508,23 @@ function Support() {
                 <p className="text-gray-600 mb-8">Explore our tools and guides to manage your gold loan more effectively.</p>
                 
                 {/* Resources Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                  {supportResources.map((resource, index) => (
-                    <div key={index} className="border border-gray-100 rounded-lg p-6 hover:shadow-md transition-shadow group">
-                      <div className="text-4xl mb-4 group-hover:text-amber-600 transition-colors">{resource.icon}</div>
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-amber-600 transition-colors">{resource.title}</h3>
-                      <p className="text-gray-500 text-sm mb-4">{resource.description}</p>
-                      <button className="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center">
-                        Access Tool
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </button>
-                    </div>
-                  ))}
+                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {supportResources.map((resource, index) => (
+              <div 
+                key={index} 
+                className="border border-gray-100 rounded-lg p-6 hover:shadow-md transition-shadow group cursor-pointer"
+                onClick={() => handleCardClick(resource.link)}
+              >
+                <div className="text-4xl mb-4 group-hover:text-amber-600 transition-colors">{resource.icon}</div>
+                <h3 className="text-lg font-semibold mb-2 group-hover:text-amber-600 transition-colors">{resource.title}</h3>
+                <p className="text-gray-500 text-sm mb-4">{resource.description}</p>
+                <div className="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center">
+                  Access Tool
+                  <GoChevronRight className='h-4 w-4 ml-1' />
                 </div>
+              </div>
+            ))}
+      </div>
                 
                 {/* Video Tutorials */}
                 <div className="mb-12">
@@ -471,19 +532,13 @@ function Support() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-100 rounded-lg aspect-video flex items-center justify-center">
                       <div className="text-center p-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                        <FaRegCirclePlay className='h-12 w-12 mx-auto text-gray-400' />
                         <p className="mt-2 text-gray-600">How to apply for a gold loan online</p>
                       </div>
                     </div>
                     <div className="bg-gray-100 rounded-lg aspect-video flex items-center justify-center">
                       <div className="text-center p-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                        <FaRegCirclePlay className='h-12 w-12 mx-auto text-gray-400' />
                         <p className="mt-2 text-gray-600">Understanding gold valuation process</p>
                       </div>
                     </div>
@@ -496,9 +551,7 @@ function Support() {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between p-4 border border-gray-100 rounded-lg hover:bg-gray-50">
                       <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                        </svg>
+                        <TbFileTypePdf className='h-8 w-8 text-amber-500' />
                         <div className="ml-4">
                           <h4 className="font-medium">Gold Loan Handbook</h4>
                           <p className="text-sm text-gray-500">PDF • 2.4 MB</p>
@@ -510,9 +563,7 @@ function Support() {
                     </div>
                     <div className="flex items-center justify-between p-4 border border-gray-100 rounded-lg hover:bg-gray-50">
                       <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                        </svg>
+                        <TbFileTypePdf className='h-8 w-8 text-amber-500' />
                         <div className="ml-4">
                           <h4 className="font-medium">Repayment Options Guide</h4>
                           <p className="text-sm text-gray-500">PDF • 1.8 MB</p>
@@ -524,9 +575,7 @@ function Support() {
                     </div>
                     <div className="flex items-center justify-between p-4 border border-gray-100 rounded-lg hover:bg-gray-50">
                       <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                        </svg>
+                        <TbFileTypePdf className='h-8 w-8 text-amber-500' />
                         <div className="ml-4">
                           <h4 className="font-medium">Gold Purity Standards</h4>
                           <p className="text-sm text-gray-500">PDF • 1.2 MB</p>

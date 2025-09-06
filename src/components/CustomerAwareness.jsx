@@ -1,22 +1,3 @@
-// const CustomerAwareness = () => {
-//   return (
-//     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-//       <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-//         <div className="bg-gradient-to-r from-amber-600 to-amber-800 text-white py-8 px-6">
-//           <h1 className="text-3xl font-extrabold text-center">Customer Awareness</h1>
-//           <p className="text-center text-amber-100 mt-2">Customer Awareness on Classification of Loan Account as SMA and NPA </p>
-//         </div>
-
-//         <div className="p-8 space-y-6 text-gray-700 leading-relaxed">
-           
-//           </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default CustomerAwareness;
-
 const CustomerAwareness = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">

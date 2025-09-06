@@ -33,7 +33,8 @@ import RBIDisclaimer from './components/RBIDisclaimer';
 import CustomerAwareness from './components/CustomerAwareness';
 import TermsAndConditions from './components/Terms&conditions';
 import JobApplicationForm from './components/JobApplicationForm';
-import GoldLoanCalculator from './components/CalculatorComponent';
+import GoldLoanCalculator from './components/GoldLoanCalculator';
+import PastMentors from './components/PastMentors';
 
 function App() {
   return (
@@ -74,6 +75,7 @@ function App() {
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/job-application" element={<JobApplicationForm />} />
             <Route path="/gold-loan-calculator" element={<GoldLoanCalculator />} />
+            <Route path="/past-mentors" element={<PastMentors />} />
 
           </Routes>
         </main>

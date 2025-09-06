@@ -1,7 +1,12 @@
 import { useState } from 'react';
+import { AiOutlineCheck } from 'react-icons/ai';
+import { FaChevronDown } from 'react-icons/fa';
+import { FaMapLocationDot } from 'react-icons/fa6';
+import { IoIosCall } from 'react-icons/io';
+import { IoLocation } from 'react-icons/io5';
 
 const BranchLocator = () => {
-  const [selectedCity, setSelectedCity] = useState('Cuttack');
+  const [selectedCity, setSelectedCity] = useState('Bhubaneswar');
 
   const cityData = [
     { value: "Cuttack", name: "Cuttack" },
@@ -143,16 +148,13 @@ const BranchLocator = () => {
   const handlePhoneClick = (phoneNumber) => {
     window.location.href = `tel:+91${phoneNumber}`;
   };
-
+ 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-amber-800 sm:text-4xl mb-4">
-          <span className=" px-4 py-2 rounded-lg shadow-inner">Gold Loan Branch Network</span>
+          <span className=" px-4 py-2 rounded-lg shadow-inner">Our Branch Network</span>
         </h2>
-        <p className="text-lg text-700 max-w-2xl mx-auto">
-          Instant gold loans at competitive interest rates
-        </p>
       </div>
 
       <div className="max-w-md mx-auto mb-1 relative">
@@ -171,9 +173,7 @@ const BranchLocator = () => {
             ))}
           </select>
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-amber-700">
-            <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
+            <FaChevronDown />
           </div>
         </div>
       </div>
@@ -185,10 +185,8 @@ const BranchLocator = () => {
             className={`${city === selectedCity ? 'block' : 'hidden'}`}
           >
             <h3 className="text-xl font-semibold text-amber-800 mb-6 flex items-center">
-              <svg className="w-5 h-5 text-amber-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
+              <IoLocation />
+
               Branches in {cityData.find(c => c.value === city)?.name}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -197,9 +195,7 @@ const BranchLocator = () => {
                   <div className="p-6">
                     <div className="flex items-start">
                       <div className="flex-shrink-0 h-10 w-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 mr-4">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                        <FaMapLocationDot />
                       </div>
                       <div>
                         <p className="text-gray-700 mb-3">{branch.address}</p>
@@ -208,9 +204,8 @@ const BranchLocator = () => {
                             className="flex items-center text-amber-600 hover:text-amber-800 font-medium cursor-pointer transition-colors"
                             onClick={() => handlePhoneClick(branch.phone)}
                           >
-                            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg>
+                            <IoIosCall />
+
                             Call: {branch.phone}
                           </div>
                         )}
@@ -228,21 +223,15 @@ const BranchLocator = () => {
         <p className="font-medium">Why choose our gold loans?</p>
         <div className="flex flex-wrap justify-center gap-4 mt-2">
           <span className="flex items-center">
-            <svg className="w-4 h-4 mr-1 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
+            <AiOutlineCheck />
             Lowest interest rates
           </span>
           <span className="flex items-center">
-            <svg className="w-4 h-4 mr-1 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
+            <AiOutlineCheck />
             Instant disbursal
           </span>
           <span className="flex items-center">
-            <svg className="w-4 h-4 mr-1 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
+            <AiOutlineCheck />
             Safe vault storage
           </span>
         </div>

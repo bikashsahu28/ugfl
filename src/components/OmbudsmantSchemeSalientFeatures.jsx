@@ -1,5 +1,7 @@
 
 import React, { useState } from 'react';
+import { IoDocumentOutline } from 'react-icons/io5';
+import { RxCross2 } from 'react-icons/rx';
 
 const OmbudsmantSchemeSalientFeatures = () => {
   const [selectedPdf, setSelectedPdf] = useState(null);
@@ -26,10 +28,8 @@ const OmbudsmantSchemeSalientFeatures = () => {
         <div className="p-8">
           <div className="flex items-center mb-8">
             <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-red-600 rounded-xl flex items-center justify-center mr-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-              </svg>
+              <IoDocumentOutline className="h-6 w-6 text-white" />
+
             </div>
             <div>
               <h1 className="text-3xl font-bold text-gray-800">Ombudsman Scheme Salient Features</h1>
@@ -67,9 +67,8 @@ const OmbudsmantSchemeSalientFeatures = () => {
                   onClick={closePdfViewer}
                   className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-lg transition-all duration-200 backdrop-blur-sm"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                  <RxCross2 className="h-5 w-5" />
+
                 </button>
               </div>
               <div className="h-96 md:h-[600px] lg:h-[700px] bg-gray-900">

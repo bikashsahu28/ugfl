@@ -9,11 +9,14 @@ import LiveChat from '../components/LiveChat';
 import GoldLoanCalculator from '../components/CalculatorComponent';
 import FAQSections from '../components/mainfaq';
 import { GrNext } from 'react-icons/gr';
-import { IoChevronBack } from 'react-icons/io5';
+import { IoCallOutline, IoChevronBack } from 'react-icons/io5';
 import { PiMoney } from 'react-icons/pi';
 import { GiTakeMyMoney } from 'react-icons/gi';
 import { TbPlayerTrackNext } from 'react-icons/tb';
 import { MdOutlineDoubleArrow } from 'react-icons/md';
+import PastMentors from '../components/PastMentors';
+import { FaArrowRight, FaRegClock, FaStar } from 'react-icons/fa';
+import { FaLocationDot } from 'react-icons/fa6';
 
 function Home() {
   const [goldPrice, setGoldPrice] = useState(null);
@@ -251,13 +254,6 @@ const visibleTestimonials = testimonials.slice(
       className="flex flex-wrap justify-center gap-4"
     >
       <button 
-        onClick={() => setIsModalOpen(true)}
-        className="relative overflow-hidden group bg-secondary text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 text-lg shadow-lg hover:shadow-xl"
-      >
-        <span className="relative z-10">{t('hero1.cta.applyOnline')}</span>
-        <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-      </button>
-      <button 
     onClick={() => {
       const calculatorSection = document.getElementById('gold-loan-calculator');
       if (calculatorSection) {
@@ -268,107 +264,14 @@ const visibleTestimonials = testimonials.slice(
   >
     <span className="relative z-10">{t('hero1.cta.checkEligibility')}</span>
     <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-  </button>
+      </button>
+      <Link
+        to="/branch-locator"
+        className="relative overflow-hidden  bg-secondary text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 text-lg shadow-lg hover:shadow-xl"
+      >
+        <span className="relative text-amber-900 z-10">Visit Nearest Branch</span>
+      </Link>
     </motion.div>
-
-    {/* Modal (already properly internationalized) */}
-    {isModalOpen && (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto"
-        >
-          {/* ... modal content remains the same ... */}
-          {isModalOpen && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-    <motion.div 
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto"
-    >
-      <div className="p-6">
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-xl font-bold text-gray-800">{t('goldLoan.title')}</h3>
-          <button 
-            onClick={() => setIsModalOpen(false)}
-            className="text-gray-500 hover:text-gray-700"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        <form className="space-y-4">
-          <div>
-            <label className="block text-sm text-left font-bold text-gray-700 mb-1">{t('goldLoan.fullName')}</label>
-            <input 
-              type="text" 
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black"
-              placeholder={t('goldLoan.fullName')}
-              required
-            />
-          </div>
-
-<div>
-  <label className="block text-sm text-left font-bold text-gray-700 mb-1">{t('goldLoan.phoneNumber')}</label>
-  <input 
-    type="tel" 
-    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black"
-    placeholder={t('goldLoan.phoneNumber')}
-    required
-  /> 
-</div>
-          <div>
-            <label className="block text-sm text-left font-bold text-gray-700 mb-1">{t('goldLoan.email')}</label>
-            <input 
-              type="email" 
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black"
-              placeholder={t('goldLoan.email')}
-              required
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold text-left text-gray-700 mb-1">{t('goldLoan.goldWeight')}</label>
-            <input 
-              type="number" 
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black"
-              placeholder={t('goldLoan.goldWeight')}
-              min="0"
-              step="0.01"
-              required
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm text-left font-bold text-gray-700 mb-1">{t('goldLoan.loanAmount')}</label>
-            <input 
-              type="number" 
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black"
-              placeholder={t('goldLoan.loanAmount')}
-              min="0"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-yellow-500 text-gray-900 py-2 px-4 rounded-md font-semibold hover:bg-yellow-600 transition-colors duration-300"
-          >
-            {t('goldLoan.submit')}
-          </button>
-        </form>
-      </div>
-    </motion.div>
-  </div>
-)}
-        </motion.div>
-      </div>
-    )}
   </motion.div>
 </div>
 
@@ -478,8 +381,11 @@ const visibleTestimonials = testimonials.slice(
         </div>
       </section>
 
+  {/* mentor section  */}
+  <PastMentors />
+
       {/* Testimonials Section */}
-      <section className="py-16 bg-white relative bg-gradient-to-b from-amber-50 to-white" ref={ref}>
+      <section className="py-10 bg-white relative bg-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -515,23 +421,12 @@ const visibleTestimonials = testimonials.slice(
                     type: "spring",
                     stiffness: 100
                   }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  className="bg-white p-8 rounded-xl shadow-lg overflow-hidden border-t-4 border-amber-500  
-                  hover:-translate-y-1 hover:shadow-xl
-                  hover:border-amber-600 hover:bg-amber-50/30
-                  group "
+                  className="bg-white rounded-xl border border-amber-300 p-6 shadow-sm hover:shadow-2xl hover:bg-red-300 transition-all duration-300 transform "
 
                 >
                   <div className="flex mb-4">
                     {[...Array(5)].map((_, i) => (
-                      <svg
-                        key={i}
-                        className={`w-6 h-6 ${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'}`}
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
+                      <FaStar key={i} className={`w-6 h-6 ${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'}`} />
                     ))}
                   </div>
                   <p className="text-gray-700 mb-6 text-lg italic">"{testimonial.review}"</p>
@@ -599,10 +494,7 @@ const visibleTestimonials = testimonials.slice(
         <div className="space-y-6">
           <div className="flex items-start gap-4">
             <div className="mt-1 text-primary">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
+              <FaLocationDot className="h-6 w-6" />
             </div>
             <div>
               <h4 className="font-semibold text-lg mb-1">Corporate Office</h4>
@@ -613,9 +505,7 @@ const visibleTestimonials = testimonials.slice(
 
           <div className="flex items-start gap-4">
             <div className="mt-1 text-primary">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
+              <IoCallOutline className="h-6 w-6"  />
             </div>
             <div>
               <h4 className="font-semibold text-lg mb-1">Contact Us</h4>
@@ -628,9 +518,7 @@ const visibleTestimonials = testimonials.slice(
 
           <div className="flex items-start gap-4">
             <div className="mt-1 text-primary">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+              <FaRegClock className="h-6 w-6" />
             </div>
             <div>
               <h4 className="font-semibold text-lg mb-1">Working Hours</h4>
@@ -650,11 +538,10 @@ const visibleTestimonials = testimonials.slice(
             className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-dark transition-colors"
           >
             Get Directions
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </a>
+            <FaArrowRight className="h-5 w-5 ml-2"  />
+          </a>          
         </div>
+        
       </motion.div>
 
       {/* Map */}

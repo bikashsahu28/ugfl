@@ -11,6 +11,7 @@ import {
   Tooltip,
   Legend
 } from 'chart.js';
+import GoldLoanCalculator from '../components/GoldLoanCalculator';
 
 ChartJS.register(
   CategoryScale,
@@ -59,6 +60,8 @@ function Calculator() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
+      <GoldLoanCalculator />
+      <Calculator />
       <h1 className="text-3xl font-bold text-center mb-8">{t('calculator.title')}</h1>
       
       <div className="grid md:grid-cols-2 gap-8">

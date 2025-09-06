@@ -278,13 +278,6 @@ const jobs = [
         </div>
       </div>
     </div>
-
-    {/* CTA Section */}
-    {/* <div className="text-center mt-16">
-      <button className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-        Start Earning Today
-      </button>
-    </div> */}
   </div>
 </section>
 
@@ -338,14 +331,6 @@ Current Openings
               
               <div className="flex justify-between items-center">
                 <span className="text-sm text-gray-500">{job.posted}</span>
-                {/* <button
-                  onClick={() => handleJobClick(job)}
-                  className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
-                >
-                  Apply Now
-                  <ArrowRight className="h-4 w-4" />
-                </button> */}
-
                 <Link
   to="/job-application"
   className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
@@ -379,7 +364,11 @@ Current Openings
 
       {/* Content */}
       <div>
-        <h2 className="text-3xl font-bold text-primary mb-6">Our Work Culture</h2>
+        <h3 className="text-4xl font-bold  text-gray-800 mb-3">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-800">
+            Our Work Culture
+          </span>
+        </h3>
         <p className="text-lg text-gray-700 mb-4">
           At Unigold Finance, we believe our people are our greatest asset.
         </p>
