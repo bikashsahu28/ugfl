@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import { FaCircle } from 'react-icons/fa';
 
 function Contact() {
   const { t, i18n } = useTranslation();
@@ -60,23 +61,54 @@ function Contact() {
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
       {/* Gold Shimmer Header */}
-      <div className="bg-gradient-to-r from-yellow-600 to-yellow-800 py-12 text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" }}></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">{t('contact.heroTitle')}</h1>
-          <p className="text-xl md:text-2xl text-yellow-100 font-medium">{t('contact.heroSubtitle')}</p>
-          <div className="mt-6 flex justify-center space-x-4">
-            <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 text-white font-medium flex items-center">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              24/7 Gold Loan Support
-            </div>
-          </div>
-        </div>
+      <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
+  {/* Background pattern using icons */}
+  <div className="absolute inset-0 opacity-10">
+    <div className="w-full h-full flex flex-wrap">
+      {Array.from({ length: 150 }).map((_, i) => (
+        <FaCircle
+          key={i}
+          className="text-white"
+          style={{
+            fontSize: "50px",
+            margin: "20px",
+          }}
+        />
+      ))}
+    </div>
+  </div>
+
+  {/* Content */}
+  <div className="max-w-7xl mx-auto px-4 relative z-10">
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+      {t("contact.heroTitle")}
+    </h1>
+    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
+      {t("contact.heroSubtitle")}
+    </p>
+
+    {/* Highlight badge */}
+    <div className="mt-8 flex justify-center">
+      <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 text-white font-medium flex items-center space-x-2 shadow-lg">
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+          />
+        </svg>
+        <span>24/7 Gold Loan Support</span>
       </div>
+    </div>
+  </div>
+</div>
+
 
       <div className="max-w-7xl mx-auto px-4 py-12 -mt-16 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

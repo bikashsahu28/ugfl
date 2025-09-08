@@ -1,4 +1,6 @@
 import { useTranslation } from 'react-i18next';
+import { FaCircle } from 'react-icons/fa';
+import { GoCheck, GoCheckCircleFill } from 'react-icons/go';
 
 function Mission() {
   const { t } = useTranslation();
@@ -8,19 +10,33 @@ function Mission() {
 
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" }}></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-            {t('mission.hero.title')}
-          </h1>
-          <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
-            {t('mission.hero.subtitle')}
-          </p>
-        </div>
-        {/* <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-amber-50 to-transparent"></div> */}
-      </div>
+  {/* Background pattern using icons */}
+  <div className="absolute inset-0 opacity-10">
+    <div className="w-full h-full flex flex-wrap">
+      {Array.from({ length: 150 }).map((_, i) => (
+        <FaCircle
+          key={i}
+          className="text-white"
+          style={{
+            fontSize: "50px",
+            margin: "21px",
+          }}
+        />
+      ))}
+    </div>
+  </div>
+
+  {/* Content */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+      {t("mission.hero.title")}
+    </h1>
+    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
+      {t("mission.hero.subtitle")}
+    </p>
+  </div>
+</div>
+
 
       {/* Mission Statement */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -63,9 +79,7 @@ function Mission() {
             {['integrity', 'innovation', 'community', 'excellence'].map((value) => (
               <div key={value} className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
                 <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
+                  <GoCheckCircleFill className='w-6 h-6 text-yellow-600' />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">{t(`mission.values.${value}.title`)}</h3>
                 <p className="text-gray-600">{t(`mission.values.${value}.content`)}</p>
@@ -93,9 +107,7 @@ function Mission() {
             <ul className="space-y-4">
               {[1, 2, 3].map((item) => (
                 <li key={item} className="flex items-start">
-                  <svg className="flex-shrink-0 w-6 h-6 text-yellow-500 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
+                  <GoCheck className='flex-shrink-0 w-6 h-6 text-yellow-500 mt-1 mr-3' />
                   <span className="text-gray-700">{t(`mission.approach.points.${item}`)}</span>
                 </li>
               ))}

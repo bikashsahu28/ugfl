@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { BsCheckCircle, BsStars } from 'react-icons/bs';
-import { FaBullseye, FaEye, FaGlobe, FaHeart } from 'react-icons/fa';
+import { FaBullseye, FaCircle, FaEye, FaGlobe, FaHeart } from 'react-icons/fa';
 import { FaBoltLightning } from 'react-icons/fa6';
 
 function History() {
@@ -27,43 +27,39 @@ function History() {
   return (
     // <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
           <div className="bg-gradient-to-b min-h-screen">
-
-
       {/* Hero Section */} 
-      <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-12 text-center overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" }}></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-            {t('overview.title')}
-          </h1>
-          <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
-            {t('overview.description')}
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full px-6 py-3 text-white font-medium flex items-center transition-all duration-300">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-              {t('overview.cta1')}
-            </button>
-            <button className="bg-white hover:bg-gray-100 text-yellow-800 rounded-full px-6 py-3 font-medium flex items-center transition-all duration-300 shadow-sm">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              {t('overview.cta2')}
-            </button>
-          </div>
-        </div>
-        {/* <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-amber-50 to-transparent"></div> */}
-      </div>
+      <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
+  {/* Background pattern using icons */}
+  <div className="absolute inset-0 opacity-10">
+    <div className="w-full h-full flex flex-wrap">
+      {Array.from({ length: 150 }).map((_, i) => (
+        <FaCircle
+          key={i}
+          className="text-white"
+          style={{
+            fontSize: "50px",
+            margin: "24px",
+          }}
+        />
+      ))}
+    </div>
+  </div>
+
+  {/* Content */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+      {t("overview.title")}
+    </h1>
+    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
+      {t("overview.description")}
+    </p>
+  </div>
+</div>
+
 
       {/* Introduction Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-3 py-4">
-        
         {/* Key Features */}
-
          <div className="max-w-6xl mx-auto py-12 px-4">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">
@@ -92,7 +88,7 @@ function History() {
           </div>
         ))}
       </div>
-    </div>
+        </div>
       </section>
 
       {/* Timeline Section */}
@@ -101,11 +97,9 @@ function History() {
           <h2 className="text-3xl md:text-4xl font-bold text-amber-800 mb-4">{t('timeline.title')}</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">{t('timeline.subtitle')}</p>
         </div>
-
         <div className="relative">
           {/* Timeline line */}
           <div className="hidden md:block absolute left-1/2 h-full w-1 bg-gradient-to-b from-yellow-400 to-yellow-600 transform -translate-x-1/2"></div>
-
           {/* Timeline Items */}
           <div className="space-y-16 md:space-y-0">
             {['founding', 'milestone1', 'expansion', 'present'].map((item, index) => (
@@ -150,7 +144,6 @@ function History() {
           </div>
         </div>
       </section>
-
       {/* Statistics Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-2xl p-8 md:p-12 shadow-xl">

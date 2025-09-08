@@ -1,4 +1,6 @@
 import { useTranslation } from 'react-i18next';
+import { FaCircle, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { IoMdStar } from 'react-icons/io';
 
 function Leadership() {
   const { t } = useTranslation();
@@ -13,23 +15,34 @@ function Leadership() {
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white">
       {/* hero Section */}
+
             <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ backgroundImage: 
-            "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" }}></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-            {t('leadership.heros.title')}
-          </h1>
-          <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
-            {t('leadership.heros.subtitle')}
-          </p>
-        </div>
-        {/* <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-amber-50 to-transparent"></div> */}
-      </div>
+  {/* Background pattern using icons */}
+  <div className="absolute inset-0 opacity-10">
+    <div className="w-full h-full flex flex-wrap">
+      {Array.from({ length: 150 }).map((_, i) => (
+        <FaCircle
+          key={i}
+          className="text-white"
+          style={{
+            fontSize: "50px",
+            margin: "20px",
+          }}
+        />
+      ))}
+    </div>
+  </div>
 
-
+  {/* Content */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+      {t("leadership.heros.title")}
+    </h1>
+    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
+      {t("leadership.heros.subtitle")}
+    </p>
+  </div>
+</div>
     {/* Leadership Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
@@ -55,14 +68,10 @@ function Leadership() {
                 <p className="text-gray-600 text-sm">{t(`leadership.${leader}.bio`)}</p>
                 <div className="mt-4 flex space-x-3">
                   <a href="#" className="text-gray-400 hover:text-yellow-600 transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-                    </svg>
+                    <FaTwitter className='w-5 h-5' />
                   </a>
                   <a href="#" className="text-gray-400 hover:text-yellow-600 transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
-                    </svg>
+                    <FaLinkedin className='w-5 h-5' />
                   </a>
                 </div>
               </div>
@@ -83,25 +92,18 @@ function Leadership() {
             <div key={testimonial} className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="flex items-center mb-4">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <svg key={star} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                  </svg>
+                  <IoMdStar key={star} className="w-5 h-5 text-yellow-400" />
                 ))}
               </div>
               <blockquote className="text-gray-600 mb-6 italic">
                 "{t(`testimonialsl.testimonial${testimonial}.quote`)}"
               </blockquote>
               <div className="flex items-center">
-                {/* <img 
-                  src={`../image/client-${testimonial}.jpeg`} 
-                  alt={t(`testimonialsl.testimonial${testimonial}.name`)}
-                  className="w-12 h-12 rounded-full object-cover mr-4"
-                /> */}
-                <img 
-        src={`/images/client-${testimonial}.jpeg`}  // Updated path
-        alt={t(`testimonialsl.testimonial${testimonial}.name`)}
-        className="w-12 h-12 rounded-full object-cover mr-4"
-      />
+                    <img 
+                     src={`/images/client-${testimonial}.jpeg`}  // Updated path
+                     alt={t(`testimonialsl.testimonial${testimonial}.name`)}
+                     className="w-12 h-12 rounded-full object-cover mr-4"
+                    />
                 <div>
                   <p className="font-semibold text-gray-800">{t(`testimonialsl.testimonial${testimonial}.name`)}</p>
                   <p className="text-sm text-gray-500">{t(`testimonialsl.testimonial${testimonial}.position`)}</p>

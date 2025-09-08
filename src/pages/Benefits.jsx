@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { FaCircle } from 'react-icons/fa';
 import { FiArrowRight, FiCheckCircle, FiStar } from 'react-icons/fi';
 import { MdOutlineSecurity } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
@@ -62,29 +63,45 @@ function Benefits() {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-amber-50 to-white">
+    <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
  
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-yellow-600 to-yellow-800 py-12 text-center relative overflow-hidden mb-16">
-  <div className="absolute inset-0 opacity-20">
-    <div className="absolute top-0 left-0 w-full h-full bg-repeat" style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" }}></div>
+<div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center relative overflow-hidden mb-16">
+  {/* Background pattern using icons */}
+  <div className="absolute inset-0 opacity-10">
+    <div className="w-full h-full flex flex-wrap">
+      {Array.from({ length: 150 }).map((_, i) => (
+        <FaCircle
+          key={i}
+          className="text-white"
+          style={{
+            fontSize: "50px",
+            margin: "20px",
+          }}
+        />
+      ))}
+    </div>
   </div>
-  <div className="max-w-7xl mx-auto px-4 relative z-10">
-    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
-      {t('benefits.title')}
-    </h1>
-    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto">
-      {t('benefits.subtitle')}
-    </p>
-    <div className="mt-6 flex justify-center space-x-4">
-      <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 text-white font-medium flex items-center">
-        <MdOutlineSecurity className='h-6 w-6 ' />
 
-        Key Benefits
+  {/* Content */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+      {t("benefits.title")}
+    </h1>
+    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
+      {t("benefits.subtitle")}
+    </p>
+
+    {/* Highlight Badge */}
+    <div className="mt-8 flex justify-center">
+      <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 text-white font-medium flex items-center space-x-2 shadow-lg">
+        <MdOutlineSecurity className="h-6 w-6" />
+        <span>Key Benefits</span>
       </div>
     </div>
   </div>
 </div>
+
    <div className="max-w-7xl mx-auto px-4 py-12">
       {/* Benefits Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">

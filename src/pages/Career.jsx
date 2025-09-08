@@ -2,7 +2,8 @@ import {
   FaGraduationCap,
   FaUsers,
   FaLightbulb,
-  FaHandshake
+  FaHandshake,
+  FaCircle
 } from 'react-icons/fa';
 import {  FaBriefcase } from 'react-icons/fa';
 import { ArrowRight, Clock, DollarSign, MapPin } from 'lucide-react';
@@ -185,15 +186,23 @@ const jobs = [
     <div className="bg-gradient-to-b from-amber-50 to-white">
       {/* Hero Section */}
 <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
-  <div className="absolute inset-0 opacity-20">
-    <div 
-      className="absolute top-0 left-0 w-full h-full bg-repeat" 
-      style={{ 
-        backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTAgMGgxMDB2MTAwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUwIDI1YzEzLjggMCAyNSAxMS4yIDI1IDI1cy0xMS4yIDI1LTI1IDI1LTI1LTExLjItMjUtMjUgMTEuMi0yNSAyNS0yNXoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')" 
-      }}
-      
-    ></div>
+  {/* Background pattern using icons */}
+  <div className="absolute inset-0 opacity-10">
+    <div className="w-full h-full flex flex-wrap">
+      {Array.from({ length: 150 }).map((_, i) => (
+        <FaCircle
+          key={i}
+          className="text-white"
+          style={{
+            fontSize: "50px",
+            margin: "20px",
+          }}
+        />
+      ))}
+    </div>
   </div>
+
+  {/* Content */}
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
       Build Your Career With Us
@@ -203,6 +212,8 @@ const jobs = [
     </p>
   </div>
 </div>
+
+
     <div className="max-w-7xl mx-auto px-4 py-1">    
  {/* Benefits */}
 
