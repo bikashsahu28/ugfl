@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { motion ,useScroll, useTransform} from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import HomeCarousel from '../components/HomeCarousel';
 import LoanPopup from '../components/LoanPopup';
@@ -10,13 +10,12 @@ import GoldLoanCalculator from '../components/CalculatorComponent';
 import FAQSections from '../components/mainfaq';
 import { GrNext } from 'react-icons/gr';
 import { IoCallOutline, IoChevronBack } from 'react-icons/io5';
-import { PiMoney } from 'react-icons/pi';
 import { GiTakeMyMoney } from 'react-icons/gi';
-import { TbPlayerTrackNext } from 'react-icons/tb';
 import { MdOutlineDoubleArrow } from 'react-icons/md';
 import PastMentors from '../components/PastMentors';
 import { FaArrowRight, FaRegClock, FaStar } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
+import UnigoldComponent from '../components/UnigoldComponent';
 
 function Home() {
   const [goldPrice, setGoldPrice] = useState(null);
@@ -26,7 +25,6 @@ function Home() {
     triggerOnce: true,
     threshold: 0.1
   });
-  const [isModalOpen, setIsModalOpen] = useState(false);
   // Adding these scroll effects at the component level
 
   useEffect(() => {
@@ -122,8 +120,10 @@ const visibleTestimonials = testimonials.slice(
     <div className="min-h-screen ">
       <HomeCarousel />
       <LoanPopup />
+
+      <UnigoldComponent />
       {/* Why Choose Us Section */}
-      <section className="py-16 bg-gray-50 bg-gradient-to-b from-amber-50 to-white">
+      <section className="py-5 bg-gray-50 bg-gradient-to-b from-amber-50 to-white">
   <div className="max-w-7xl mx-auto px-4">
 
 <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
@@ -421,7 +421,7 @@ const visibleTestimonials = testimonials.slice(
                     type: "spring",
                     stiffness: 100
                   }}
-                  className="bg-white rounded-xl border border-amber-300 p-6 shadow-sm hover:shadow-2xl hover:bg-red-300 transition-all duration-300 transform "
+                  className="bg-white rounded-xl border border-amber-300 p-6 shadow-sm hover:shadow-2xl hover:bg-amber-100 transition-all duration-300 transform "
 
                 >
                   <div className="flex mb-4">
@@ -510,8 +510,8 @@ const visibleTestimonials = testimonials.slice(
             <div>
               <h4 className="font-semibold text-lg mb-1">Contact Us</h4>
               <p className="text-gray-600">
-                Phone: <a href="tel:+919876543210" className="hover:text-primary">+91 98765 43210</a><br/>
-                Email: <a href="mailto:info@unigoldfinance.com" className="hover:text-primary">info@unigoldfinance.com</a>
+                Phone: <a href="tel:+919777700511" className="hover:text-primary">+91 97777 00511</a><br/>
+                Email: <a href="mailto:care@unigoldfinance.com" className="hover:text-primary">care@unigoldfinance.com</a>
               </p>
             </div>
           </div>

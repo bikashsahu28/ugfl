@@ -10,21 +10,21 @@ const PastMentors = () => {
       name: "Ramakant Sharma",
       title: "Cofounder & COO",
       company: "Livspace",
-        image: "../Mentor/SN.png"
+        image: "../Mentor/.png"
 
     },
     {
       name: "Anil Joshi",
       title: "Founder & Managing Partner",
       company: "Unicorn India Ventures",
-      image: "../Mentor/Su.png"
+      image: "../Mentor/.png"
 
     },
     {
       name: "Tej Kapoor",
       title: "Director - Investments",
       company: "ICICI Venture",
-      image: "../Mentor/Aj.png"
+      image: ".png"
     }
   ];
 
@@ -34,37 +34,37 @@ const PastMentors = () => {
       name: "Sneha Patel",
       title: "Head of Growth",
       company: "StartupX",
-      image: "../Mentor/Bi.png"
+      image: "../Mentor/.png"
     },
     {
       name: "Rahul Mehta",
       title: "CTO",
       company: "TechNova",
-      image: "../Mentor/Aj.png"
+      image: "../Mentor/A.png"
     },
     {
       name: "Vikram Singh",
       title: "Chief Strategy Officer",
       company: "InnovateCorp",
-      image: "../Mentor/Aj.png"
+      image: "../Mentor/A.png"
     },
     {
       name: "Priya Sharma",
       title: "VP of Product",
       company: "ScaleUp Inc",
-      image: "../Mentor/Aj.png"
+      image: "../Mentor/j.png"
     },
     {
       name: "Amit Patel",
       title: "Investment Director",
       company: "Venture Partners",
-      image: "../Mentor/Aj.png"
+      image: "../Mentor/A.png"
     },
     {
       name: "Neha Gupta",
       title: "Chief Marketing Officer",
       company: "DigitalFirst",
-      image: "../Mentor/Aj.png"
+      image: "../Mentor/j.png"
     }
   ];
 

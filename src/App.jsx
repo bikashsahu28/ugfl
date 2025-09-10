@@ -76,7 +76,6 @@ function App() {
             <Route path="/job-application" element={<JobApplicationForm />} />
             <Route path="/gold-loan-calculator" element={<GoldLoanCalculator />} />
             <Route path="/past-mentors" element={<PastMentors />} />
-
           </Routes>
         </main>
         <SocialButtons />
