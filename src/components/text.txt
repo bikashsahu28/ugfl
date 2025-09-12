@@ -945,3 +945,72 @@ const GoldLoanCalculator = () => {
 };
 
 export default GoldLoanCalculator;
+=================================================
+ {/* 7 C's Core Values Section */}
+      <section className="py-16 bg-gradient-to-br from-white via-red-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              We are in the business of building
+              <span className="block text-red-600 mt-2">Trust and Relationships</span>
+            </h2>
+            
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 leading-relaxed">
+                At UNIGOLD, we believe in creating comfort that assures our customers 
+                they're in the right place and will be treated in a fair and transparent manner.
+              </p>
+            </div>
+          </div>
+
+          {/* 7 C's Title */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 bg-red-100 px-6 py-3 rounded-full">
+              <div className="w-2 h-2 bg-red-600 rounded-full"></div>
+              <span className="text-lg font-semibold text-red-700">7 C's: Unigold Standards for Customer Engagement</span>
+            </div>
+          </div>
+
+          {/* Core Values Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {coreValues.map((value, index) => (
+              <div
+                key={index}
+                data-index={index}
+                className={`core-value-card transition-all duration-700 transform ${
+                  animatedItems.includes(index)
+                    ? 'translate-y-0 opacity-100'
+                    : 'translate-y-8 opacity-0'
+                }`}
+              >
+                <div className="h-full bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                  <div className="p-8">
+                    {/* Icon & Title */}
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span className="text-2xl">{value.icon}</span>
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900">{value.title}</h3>
+                        <p className="text-red-600 font-medium">{value.subtitle}</p>
+                      </div>
+                    </div>
+                    
+                    {/* Description */}
+                    <p className="text-gray-700 leading-relaxed pl-16">
+                      {value.description}
+                    </p>
+                    
+                    {/* Decorative element */}
+                    <div className="mt-6 pt-6 border-t border-gray-100">
+                      <div className="flex justify-end">
+                        <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-red-600"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>

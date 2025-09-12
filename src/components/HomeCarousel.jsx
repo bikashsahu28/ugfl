@@ -11,12 +11,14 @@ function HomeCarousel() {
   const slides = [
     {
       // image: "https://images.unsplash.com/photo-1610375461246-83df859d849d",../meeting/meeting6.jpg
-       image: "../image/001.jpeg",
+      //  image: "../image/001.jpeg",
       // title: t('carousel.slide1.title'),
       // description: t('carousel.slide1.description'),
+      image: "../image/bnr1.jpeg",
     },
     {
       image: "../image/003.jpeg",
+
     },
     {
       image: "../image/002.jpeg",
