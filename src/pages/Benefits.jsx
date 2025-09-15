@@ -3,7 +3,7 @@ import { FaCircle } from 'react-icons/fa';
 import { FiArrowRight, FiCheckCircle, FiStar } from 'react-icons/fi';
 import { MdOutlineSecurity } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
 function Benefits() {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -61,50 +61,83 @@ function Benefits() {
     t('benefits.features.3'),
     t('benefits.features.4')
   ];
-
+ const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
  
       {/* Hero Section */}
-<div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center relative overflow-hidden mb-16">
-  {/* Background pattern using icons */}
-  <div className="absolute inset-0 opacity-10">
-    <div className="w-full h-full flex flex-wrap">
-      {Array.from({ length: 150 }).map((_, i) => (
-        <FaCircle
-          key={i}
-          className="text-white"
-          style={{
-            fontSize: "50px",
-            margin: "20px",
-          }}
-        />
-      ))}
-    </div>
-  </div>
-
-  {/* Content */}
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-      {t("benefits.title")}
-    </h1>
-    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
-      {t("benefits.subtitle")}
-    </p>
-
-    {/* Highlight Badge */}
-    <div className="mt-8 flex justify-center">
-      <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 text-white font-medium flex items-center space-x-2 shadow-lg">
-        <MdOutlineSecurity className="h-6 w-6" />
-        <span>Key Benefits</span>
+ <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false }}
+      variants={fadeIn}
+      transition={{ duration: 0.6 }}
+      className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden mb-16"
+    >
+      {/* Background pattern using icons */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="w-full h-full flex flex-wrap">
+          {Array.from({ length: 150 }).map((_, i) => (
+            <FaCircle
+              key={i}
+              className="text-white"
+              style={{
+                fontSize: "50px",
+                margin: "20px",
+              }}
+            />
+          ))}
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+
+      {/* Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.h1
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
+          variants={fadeIn}
+          transition={{ duration: 0.6 }}
+        >
+          {t("benefits.title")}
+        </motion.h1>
+
+        <motion.p
+          className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {t("benefits.subtitle")}
+        </motion.p>
+
+        {/* Highlight Badge */}
+        <motion.div
+          className="mt-8 flex justify-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 text-white font-medium flex items-center space-x-2 shadow-lg">
+            <MdOutlineSecurity className="h-6 w-6" />
+            <span>Key Benefits</span>
+          </div>
+        </motion.div>
+      </div>
+    </motion.div>
 
    <div className="max-w-7xl mx-auto px-4 py-12">
       {/* Benefits Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false }}
+      variants={fadeIn}
+      transition={{ duration: 0.6 }}
+       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
         {benefits.map((benefit) => (
           <div 
             key={benefit.id} 
@@ -116,11 +149,17 @@ function Benefits() {
             <p className="text-amber-600 font-semibold">{benefit.stats}</p>
           </div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Key Features Section */}
       
-<div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl p-8 md:p-12 mb-16 shadow-lg border border-amber-200">
+<motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false }}
+      variants={fadeIn}
+      transition={{ duration: 0.6 }}
+       className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl p-8 md:p-12 mb-16 shadow-lg border border-amber-200">
   <div className="max-w-4xl mx-auto">
     <h2 className="text-4xl font-bold text-center text-gray-900 mb-6">
       <span className="relative inline-block">
@@ -155,11 +194,17 @@ function Benefits() {
       </button>
     </div>
   </div>
-</div>
+</motion.div>
 
 
       {/* Testimonials Section */}
-      <div className="mb-16">
+      <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      transition={{ duration: 0.6 }}
+      className="mb-16">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
           {t('benefits.testimonialsTitle')}
         </h2>
@@ -179,7 +224,7 @@ function Benefits() {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-amber-500 to-amber-600 rounded-xl p-8 md:p-12 text-center">

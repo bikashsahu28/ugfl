@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { FaCheckCircle, FaCircle, FaRegQuestionCircle } from 'react-icons/fa';
 import { HiMiniIdentification } from 'react-icons/hi2';
 import { IoMdCall } from 'react-icons/io';
+import { motion } from 'framer-motion';
 
 function Process() {
   const { t } = useTranslation();
@@ -20,14 +21,24 @@ function Process() {
       answer: t('process.faq.earlyRepaymentAnswer')
     }
   ];
-
+ const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white">
    
       {/* Hero Section */}
-                <div className="bg-gradient-to-r from-yellow-600 to-yellow-800 py-12 text-center relative overflow-hidden">
+        <motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false }}
+  variants={fadeIn}
+  transition={{ duration: 0.6 }}
+  className="bg-gradient-to-r from-yellow-600 to-yellow-800 py-12 text-center relative overflow-hidden mb-12"
+>
   {/* Background pattern */}
-  <div className="absolute inset-0 opacity-10">
+  <div className="absolute inset-0 opacity-5">
     <div className="w-full h-full flex flex-wrap">
       {Array.from({ length: 120 }).map((_, i) => (
         <FaCircle
@@ -44,28 +55,55 @@ function Process() {
 
   {/* Content */}
   <div className="max-w-7xl mx-auto px-4 relative z-10">
-    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+    {/* Title */}
+    <motion.h1
+      className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       {t("process.title")}
-    </h1>
-    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto">
+    </motion.h1>
+
+    {/* Subtitle */}
+    <motion.p
+      className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       {t("process.subtitle")}
-    </p>
+    </motion.p>
 
     {/* Highlight badge */}
-    <div className="mt-6 flex justify-center space-x-4">
+    <motion.div
+      className="mt-6 flex justify-center space-x-4"
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 0.6, duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 text-white font-medium flex items-center shadow-md">
         <IoMdCall className="w-5 h-5 mr-2" />
         24/7 Loan Support
       </div>
-    </div>
+    </motion.div>
   </div>
-</div>
+</motion.div>
+
 
  <div className="max-w-7xl mx-auto px-4 py-12">
       {/* Process Steps */}
       <div className="space-y-20">
         {/* Eligibility Section */}
-       <section className="bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-2xl shadow-lg overflow-hidden p-0 border border-yellow-200 hover:shadow-xl transition-shadow duration-300">
+       <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-2xl shadow-lg overflow-hidden p-0 border border-yellow-200 hover:shadow-xl transition-shadow duration-300">
   <div className="flex flex-col md:flex-row gap-0 items-stretch min-h-[400px]">
     {/* Image Section (Left) */}
     <div className="md:w-1/2 relative overflow-hidden group">
@@ -108,9 +146,14 @@ function Process() {
       </ul>
     </div>
   </div>
-</section>
+       </motion.section>
         {/* Documents Section */}  
-        <section className="bg-gradient-to-br from-amber-100 to-yellow-50 rounded-2xl shadow-lg overflow-hidden border border-amber-200 hover:shadow-xl transition-all duration-300">
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="bg-gradient-to-br from-amber-100 to-yellow-50 rounded-2xl shadow-lg overflow-hidden border border-amber-200 hover:shadow-xl transition-all duration-300">
   <div className="flex flex-col md:flex-row-reverse gap-0 min-h-[450px]">
     {/* Image Section (Right) - Enhanced */}
     <div className="md:w-1/2 relative group overflow-hidden">
@@ -161,11 +204,16 @@ function Process() {
       </div>
     </div>
   </div>
-</section>
+        </motion.section>
 
         {/* Application Steps */}
 
-<section className=" bg-white rounded-2xl shadow-lg p-10 my-12">
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className=" bg-white rounded-2xl shadow-lg p-10 my-12">
   <h2 className="text-4xl font-bold text-gold-700 mb-10 text-center tracking-tight font-bold  text-center text-amber-700">
     {t('process.steps.title')}
   </h2>
@@ -208,7 +256,7 @@ function Process() {
       </div>
     ))}
   </div>
-</section>
+</motion.section>
 
         {/* FAQ Section */}
         <section className="bg-gradient-to-br from-yellow-300 to-amber-50 rounded-2xl shadow-lg p-10">

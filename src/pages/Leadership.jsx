@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { FaCircle, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { IoMdStar } from 'react-icons/io';
-
+import { motion } from 'framer-motion';
 function Leadership() {
   const { t } = useTranslation();
   const testimonialsl = [
@@ -11,22 +11,31 @@ function Leadership() {
     { id: 4, image: '../image/img3.jpeg' },
     { id: 5, image: '../image/img3.jpeg' },
   ];
-  
+    const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white">
       {/* hero Section */}
-
-            <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
+             <motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false }}
+  variants={fadeIn}
+  transition={{ duration: 0.6 }}
+  className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden mb-12"
+>
   {/* Background pattern using icons */}
-  <div className="absolute inset-0 opacity-10">
+  <div className="absolute inset-0 opacity-5">
     <div className="w-full h-full flex flex-wrap">
       {Array.from({ length: 150 }).map((_, i) => (
         <FaCircle
           key={i}
           className="text-white"
           style={{
-            fontSize: "50px",
-            margin: "20px",
+            fontSize: "55px",
+            margin: "22px",
           }}
         />
       ))}
@@ -35,16 +44,37 @@ function Leadership() {
 
   {/* Content */}
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+    <motion.h1
+      className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       {t("leadership.heros.title")}
-    </h1>
-    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
+    </motion.h1>
+
+    <motion.p
+      className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       {t("leadership.heros.subtitle")}
-    </p>
+    </motion.p>
   </div>
-</div>
+      </motion.div>
+
+
+
     {/* Leadership Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">{t('leadership.title')}</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">{t('leadership.subtitle')}</p>
@@ -78,7 +108,7 @@ function Leadership() {
             </div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-gray-50 rounded-xl">

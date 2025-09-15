@@ -115,7 +115,10 @@ const visibleTestimonials = testimonials.slice(
       description: "Pay back the loan and get your gold back"
     }
   ];
-
+ const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
   return (
     <div className="min-h-screen ">
       <HomeCarousel />
@@ -184,6 +187,9 @@ const visibleTestimonials = testimonials.slice(
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, delay: 0.2 }}
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
     className="text-center"
   >
     {/* Main headline with gold text effect */}
@@ -310,12 +316,22 @@ const visibleTestimonials = testimonials.slice(
 ))}
 </section>
 {/* Gold Loan Calculator Section */}
-<section className="py-0  " id="gold-loan-calculator">
+<motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="py-0  " id="gold-loan-calculator">
   <GoldLoanCalculator />
-</section>
+</motion.div>
       {/* How It Works Section */}
 
-<section className="py-16 bg-gray-50 " ref={ref}>
+<motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="py-16 bg-gray-50 " ref={ref}>
   <div className="max-w-7xl mx-auto px-4">
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -351,7 +367,7 @@ const visibleTestimonials = testimonials.slice(
       </div>
     </motion.div>
   </div>
-</section>
+</motion.div>
       {/* Trust & Security Section */}
       <section className="py-16 bg-primary text-white ">
         <div className="max-w-7xl mx-auto px-4">
@@ -382,7 +398,14 @@ const visibleTestimonials = testimonials.slice(
       </section>
 
   {/* mentor section  */}
-  <PastMentors />
+  <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="py-16 bg-gray-50 " ref={ref}>
+          <PastMentors />
+          </motion.div>
 
       {/* Testimonials Section */}
       <section className="py-10 bg-white relative bg-white" ref={ref}>
@@ -470,7 +493,12 @@ const visibleTestimonials = testimonials.slice(
 
 
       {/* FAQ Section */}
-              <section className="py-1 bg-white relative bg-gradient-to-b from-amber-50 to-white"><FAQSections /></section>
+              <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="py-1 bg-white relative bg-gradient-to-b from-amber-50 to-white"><FAQSections /></motion.div>
 
       {/* Map Section */}
 <section className="py-16 bg-white">

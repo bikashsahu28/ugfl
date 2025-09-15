@@ -9,6 +9,7 @@ import { ImNeutral } from 'react-icons/im';
 import { GoChevronRight } from 'react-icons/go';
 import { FaRegCirclePlay } from 'react-icons/fa6';
 import { TbFileTypePdf } from 'react-icons/tb';
+import { motion } from 'framer-motion';
 
 function Support() {
   const { t } = useTranslation();
@@ -216,6 +217,10 @@ function Support() {
  const handleCardClick = (link) => {
     navigate(link);
   };
+   const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
   // Filter FAQs based on search and category
   const filteredFaqs = faqs.filter(faq => {
     const matchesSearch = faq.question.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -227,33 +232,56 @@ function Support() {
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
       {/* Hero Section */}      
-<div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
-      {/* Background pattern using icons */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="w-full h-full flex flex-wrap">
-          {Array.from({ length: 150 }).map((_, i) => (
-            <FaCircle
-              key={i}
-              className="text-white "
-              style={{
-                fontSize: "55px",
-                margin: "22px",
-              }}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-          {t("support.title")}
-        </h1>
-        <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
-          {t("support.subtitle")}
-        </p>
-      </div>
+        <motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false }}
+  variants={fadeIn}
+  transition={{ duration: 0.6 }}
+  className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden mb-12"
+>
+  {/* Background pattern using icons */}
+  <div className="absolute inset-0 opacity-5">
+    <div className="w-full h-full flex flex-wrap">
+      {Array.from({ length: 150 }).map((_, i) => (
+        <FaCircle
+          key={i}
+          className="text-white"
+          style={{
+            fontSize: "55px",
+            margin: "22px",
+          }}
+        />
+      ))}
     </div>
+  </div>
+
+  {/* Content */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    {/* Title */}
+    <motion.h1
+      className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      {t("support.title")}
+    </motion.h1>
+
+    {/* Subtitle */}
+    <motion.p
+      className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      {t("support.subtitle")}
+    </motion.p>
+  </div>
+</motion.div>
+
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Tab Navigation */}

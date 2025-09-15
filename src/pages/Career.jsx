@@ -8,11 +8,8 @@ import {
 import {  FaBriefcase } from 'react-icons/fa';
 import { ArrowRight, Clock, DollarSign, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
 function Career() {
-
-
-  // ==============================================================================
 const jobs = [
     {
       id: 1,
@@ -181,11 +178,21 @@ const jobs = [
       description: "Flexible policies to support your wellbeing"
     }
   ];
-
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white">
       {/* Hero Section */}
-<div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
+      <motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false }}
+  variants={fadeIn}
+  transition={{ duration: 0.6 }}
+  className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden mb-12"
+>
   {/* Background pattern using icons */}
   <div className="absolute inset-0 opacity-10">
     <div className="w-full h-full flex flex-wrap">
@@ -204,37 +211,41 @@ const jobs = [
 
   {/* Content */}
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+    <motion.h1
+      className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       Build Your Career With Us
-    </h1>
-    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
+    </motion.h1>
+
+    <motion.p
+      className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       Join Unigold Finance and be part of a team that's transforming gold loans with innovation and integrity
-    </p>
+    </motion.p>
   </div>
-</div>
+</motion.div>
 
+    <div className="max-w-7xl mx-auto px-4 py-1">
+      {/* Benefits */}
 
-    <div className="max-w-7xl mx-auto px-4 py-1">    
- {/* Benefits */}
-
-<section className="why-join py-5 bg-gradient-to-br from-amber-50 via-white to-orange-50 overflow-hidden">
+<motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.9 }}
+           className="why-join py-5 bg-gradient-to-br from-amber-50 via-white to-orange-50 overflow-hidden">
   {/* Background decorative elements */}
 
   <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
-    {/* Section Header */}
-    {/* <div className="text-center mb-16">
-      <h2 className="text-4xl font-bold text-center text-gray-800 mb-3">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-800">
-        Why Partner With Us
-
-        </span>
-      </h2> */}
-      {/* <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-        Join India's fastest-growing gold loan network and unlock unlimited earning potential
-      </p> */}
-      {/* <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-6 rounded-full"></div> */}
-    {/* </div> */}
-
     {/* Benefits Grid */}
     <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-4 gap-6">
       {/* Existing Benefits */}
@@ -290,16 +301,22 @@ const jobs = [
       </div>
     </div>
   </div>
-</section>
+</motion.div>
 
 
 {/* current openings  */}
-<section id="jobs" className="py-20 bg-gradient-to-b  from-white to-white-50">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.9 }}
+           id="jobs" className="py-20 bg-gradient-to-b  from-white to-white-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h3 className="text-4xl font-bold text-center text-gray-800 mb-3">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-800">
-Current Openings
+        Current Openings
         </span>
       </h3>
             {/* <h3 className="text-3xl font-bold text-gray-900 mb-4">Current Openings</h3> */}
@@ -356,11 +373,16 @@ Current Openings
       </div>
     </div>
         </div>
-      </section>
+      </motion.div>
 
 
 {/* Culture Section */}
-<section className="culture-section py-16 bg-white">
+<motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="culture-section py-16 bg-white">
   <div className="max-w-7xl mx-auto px-4">
     <div className="grid md:grid-cols-2 gap-12 items-center">
       
@@ -411,7 +433,7 @@ Current Openings
       </div>
     </div>
   </div>
-</section>
+</motion.div>
     </div>
     </div>
   );

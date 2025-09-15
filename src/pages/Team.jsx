@@ -47,18 +47,21 @@ function Team() {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 }
   };
-
+ const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white"> 
-
       {/* Hero Section */}
-      {/* <section className="bg-primary text-white py-16 text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4">Our Trusted Team</h1>
-          <p className="text-lg">Meet the experienced professionals behind Unigold Finance who ensure your gold assets are in safe hands</p>
-        </div>
-      </section> */}
-      <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
+      <motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={fadeIn}
+  transition={{ duration: 0.6 }}
+  className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden mb-12"
+>
   {/* Background pattern using icons */}
   <div className="absolute inset-0 opacity-5">
     <div className="w-full h-full flex flex-wrap">
@@ -68,7 +71,7 @@ function Team() {
           className="text-white"
           style={{
             fontSize: "55px",
-            margin: "22px", 
+            margin: "22px",
           }}
         />
       ))}
@@ -77,48 +80,37 @@ function Team() {
 
   {/* Content */}
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+    {/* Title */}
+    <motion.h1
+      className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       Our Trusted Team
-    </h1>
-    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
-      Meet the experienced professionals behind Unigold Finance who ensure your gold assets are in safe hands
-    </p>
-  </div>
-</div>
+    </motion.h1>
 
+    {/* Subtitle */}
+    <motion.p
+      className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      Meet the experienced professionals behind Unigold Finance who ensure your gold assets are in safe hands
+    </motion.p>
+  </div>
+</motion.div>
 
       {/* Company Values */}
-      {/* <section className="py-16 bg-gray-100">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Commitment to You</h2>
-            <p className="text-lg text-gray-700">At Unigold Finance, we combine financial expertise with ethical practices to provide the best gold loan experience</p>
-          </div>
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-white shadow rounded">
-              <FaHandshake size={40} className="text-primary mx-auto mb-3" />
-              <h4 className="text-xl font-semibold">Integrity</h4>
-              <p>Honest valuations and transparent transactions</p>
-            </div>
-            <div className="text-center p-6 bg-white shadow rounded">
-              <FaGem size={40} className="text-primary mx-auto mb-3" />
-              <h4 className="text-xl font-semibold">Expertise</h4>
-              <p>Certified professionals with gold valuation expertise</p>
-            </div>
-            <div className="text-center p-6 bg-white shadow rounded">
-              <FaShieldAlt size={40} className="text-primary mx-auto mb-3" />
-              <h4 className="text-xl font-semibold">Security</h4>
-              <p>Bank-grade vaults with 24/7 surveillance</p>
-            </div>
-            <div className="text-center p-6 bg-white shadow rounded">
-              <FaChartLine size={40} className="text-primary mx-auto mb-3" />
-              <h4 className="text-xl font-semibold">Growth</h4>
-              <p>Helping customers achieve financial flexibility</p>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      <div className="container mx-auto px-4 py-16 max-w-7xl">
+      <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="container mx-auto px-4 py-16 max-w-7xl">
   <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl shadow-xl overflow-hidden border border-amber-200">
     <div className="p-8">
       <div className="flex items-center mb-12">
@@ -182,7 +174,7 @@ function Team() {
       </div>
     </div>
   </div>
-</div>
+      </motion.div>
 
       {/* Leadership Team */}
       <section className="py-16">

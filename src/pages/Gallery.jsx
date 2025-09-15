@@ -6,6 +6,7 @@ import { GiSplitCross } from 'react-icons/gi';
 import { IoMdStar } from 'react-icons/io';
 import { IoMapSharp, IoPerson } from 'react-icons/io5';
 import { RiRecordCircleLine } from 'react-icons/ri';
+import { motion } from 'framer-motion';
 
 function Gallery() {
   const { t } = useTranslation();
@@ -199,36 +200,69 @@ function Gallery() {
       image: '../image/img1.jpeg'
     }
   ];
+   const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white">
       {/* Hero Section */}
-       <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
-              <div className="absolute inset-0 opacity-5">
-                <div className="w-full h-full flex flex-wrap">
-                  {Array.from({ length: 150 }).map((_, i) => (
-                    <FaCircle
-                      key={i}
-                      className="text-white "
-                      style={{
-                        fontSize: "55px",
-                        margin: "22px",
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-            {t('gallery.title')}
-          </h1>
-          <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
-            {t('gallery.subtitle')}
-          </p>
-        </div>
-      </div>
+      <motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false }}
+  variants={fadeIn}
+  transition={{ duration: 0.6 }}
+  className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden mb-12"
+>
+  {/* Background pattern using icons */}
+  <div className="absolute inset-0 opacity-5">
+    <div className="w-full h-full flex flex-wrap">
+      {Array.from({ length: 150 }).map((_, i) => (
+        <FaCircle
+          key={i}
+          className="text-white"
+          style={{
+            fontSize: "55px",
+            margin: "22px",
+          }}
+        />
+      ))}
+    </div>
+  </div>
+
+  {/* Content */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <motion.h1
+      className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      {t('gallery.title')}
+    </motion.h1>
+
+    <motion.p
+      className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      {t('gallery.subtitle')}
+    </motion.p>
+  </div>
+</motion.div>
+
     <div className="max-w-7xl mx-auto px-4 py-1 space-y-16">
       {/* Main Gallery Section */}
-      <section>
+      <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }}>
       <div className="min-h-screen  p-4 md:p-8">
         {/* <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Image Gallery</h1> */}
                 {/* <h1 className="text-3xl font-bold text-amber-700 text-center mb-4">Image Gallery</h1> */}
@@ -337,11 +371,16 @@ function Gallery() {
           </div>
         )}
       </div>
-      </section>
+      </motion.div>
 
       {/* News Section */}
 
-      <section className="bg-gray-50  rounded-xl p-8 md:p-12 max-w-7xl mx-auto">
+      <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="bg-gray-50  rounded-xl p-8 md:p-12 max-w-7xl mx-auto">
   <div className="text-center mb-16">
     <h2 className="text-4xl font-bold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-800">{t('news.title')}</h2>
     <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -381,10 +420,15 @@ function Gallery() {
       </div>
     ))}
   </div>
-</section> 
+</motion.div> 
 
       {/* Events Section */}
-<section className="py-2 bg-gray-50">
+<motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="py-2 bg-gray-50">
   <div className="container mx-auto px-4">
     <div className="text-center mb-16">
       <h2 className="text-4xl font-bold text-amber-700 text-center mb-4">{t('events.title')}</h2>
@@ -553,7 +597,7 @@ function Gallery() {
     <div className="text-center mt-12">
     </div>
   </div>
-</section>
+</motion.div>
       {/* testiment Section */}
 <section className="bg-gold-50 rounded-xl p-1">
   <div className="text-center mb-12">

@@ -5,24 +5,35 @@ import { HiCurrencyDollar } from 'react-icons/hi';
 import { HiArrowPath } from 'react-icons/hi2';
 import { IoIosLock, IoMdTime } from 'react-icons/io';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function Loan() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-
+   const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
       {/* Hero Section */}
-<div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={fadeIn}
+  transition={{ duration: 0.6 }}
+  className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden mb-12"
+>
   {/* Background pattern using icons */}
-  <div className="absolute inset-0 opacity-10">
+  <div className="absolute inset-0 opacity-5">
     <div className="w-full h-full flex flex-wrap">
       {Array.from({ length: 150 }).map((_, i) => (
         <FaCircle
           key={i}
           className="text-white"
           style={{
-            fontSize: "50px",
+            fontSize: "55px",
             margin: "21px",
           }}
         />
@@ -32,29 +43,54 @@ function Loan() {
 
   {/* Content */}
   <div className="max-w-7xl mx-auto px-6 relative z-10">
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+    <motion.h1
+      className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       {t("loanServices.title")}
-    </h1>
-    <p className="text-xl md:text-2xl text-amber-100 font-medium max-w-3xl mx-auto leading-relaxed">
+    </motion.h1>
+
+    <motion.p
+      className="text-xl md:text-2xl text-amber-100 font-medium max-w-3xl mx-auto leading-relaxed"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       {t("loanServices.subtitle")}
-    </p>
+    </motion.p>
 
     {/* CTA Button */}
-    <div className="mt-8">
+    <motion.div
+      className="mt-8"
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 0.6, duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <button
         onClick={() => navigate("/LoanApplicationForm")}
         className="bg-white text-amber-700 font-semibold px-8 py-3 rounded-lg hover:bg-gray-50 transition-all duration-300 text-lg shadow-md hover:shadow-lg transform hover:scale-105"
       >
         {t("loanServices.cta.buttonText")}
       </button>
-    </div>
+    </motion.div>
   </div>
-</div>
+</motion.div>
+
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {/* Quick Approval Card */}
           <div className="bg-white rounded-xl shadow-md overflow-hidden border-t-4 border-amber-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
             <div className="p-8">
@@ -114,14 +150,19 @@ function Loan() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Detailed Sections */}
        
         
         <div className="space-y-12">
   {/* Quick Approval Section */}
-  <div className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
+  <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
     <div className="flex flex-col lg:flex-row">
       <div className="lg:w-1/2 p-8 flex flex-col justify-center">
         <div className="mb-6">
@@ -161,10 +202,15 @@ function Loan() {
         />
       </div>
     </div>
-  </div>
+  </motion.div>
 
   {/* Interest Rates Section */}
-  <div className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
+  <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
     <div className="flex flex-col lg:flex-row-reverse">
       <div className="lg:w-1/2 p-8 flex flex-col justify-center">
         <div className="mb-6">
@@ -204,10 +250,15 @@ function Loan() {
         />
       </div>
     </div>
-  </div>
+  </motion.div>
 
   {/* Repayment Section */}
-  <div className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
+  <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
     <div className="flex flex-col lg:flex-row">
       <div className="lg:w-1/2 p-8 flex flex-col justify-center">
         <div className="mb-6">
@@ -247,10 +298,15 @@ function Loan() {
         />
       </div>
     </div>
-  </div>
+  </motion.div>
 
   {/* Vault Storage Section */}
-  <div className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
+  <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }} className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
     <div className="flex flex-col lg:flex-row-reverse">
       <div className="lg:w-1/2 p-8 flex flex-col justify-center">
         <div className="mb-6">
@@ -290,7 +346,7 @@ function Loan() {
         />
       </div>
     </div>
-  </div>
+  </motion.div>
 </div>                              
         {/* Final CTA Section */}
         <div className="mt-24 text-center bg-gradient-to-r from-amber-600 to-amber-700 rounded-2xl p-12 relative overflow-hidden">

@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { BsCheckCircle, BsStars } from 'react-icons/bs';
 import { FaBullseye, FaCircle, FaEye, FaGlobe, FaHeart } from 'react-icons/fa';
 import { FaBoltLightning } from 'react-icons/fa6';
-
+import { motion } from 'framer-motion';
 function History() {
   const { t } = useTranslation();
 
@@ -23,12 +23,21 @@ function History() {
       textColor: "text-amber-800"
     }
   };
-
+ const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
   return (
-    // <div className="bg-gradient-to-b from-amber-50 to-white min-h-screen">
           <div className="bg-gradient-to-b min-h-screen">
       {/* Hero Section */} 
-      <div className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden">
+      <motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false }}
+  variants={fadeIn}
+  transition={{ duration: 0.6 }}
+  className="relative bg-gradient-to-r from-yellow-600 to-yellow-800 py-20 text-center overflow-hidden mb-12"
+>
   {/* Background pattern using icons */}
   <div className="absolute inset-0 opacity-10">
     <div className="w-full h-full flex flex-wrap">
@@ -47,18 +56,36 @@ function History() {
 
   {/* Content */}
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+    <motion.h1
+      className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       {t("overview.title")}
-    </h1>
-    <p className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed">
-      {t("overview.description")}
-    </p>
-  </div>
-</div>
+    </motion.h1>
 
+    <motion.p
+      className="text-xl md:text-2xl text-yellow-100 font-medium max-w-3xl mx-auto leading-relaxed"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      {t("overview.description")}
+    </motion.p>
+  </div>
+</motion.div>
 
       {/* Introduction Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-3 py-4">
+      <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }}
+           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-3 py-4">
         {/* Key Features */}
          <div className="max-w-6xl mx-auto py-12 px-4">
       <div className="text-center mb-12">
@@ -89,10 +116,17 @@ function History() {
         ))}
       </div>
         </div>
-      </section>
+      </motion.div>
 
       {/* Timeline Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 bg-white rounded-xl shadow-sm mb-16">
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false }}
+        variants={fadeIn}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 bg-white rounded-xl shadow-sm mb-16"
+      >
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-amber-800 mb-4">{t('timeline.title')}</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">{t('timeline.subtitle')}</p>
@@ -143,7 +177,7 @@ function History() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
       {/* Statistics Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-2xl p-8 md:p-12 shadow-xl">
