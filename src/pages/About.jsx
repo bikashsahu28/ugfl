@@ -12,11 +12,62 @@ import { IoCheckmarkCircleSharp } from 'react-icons/io5';
 function About() {
   const { t } = useTranslation();
 
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
+   const milestones = [
+    {
+      year: "2018",
+      title: "Founding Vision",
+      description: "Started with a simple idea to create meaningful digital experiences that connect people and brands.",
+      icon: "🌱"
+    },
+    {
+      year: "2019",
+      title: "First Breakthrough",
+      description: "Launched our flagship product, serving 500+ users and establishing our core technology stack.",
+      icon: "🚀"
+    },
+    {
+      year: "2020",
+      title: "Global Expansion",
+      description: "Expanded operations internationally, serving clients across 15 countries and building a diverse team.",
+      icon: "🌍"
+    },
+    {
+      year: "2021",
+      title: "Award Recognition",
+      description: "Received industry accolades for innovation and user experience design, recognized as Top Startup.",
+      icon: "🏆"
+    },
+    {
+      year: "2022",
+      title: "Technology Leadership",
+      description: "Pioneered AI-driven solutions that transformed our platform's capabilities and efficiency.",
+      icon: "⚡"
+    },
+    {
+      year: "2023",
+      title: "Community Impact",
+      description: "Launched educational initiatives and open-source projects, empowering 10,000+ developers worldwide.",
+      icon: "🤝"
+    },
+    {
+      year: "2024",
+      title: "Sustainable Growth",
+      description: "Achieved profitability while maintaining commitment to ethical practices and environmental sustainability.",
+      icon: "🌳"
+    }
+  ];
 
+const fadeIn = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.6,
+        staggerChildren: 0.1
+      }
+    }
+  };
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white">
 
@@ -146,10 +197,9 @@ function About() {
             </div>
           </div>
         </motion.div>
-       
-
+        
         {/* Our Journey */}
-        <motion.div
+        {/* <motion.div
           id="journey"
           initial="hidden"
           whileInView="visible"
@@ -172,7 +222,81 @@ function About() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
+
+        <motion.div
+      id="journey"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      className="mb-16 px-4"
+    >
+      {/* Section Header */}
+      <div className="text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-orange-500 to-red-500">
+          Our Journey
+        </h2>
+        <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          From a humble beginning to an industry leader, our path has been defined by innovation, perseverance, and a commitment to excellence.
+        </p>
+      </div>
+
+      {/* Timeline Container */}
+      <div className="relative max-w-6xl mx-auto">
+        {/* Vertical Line */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-amber-200 to-transparent dark:from-amber-700 dark:to-transparent"></div>
+
+        {/* Milestones */}
+        <div className="space-y-12">
+          {milestones.map((milestone, index) => (
+            <motion.div
+              key={milestone.year}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className={`relative flex items-center ${
+                index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+              }`}
+            >
+              {/* Timeline Dot */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 shadow-lg z-10 border-4 border-white dark:border-gray-800"></div>
+
+              {/* Content Card */}
+              <div className={`w-full md:w-5/12 p-6 rounded-2xl shadow-xl bg-white dark:bg-gray-800 transform transition-all duration-300 hover:shadow-2xl ${
+                index % 2 === 0 ? 'mr-8' : 'ml-8'
+              }`}>
+                <div className="flex items-center mb-4">
+                  <span className="text-3xl mr-3">{milestone.icon}</span>
+                  <span className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    {milestone.year}
+                  </span>
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-3">
+                  {milestone.title}
+                </h3>
+                
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {milestone.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Decorative Elements */}
+      <div className="mt-12 flex justify-center">
+        <div className="flex space-x-4">
+          {[...Array(5)].map((_, i) => (
+            <div 
+              key={i} 
+              className="w-2 h-2 bg-amber-300 rounded-full animate-bounce"
+              style={{ animationDelay: `${i * 0.2}s` }}
+            ></div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
 
         {/* Why Choose Us */}
         <motion.div
