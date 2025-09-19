@@ -16,6 +16,7 @@ import PastMentors from '../components/PastMentors';
 import { FaArrowRight, FaRegClock, FaStar } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
 import UnigoldComponent from '../components/UnigoldComponent';
+import SubNavbar from '../components/SubNavBar';
 
 function Home() {
   const [goldPrice, setGoldPrice] = useState(null);
@@ -121,7 +122,15 @@ const visibleTestimonials = testimonials.slice(
   };
   return (
     <div className="min-h-screen ">
-      <HomeCarousel />
+                  <SubNavbar />
+            {/* Carousel Section */}
+            <section className="py-3 bg-gray-50 bg-gradient-to-b from-amber-50 to-white">
+              <div className="max-w-7xl mx-auto px-4">
+                <HomeCarousel />
+              </div>
+            </section>
+
+     
       <LoanPopup />
 
       <UnigoldComponent />

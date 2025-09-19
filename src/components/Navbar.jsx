@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import NavDropdown from './NavDropdown';
@@ -11,7 +11,6 @@ function Navbar() {
   const [isSticky, setIsSticky] = useState(false);
   const { t } = useTranslation();
   const location = useLocation();
-  const navigate = useNavigate();
   const navItems = [
     {
       title: t('nav.about'),
@@ -71,43 +70,109 @@ function Navbar() {
     UNIGOLD FINANCE
     <span className="align-super text-[10px] sm:text-xs">™</span>
   </span>
-  <span className="text-xs sm:text-sm text-secondary font-bold -mt-0.5 sm:-mt-1">
+  {/* <span className="text-xs sm:text-sm text-secondary font-bold -mt-0.5 sm:-mt-1">
     GOLD LOAN
-  </span>
+  </span> */}
+<span className="text-sm sm:text-base text-yellow-500 font-bold -mt-0.5 sm:-mt-1">
+  GOLD LOAN
+</span>
+
 </Link>
 
 </div>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center font-bold space-x-1 xl:space-x-2">
-            {navItems.map((item) => (
-              item.dropdown ? (
-                // <NavDropdown key={item.path}  className="font-bold " item={item} />
-                <NavDropdown 
-        key={item.path}  
-        className="font-bold" 
-        item={{
-          ...item,
-          title: <span className="font-bold">{item.title}</span>
-        }} 
-      />
-              ) : (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm  transition-colors duration-200"
-                >
-                  {item.title}
-                </Link>
-              )
-            ))}
-            <div className="ml-2">
-              <LanguageDropdown />
-            </div>
-            <Button />
+      {/* {navItems.map((item ) => (
+        
+        item.dropdown ? (
+          <NavDropdown 
+            key={item.path}  
+             className="font-bold " 
 
+            item={{
+              ...item,
+              title: <span className="font-bold">{item.title}</span>
+            }} 
+          />
+        ) : (
+          <Link
+            key={item.path}
+            to={item.path}
+            className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm transition-colors duration-200 border-r border-gray-300 last:border-r-0"
+          >
+            {item.title}
+          </Link>
+        )
+      ))} */}
+
+
+{navItems.map((item, index) => (
+    <div
+      key={item.path}
+      // className="flex items-center border-r border-gray-300 last:border-r-0"
+      className="text-gray-700 hover:text-primary px-1 py-2 rounded-md text-sm transition-colors duration-200 border-r border-gray-300 last:border-r-0"
+
+      
+    >
+      {item.dropdown ? (
+        <NavDropdown
+          className="font-bold"
+          item={{
+            ...item,
+            title: <span className="font-bold">{item.title}</span>,
+          }}
+        />
+      ) : (
+        <Link
+          to={item.path}
+          className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm transition-colors duration-200"
+        >
+          {item.title}
+        </Link>
+      )}
+    </div>
+  ))}
+
+      <div className="ml-2">
+        <LanguageDropdown />
+      </div>
+      <Button />
           </div>
- 
+
+          {/* <div className="hidden lg:flex items-center font-bold space-x-1 xl:space-x-2">
+  {navItems.map((item, index) => (
+    <div
+      key={item.path}
+      className="flex items-center border-r border-gray-300 last:border-r-0"
+    >
+      {item.dropdown ? (
+        <NavDropdown
+          className="font-bold"
+          item={{
+            ...item,
+            title: <span className="font-bold">{item.title}</span>,
+          }}
+        />
+      ) : (
+        <Link
+          to={item.path}
+          className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm transition-colors duration-200"
+        >
+          {item.title}
+        </Link>
+      )}
+    </div>
+  ))}
+
+  <div className="ml-2">
+    <LanguageDropdown />
+  </div>
+  <Button />
+</div> */}
+
+
+
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center space-x-2">
             <LanguageDropdown />

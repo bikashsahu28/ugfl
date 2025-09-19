@@ -1014,3 +1014,142 @@ export default GoldLoanCalculator;
           </div>
         </div>
       </section>
+      ======================================================================================
+      // import React from 'react';
+
+// import { useState, useEffect } from 'react';
+
+// const HomeCarousel = () => {
+//   const [currentSlide, setCurrentSlide] = useState(0);
+  
+//   const slides = [
+//     {
+//       id: 1,
+//       image: "https://placehold.co/1200x400/f5f5f5/333?text=Muthoot+Finance+Gold+Loan",
+//       title: "Muthoot Finance",
+//       subtitle: "INDIA'S LARGEST GOLD LOAN NBFC",
+//       content: "Instant Gold Loan | 2.5 Lakh+ Customers Served Every Daily* | Attractive Interest Rates",
+//       phone: "1800 313 1212",
+//       website: "muthootfinance.com"
+//     },
+//     {
+//       id: 2,
+//       image: "https://placehold.co/1200x400/f5f5f5/333?text=Credit+Score+Services",
+//       title: "Credit Score Services",
+//       subtitle: "Improve Your Financial Health",
+//       content: "Get your credit score and improve your financial standing",
+//       phone: "1800 313 1212",
+//       website: "muthootfinance.com"
+//     },
+//     {
+//       id: 3,
+//       image: "https://placehold.co/1200x400/f5f5f5/333?text=Housing+Finance",
+//       title: "Housing Finance",
+//       subtitle: "Your Dream Home Made Possible",
+//       content: "Affordable housing loans with competitive interest rates",
+//       phone: "1800 313 1212",
+//       website: "muthootfinance.com"
+//     }
+//   ];
+
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCurrentSlide((prev) => (prev + 1) % slides.length);
+//     }, 5000);
+//     return () => clearInterval(timer);
+//   }, [slides.length]);
+
+//   const goToSlide = (index) => {
+//     setCurrentSlide(index);
+//   };
+
+//   const nextSlide = () => {
+//     setCurrentSlide((prev) => (prev + 1) % slides.length);
+//   };
+
+//   const prevSlide = () => {
+//     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+//   };
+
+//   // Service cards data
+//   const services = [
+//     { name: "GOLD FLEXI CREDIT", icon: "💰" },
+//     { name: "CREDIT SCORE", icon: "📊" },
+//     { name: "GOLD LOAN", icon: "💍" },
+//     { name: "HOUSING FINANCE", icon: "🏠" },
+//     { name: "PERSONAL LOAN", icon: "💼" },
+//     { name: "SMALL BUSINESS LOAN", icon: "🏢" },
+//     { name: "INSURANCE", icon: "🛡️" }
+//   ];
+
+//   return (
+//     <div className="min-h-screen bg-white">
+//       {/* Header */}
+//       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="flex justify-between items-center h-16">
+//             {/* Logo */}
+//             <div className="flex items-center">
+//               <div className="flex items-center space-x-2">
+//                 <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
+//                   <span className="text-white font-bold text-lg">MF</span>
+//                 </div>
+//                 <span className="text-xl font-bold text-red-600">Muthoot Finance</span>
+//               </div>
+//             </div>
+
+//             {/* Navigation */}
+//             <nav className="hidden md:flex space-x-6">
+//               <a href="#" className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">HOME</a>
+//               <a href="#" className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">SERVICES</a>
+//               <a href="#" className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">CORPORATE</a>
+//               <a href="#" className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">INVESTORS</a>
+//               <a href="#" className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">POLICY</a>
+//               <a href="#" className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">DIGITAL INITIATIVES</a>
+//               <a href="#" className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">CAREERS</a>
+//               <a href="#" className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">CSR</a>
+//               <a href="#" className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">MEDIA</a>
+//               <a href="#" className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">NEWS</a>
+//               <a href="#" className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">CONTACT</a>
+//               <button className="text-gray-700 hover:text-red-600 transition-colors">
+//                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+//                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+//                 </svg>
+//               </button>
+//             </nav>
+
+//             {/* WhatsApp Contact */}
+//             <div className="hidden md:flex items-center space-x-2">
+//               <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+//                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+//                   <path d="M2.003 5.884l8 4.8a1 1 0 00.994 0l8-4.8A1 1 0 0018 4H2a1 1 0 00.003 1.884z" />
+//                   <path d="M18 8.118l-7.555 4.533a3 3 0 01-2.89 0L2 8.118V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+//                 </svg>
+//               </div>
+//               <span className="text-sm font-medium text-gray-700">WhatsApp</span>
+//             </div>
+//           </div>
+//         </div>
+//       </header>
+
+//       {/* Carousel */}
+//       <div className="relative">
+//         <div className="overflow-hidden h-64 sm:h-80 md:h-96 lg:h-[500px]">
+//           {slides.map((slide, index) => (
+//             <div
+//               key={slide.id}
+//               className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+//             >
+//               <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
+//               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center text-white p-4">
+//                 <h2 className="text-lg font-bold">{slide.title}</h2>
+//                 <p className="mt-2">{slide.description}</p>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//       </div>
+//     );
+//   };
+// export default HomeCarousel; 
