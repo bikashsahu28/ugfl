@@ -35,10 +35,12 @@ import TermsAndConditions from './components/Terms&conditions';
 import JobApplicationForm from './components/JobApplicationForm';
 import GoldLoanCalculator from './components/GoldLoanCalculator';
 import PastMentors from './components/PastMentors';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop /> 
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow">
