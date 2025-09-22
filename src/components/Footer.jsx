@@ -31,6 +31,8 @@ function Footer() {
               <li><Link to="/team" className="text-gray-400 hover:text-white">{t('nav.team')}</Link></li>
 
               <li><Link to="/career" className="text-gray-400 hover:text-white">{t('nav.career')}</Link></li>
+              <li><Link to="/sitemap" className="text-gray-400 hover:text-white">sitemap</Link></li>
+
 
 
             </ul>

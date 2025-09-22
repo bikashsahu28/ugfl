@@ -36,6 +36,7 @@ import JobApplicationForm from './components/JobApplicationForm';
 import GoldLoanCalculator from './components/GoldLoanCalculator';
 import PastMentors from './components/PastMentors';
 import ScrollToTop from './components/ScrollToTop';
+import Sitemap from './components/Sitemap';
 
 function App() {
   return (
@@ -78,6 +79,8 @@ function App() {
             <Route path="/job-application" element={<JobApplicationForm />} />
             <Route path="/gold-loan-calculator" element={<GoldLoanCalculator />} />
             <Route path="/past-mentors" element={<PastMentors />} />
+            <Route path="/sitemap" element={<Sitemap />} />
+
           </Routes>
         </main>
         <SocialButtons />

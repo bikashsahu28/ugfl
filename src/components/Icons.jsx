@@ -55,7 +55,7 @@ const SocialMediaCard = () => {
         {/* Instagram */}
         <motion.a 
           style={styles.socialContainer}
-          href="#"
+          href="https://www.instagram.com/financeunigold?igsh=MWN0bDZuZTc2am5kYg=="
           initial={{ backgroundColor: 'rgb(65, 29, 131)' }}
           whileHover={{ 
             scale: 1.2, 
@@ -95,7 +95,7 @@ const SocialMediaCard = () => {
         {/* LinkedIn */}
         <motion.a 
           style={styles.socialContainer}
-          href="#"
+          href="https://www.linkedin.com/company/uni-gold-finance/"
           initial={{ backgroundColor: 'rgb(65, 29, 131)' }}
           whileHover={{ 
             scale: 1.2, 
@@ -115,7 +115,7 @@ const SocialMediaCard = () => {
         {/* WhatsApp */}
         <motion.a 
           style={styles.socialContainer}
-          href="#"
+          href="https://wa.me/1234567890"
           initial={{ backgroundColor: 'rgb(65, 29, 131)' }}
           whileHover={{ 
             scale: 1.2, 
