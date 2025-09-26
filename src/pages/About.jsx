@@ -199,30 +199,6 @@ const fadeIn = {
         </motion.div>
         
         {/* Our Journey */}
-        {/* <motion.div
-          id="journey"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold mb-6 text-center text-amber-700">{t('about.journey.title')}</h2>
-          <p className="text-gray-600 mb-8 text-lg">{t('about.journey.description')}</p>
-          <div className="grid md:grid-cols-4 gap-6">
-            {Object.entries(t('about.journey.milestones', { returnObjects: true })).map(([year, milestone]) => (
-              <motion.div 
-                key={year} 
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-xl shadow-md p-6 border-l-4 border-amber-500 hover:shadow-lg transition-shadow"
-              >
-                <h3 className="text-xl font-bold text-amber-600 mb-2">{year}</h3>
-                <p className="text-gray-600">{milestone}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div> */}
 
         <motion.div
       id="journey"
@@ -296,10 +272,10 @@ const fadeIn = {
           ))}
         </div>
       </div>
-    </motion.div>
+        </motion.div>
 
         {/* Why Choose Us */}
-        <motion.div
+        {/* <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -321,7 +297,93 @@ const fadeIn = {
               </div>
             ))}
           </div>
+        </motion.div> */}
+
+        <motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={fadeIn}
+  transition={{ duration: 0.8, staggerChildren: 0.2 }}
+  className="mb-20 py-12 px-4 bg-gradient-to-br from-amber-50 to-white"
+>
+  <div className="max-w-6xl mx-auto">
+    {/* Enhanced Header */}
+    <motion.div
+      variants={fadeIn}
+      className="text-center mb-12"
+    >
+      <span className="inline-block px-4 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-medium mb-4">
+      {t('about.whyUs.subtitle', { defaultValue: 'Our Advantages' })}
+      </span>
+      <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-amber-700 to-amber-500 bg-clip-text text-transparent">
+        {t('about.whyUs.title')}
+      </h2>
+      <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+        {t('about.whyUs.description', { defaultValue: 'Discover what sets us apart and why we are the right choice for your needs' })}
+      </p>
+    </motion.div>
+
+    {/* Enhanced Cards Grid */}
+    <div className="grid md:grid-cols-3 gap-8">
+      {Object.entries(t('about.whyUs.points', { returnObjects: true })).map(([key, value], index) => (
+        <motion.div
+          key={key}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { 
+              opacity: 1, 
+              y: 0,
+              transition: { duration: 0.6, delay: index * 0.1 }
+            }
+          }}
+          whileHover={{ 
+            y: -8,
+            transition: { duration: 0.3 }
+          }}
+          className="group relative"
+        >
+          {/* Card with enhanced styling */}
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-amber-100 group-hover:shadow-xl transition-all duration-300 h-full flex flex-col relative overflow-hidden">
+            {/* Decorative accent */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-amber-600"></div>
+            
+            {/* Icon container with enhanced design */}
+            <div className="flex items-center mb-6">
+              <div className="relative">
+                <div className="bg-gradient-to-br from-amber-500 to-amber-600 p-3 rounded-xl shadow-md mr-4 z-10 relative">
+                  <IoCheckmarkCircleSharp className='h-7 w-7 text-white' />
+                </div>
+                {/* Subtle decorative element */}
+                <div className="absolute -inset-2 bg-amber-200 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-800">{value.title}</h3>
+            </div>
+            
+            {/* Description with improved typography */}
+            <p className="text-gray-600 leading-relaxed flex-grow">{value.description}</p>
+            
+            {/* Optional decorative number */}
+            <div className="absolute bottom-4 right-4 text-amber-100 text-6xl font-bold opacity-30 -z-10">
+              {index + 1}
+            </div>
+          </div>
         </motion.div>
+      ))}
+    </div>
+
+    {/* Optional CTA Section */}
+    <motion.div
+      variants={fadeIn}
+      className="text-center mt-12"
+    >
+      <button className="px-8 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:from-amber-600 hover:to-amber-700">
+        {t('about.whyUs.cta', { defaultValue: 'Learn More About Us' })}
+      </button>
+    </motion.div>
+  </div>
+</motion.div> 
+
 
         {/* Our Values */}
         <motion.div

@@ -171,9 +171,9 @@ const visibleTestimonials = testimonials.slice(
       </div>
     </div>
     <div className="mt-12 text-center">
-      <p className="text-xl font-medium">
+      {/* <p className="text-xl font-medium">
         {t('whyChooseUs.trusted')} <span className="text-primary font-bold">30,000+</span> {t('whyChooseUs.customers')}
-      </p>
+      </p> */}
     </div>
   </div>
 </section>
