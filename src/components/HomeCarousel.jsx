@@ -78,7 +78,7 @@ function HomeCarousel() {
       //  image: "../image/001.jpeg",
       // title: t('carousel.slide1.title'),
       // description: t('carousel.slide1.description'),
-      image: "../image/003.jpeg",
+      image: "../image/121.jpg",
     },
     { image: "../image/bnr1.jpeg" },
     { image: "../image/002.jpeg" },
@@ -105,7 +105,7 @@ function HomeCarousel() {
               alt={slide.title || `slide-${index}`}
               className="w-full h-full object-cover rounded-xl"
             />
-            {/* If you want text overlay on desktop only */}
+            {/*  text overlay on desktop only */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4 sm:p-8 mt-4 sm:mt-10">
               <h2 className="hidden sm:block text-2xl md:text-4xl font-bold mb-2 md:mb-4">
                 {slide.title}

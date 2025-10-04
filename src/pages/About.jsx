@@ -275,29 +275,7 @@ const fadeIn = {
         </motion.div>
 
         {/* Why Choose Us */}
-        {/* <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold mb-8 text-center text-amber-700">{t('about.whyUs.title')}</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {Object.entries(t('about.whyUs.points', { returnObjects: true })).map(([key, value]) => (
-              <div key={key} className="bg-white p-6 rounded-xl shadow-md">
-                <div className="flex items-center mb-4">
-                  <div className="bg-amber-100 p-3 rounded-full mr-4">
-                    <IoCheckmarkCircleSharp className='h-6 w-6 text-amber-600' />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-800">{value.title}</h3>
-                </div>
-                <p className="text-gray-600 pl-14">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div> */}
+      
 
         <motion.div
   initial="hidden"

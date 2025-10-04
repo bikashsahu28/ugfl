@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 import { Home, Info, Phone, Briefcase, FileText, Mail } from "lucide-react";
+import { FaBullseye, FaLocationDot, FaUsers } from "react-icons/fa6";
+import { FaCalculator, FaHistory } from "react-icons/fa";
+import { VscGitStashApply } from "react-icons/vsc";
+import { SiJordan } from "react-icons/si";
+import { GrGallery } from "react-icons/gr";
+import { RiTeamFill } from "react-icons/ri";
 
 const Sitemap = () => {
   const sitemapLinks = [
@@ -7,17 +13,26 @@ const Sitemap = () => {
       category: "Main Pages",
       links: [
         { name: "Home", path: "/", icon: <Home size={18} /> },
-        { name: "About Us", path: "/about", icon: <Info size={18} /> },
-        { name: "Services", path: "/services", icon: <Briefcase size={18} /> },
-        { name: "Contact", path: "/contact", icon: <Phone size={18} /> },
+        { name: "About Us", path: "/about/company", icon: <Info size={18} /> },
+        { name: "Services", path: "/services/loans", icon: <Briefcase size={18} /> },
+        // { name: "Contact", path: "/contact", icon: <Phone size={18} /> },
+        { name: "History", path: "/about/history", icon: <FaHistory size={18} /> },
+        { name: "Mission & Vision", path: "/about/mission", icon: <FaBullseye size={18} /> },
+        { name: "Leadership", path: "/about/leadership", icon: <FaUsers size={18} /> },
+        { name: "Team", path: "/team", icon: <RiTeamFill size={18} /> },
       ],
-    },
+    },  
     {
       category: "Resources",
       links: [
-        { name: "Blog", path: "/blog", icon: <FileText size={18} /> },
-        { name: "Careers", path: "/careers", icon: <Briefcase size={18} /> },
+        { name: "Gallery", path: "/gallery", icon: <GrGallery /> },
+        // { name: "Blog", path: "/blog", icon: <FileText size={18} /> },
+        { name: "Careers", path: "/career", icon: <Briefcase size={18} /> },
         { name: "Support", path: "/support", icon: <Mail size={18} /> },
+        { name: "Branch Location", path: "/branch-locator", icon: <FaLocationDot size={18} /> },
+        { name: "Calculators", path: "/calculators", icon: <FaCalculator size={18} /> },
+        { name: "Loan Application Form", path: "/LoanApplicationForm", icon: <VscGitStashApply size={18} /> },
+        { name: "Job Application", path: "/job-application", icon: <SiJordan size={18} /> },
       ],
     },
   ];
@@ -58,11 +73,11 @@ const Sitemap = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <p className="text-sm text-gray-500">
             © {new Date().getFullYear()} Unigold Finance. All Rights Reserved.
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );
