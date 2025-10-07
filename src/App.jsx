@@ -10,7 +10,7 @@ import Career from './pages/Career';
 import Contact from './pages/Contact';
 import Team from './pages/Team';
 import Footer from './components/Footer';
-import SocialButtons from './components/SocialButtons';
+// import SocialButtons from './components/SocialButtons';
 import Loan from './pages/Loans';
 import Benifits from './pages/Benefits';
 import Valueaddedservices from './pages/Valueservices';
@@ -37,6 +37,7 @@ import GoldLoanCalculator from './components/GoldLoanCalculator';
 import PastMentors from './components/PastMentors';
 import ScrollToTop from './components/ScrollToTop';
 import Sitemap from './components/Sitemap';
+import LiveChat from './components/LiveChat';
 
 function App() {
   return (
@@ -83,7 +84,8 @@ function App() {
 
           </Routes>
         </main>
-        <SocialButtons />
+        {/* <SocialButtons /> */}
+        <LiveChat />
         <Footer />
       </div>
     </Router>

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaGlobe, FaChevronDown } from 'react-icons/fa';
+import { IoLanguageSharp } from 'react-icons/io5';
 
 function LanguageDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,9 @@ function LanguageDropdown() {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-gray-100"
       >
-        <FaGlobe className="text-gray-600" />
+        {/* <FaGlobe className="text-gray-600" /> */}
+<IoLanguageSharp className="text-gray-800 font-semibold text-xl" />
+
         <span className="hidden md:inline">{languages.find(lang => lang.code === i18n.language)?.name}</span>
         <FaChevronDown className="text-gray-600" />
       </button>

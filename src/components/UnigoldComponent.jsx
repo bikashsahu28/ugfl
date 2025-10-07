@@ -1,14 +1,16 @@
 import  { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const UnigoldComponent = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+    const { t } = useTranslation();
   
   // Statistics data
   const stats = [
-    { value: 30000, label: 'Happy Customers', suffix: '+' },
-    { value: 500, label: 'Loans Disbursed', suffix: 'Lakh+' },
-    { value: 21, label: 'Branches', suffix: '+' }
+    { value: 33000, label: 'Happy Customers', suffix: '+' },
+    { value: 50, label: 'Loans Disbursed', suffix: 'Lakh+' },
+    { value: 23, label: 'Branches', suffix: '+' }
   ];
 
   // Intersection Observer to trigger animation when section is in view
@@ -47,28 +49,27 @@ const UnigoldComponent = () => {
             <div className="space-y-5">
                 <h1 className="text-4xl font-bold text-gray-800 mb-12">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-800">
-          UNIGOLD FINANCE LTD
+          {/* UNIGOLD FINANCE LTD */}
+                      {t('companyName')}
+
         </span>
       </h1>
               <p className="text-gray-700 leading-relaxed">
-                UNIGOLD Finance is a consumer finance registered NBFC, founded and backed by 
+                {/* UNIGOLD Finance is a consumer finance registered NBFC, founded and backed by 
                 ultra-high net worth individuals and family offices. The NBFC focuses on providing 
                 easy gold loans to the customers and develop a personal touchpoint through an 
-                offline sourcing model.
+                offline sourcing model. */}
+                          {t('aboutParagraph1')}
+
               </p>
               
               <p className="text-gray-700 leading-relaxed">
-                We aim to become one of the top and most trusted financing partners for all 
-                segments of society. We believe that through a hassle-free loan process, 
-                operational efficiency, and customer delight we can achieve our target in a 
-                very short period.
+                          {t('aboutParagraph2')}
+
               </p>
               
               <p className="text-gray-700 leading-relaxed">
-                Professionals with rich experience have been entrusted with our business to 
-                help us advance as the leader in gold financing. Our organization is built on 
-                the premise that employees should be given leadership opportunities regardless 
-                of the role they play.
+          {t('aboutParagraph3')}
               </p>
             </div>
           </div>

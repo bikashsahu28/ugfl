@@ -35,6 +35,15 @@
       "description": "We offer the most competitive interest rates in the market"
     }
   },
+  
+  "companyName": "UNIGOLD FINANCE LTD",
+  "aboutParagraph1": "UNIGOLD Finance is a consumer finance registered NBFC, founded and backed by ultra-high net worth individuals and family offices. The NBFC focuses on providing easy gold loans to the customers and develop a personal touchpoint through an offline sourcing model.",
+  "aboutParagraph2": "We aim to become one of the top and most trusted financing partners for all segments of society. We believe that through a hassle-free loan process, operational efficiency, and customer delight we can achieve our target in a very short period.",
+  "aboutParagraph3": "Professionals with rich experience have been entrusted with our business to help us advance as the leader in gold financing. Our organization is built on the premise that employees should be given leadership opportunities regardless of the role they play.",
+  "loanAmount": "Loan Amount",
+  "happyCustomers": "Happy Customers",
+  "branchNetwork": "Branch Network"
+,
   "features": {
     "title": "Why Choose UniGold Finance?",
     "quickProcessing": {

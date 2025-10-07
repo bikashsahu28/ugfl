@@ -17,6 +17,7 @@ import { FaArrowRight, FaRegClock, FaStar } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
 import UnigoldComponent from '../components/UnigoldComponent';
 import SubNavbar from '../components/SubNavBar';
+import SocialMediaSidebar from '../components/SocialMediaSidebar';
 
 function Home() {
   const [goldPrice, setGoldPrice] = useState(null);
@@ -129,7 +130,7 @@ const visibleTestimonials = testimonials.slice(
                 <HomeCarousel />
               </div>
             </section>
-
+<SocialMediaSidebar />
      
       <LoanPopup />
 
@@ -171,9 +172,6 @@ const visibleTestimonials = testimonials.slice(
       </div>
     </div>
     <div className="mt-12 text-center">
-      {/* <p className="text-xl font-medium">
-        {t('whyChooseUs.trusted')} <span className="text-primary font-bold">30,000+</span> {t('whyChooseUs.customers')}
-      </p> */}
     </div>
   </div>
 </section>
