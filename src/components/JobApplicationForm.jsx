@@ -1,5 +1,7 @@
-import { FaUser, FaEnvelope, FaPhone, FaGraduationCap, FaBriefcase, FaFileUpload, FaMapMarkerAlt, FaRedo } from 'react-icons/fa';
+import { FaUser, FaEnvelope, FaPhone, FaGraduationCap, FaBriefcase, FaMapMarkerAlt, FaRedo } from 'react-icons/fa';
 import { useState } from 'react';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const JobApplicationForm = () => {
   const [formData, setFormData] = useState({
@@ -86,24 +88,134 @@ const JobApplicationForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
     
-    if (validateForm()) {
-      // Form is valid, proceed with submission
-      console.log('Form submitted:', formData);
-      setIsSubmitted(true);
+  //   if (validateForm()) {
+  //     // Form is valid, proceed with submission
+  //     console.log('Form submitted:', formData);
+  //     setIsSubmitted(true);
       
-      // Here you would typically send the data to your backend
-      // axios.post('/api/job-application', formData)...
+  //     // Here you would typically send the data to your backend
+  //     // axios.post('/api/job-application', formData)...
       
-      // Reset form after successful submission (optional)
-      setTimeout(() => {
-        resetForm();
-        setIsSubmitted(false);
-      }, 3000);
+  //     // Reset form after successful submission (optional)
+  //     setTimeout(() => {
+  //       resetForm();
+  //       setIsSubmitted(false);
+  //     }, 3000);
+  //   }
+  // };
+
+
+// const handleSubmit = async (e) => {
+//   e.preventDefault();
+
+//   // Basic validation (optional – you can reuse your existing validateForm)
+//   if (!formData.fullName || !formData.email || !formData.phone || !formData.position) {
+//     alert("Please fill all required fields!");
+//     return;
+//   }
+
+//   try {
+//     // Create FormData to handle file uploads (resume)
+//     const data = new FormData();
+//     data.append("fullName", formData.fullName);
+//     data.append("email", formData.email);
+//     data.append("phone", formData.phone);
+//     data.append("location", formData.location);
+//     data.append("position", formData.position);
+//     data.append("salary", formData.salary);
+//     data.append("education", formData.education);
+//     data.append("experience", formData.experience);
+//     data.append("coverLetter", formData.coverLetter);
+//     data.append("resume", formData.resume);
+//     // if (formData.resume) {
+//     //   data.append("resume", formData.resume);
+//     // }
+//       // formData.append("resume", resumeFile); // resumeFile from input[type="file"]
+
+
+//     // POST to backend API
+//     const res = await axios.post("http://localhost:3000/api/postjob", data, {
+//       headers: {
+//         "Content-Type": "multipart/form-data",
+//       },
+//     });
+
+//     if (res.status === 200) {
+//       alert("Application submitted successfully!");
+//       resetForm(); // clear the form
+//     } 
+//     // else {
+//     //   alert("Failed to submit application. Please try again.");
+//     // }
+//   } catch (error) {
+//     console.error("Error submitting form:", error);
+//     alert("An error occurred while submitting your application.");
+//   }
+// };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  // Basic validation
+  if (!formData.fullName || !formData.email || !formData.phone || !formData.position) {
+    Swal.fire({
+      icon: "warning",
+      title: "Missing Fields",
+      text: "Please fill all required fields before submitting!",
+      confirmButtonColor: "#3085d6",
+    });
+    return;
+  }
+
+  try {
+    // Create FormData to handle file upload
+    const data = new FormData();
+    data.append("fullName", formData.fullName);
+    data.append("email", formData.email);
+    data.append("phone", formData.phone);
+    data.append("location", formData.location);
+    data.append("position", formData.position);
+    data.append("salary", formData.salary);
+    data.append("education", formData.education);
+    data.append("experience", formData.experience);
+    data.append("coverLetter", formData.coverLetter);
+    data.append("resume", formData.resume); // File input
+
+    // Send data to backend
+    const res = await axios.post("http://localhost:3000/api/postjob", data, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+
+    if (res.status === 200 || res.status === 201) {
+      Swal.fire({
+        icon: "success",
+        title: "Application Submitted!",
+        text: "Your application has been submitted successfully.",
+        confirmButtonColor: "#3085d6",
+      });
+      resetForm(); // clear form
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Submission Failed",
+        text: "Something went wrong. Please try again.",
+        confirmButtonColor: "#d33",
+      });
     }
-  };
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    Swal.fire({
+      icon: "error",
+      title: "Server Error",
+      text: "An error occurred while submitting your application.",
+      confirmButtonColor: "#d33",
+    });
+  }
+};
 
   const resetForm = () => {
     setFormData({

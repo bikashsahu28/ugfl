@@ -52,7 +52,13 @@ const LoanApplicationForm = () => {
   const validateForm = () => {
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = t('LoanApplicationForm.errors.name');
-    if (!formData.phone.trim()) newErrors.phone = t('LoanApplicationForm.errors.phone');
+    // if (!formData.phone.trim()) newErrors.phone = t('LoanApplicationForm.errors.phone');
+    // ✅ Phone validation: must be exactly 10 digits
+  if (!formData.phone.trim()) {
+    newErrors.phone = t('LoanApplicationForm.errors.phone');
+  } else if (!/^[0-9]{10}$/.test(formData.phone)) {
+    newErrors.phone = "Phone number must be exactly 10 digits.";
+  }
     if (!formData.address.trim()) newErrors.address = t('LoanApplicationForm.errors.address');
     if (!formData.goldWeight) newErrors.goldWeight = t('LoanApplicationForm.errors.goldWeight');
     if (!formData.agreeTerms) newErrors.agreeTerms = t('LoanApplicationForm.errors.agreeTerms');
@@ -61,152 +67,69 @@ const LoanApplicationForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (validateForm()) {
-  //     setIsSubmitting(true);
-      
-  //     try {
-  //       // Simulate API call
-  //       await new Promise(resolve => setTimeout(resolve, 1500));
-        
-  //       if (!isMounted) return;
-        
-  //       console.log('Form submitted:', formData);
-  //       setSubmitSuccess(true);
-  //       setErrors({});
-  //       setFormData(initialFormState);
-        
-  //       await Swal.fire({
-  //         title: t('LoanApplicationForm.success.title'),
-  //         text: t('LoanApplicationForm.success.message'),
-  //         icon: "success",
-  //         showClass: {
-  //           popup: 'animate__animated animate__fadeInDown animate__faster'
-  //         },
-  //         hideClass: {
-  //           popup: 'animate__animated animate__fadeOutUp animate__faster'
-  //         },
-  //         background: '#fff',
-  //         backdrop: `
-  //           rgba(245, 158, 11, 0.4)
-  //           url("/images/nyan-cat.gif")
-  //           left top
-  //           no-repeat
-  //         `,
-  //         confirmButtonColor: "#f59e0b",
-  //         confirmButtonText: t('LoanApplicationForm.success.button'),
-  //         customClass: {
-  //           container: 'shadow-xl rounded-xl'
-  //         }
-  //       });
-  //     } finally {
-  //       if (isMounted) {
-  //         setIsSubmitting(false);
-  //       }
-  //     }
-  //   }
-  // };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (validateForm()) {
+    setIsSubmitting(true);
 
+    try {
+      // Simulate API call delay
+      await new Promise(resolve => setTimeout(resolve, 1500));
 
+      if (!isMounted) return;
 
-// const handleSubmit = async (e) => {
-//   e.preventDefault();
-//   if (validateForm()) {
-//     setIsSubmitting(true);
-    
-//     try {
-//       const response = await fetch('http://localhost:3000/', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(formData),
-//       });
+      // Try submitting the form
+      await axios.post('http://localhost:3000/api/postloan', formData);
+      //console.log('Form submitted:', formData);
+      setSubmitSuccess(true);
+      setErrors({});
+      setFormData(initialFormState);
 
-//       if (!response.ok) {
-//         throw new Error('Failed to submit application');
-//       }
+      await Swal.fire({
+        title: t('LoanApplicationForm.success.title'),
+        text: t('LoanApplicationForm.success.message'),
+        icon: "success",
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown animate__faster'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp animate__faster'
+        },
+        confirmButtonColor: "#f5c73eff",
+        confirmButtonText: t('LoanApplicationForm.success.button'),
+        customClass: {
+          container: 'shadow-xl rounded-xl'
+        },
+      });
 
-//       const result = await response.json();
-//       console.log('Form submitted successfully:', result.data);
-      
-//       setSubmitSuccess(true);
-//       setErrors({});
-//       setFormData(initialFormState);
-      
-//       await Swal.fire({
-//         title: t('LoanApplicationForm.success.title'),
-//         text: t('LoanApplicationForm.success.message'),
-//         icon: "success",
-//         // ... rest of your Swal config
-//       });
-//     } catch (error) {
-//       console.error('Error submitting form:', error);
-//       await Swal.fire({
-//         title: 'Error',
-//         text: error.message || 'Failed to submit application',
-//         icon: "error",
-//         confirmButtonColor: "#f59e0b",
-//       });
-//     } finally {
-//       if (isMounted) {
-//         setIsSubmitting(false);
-//       }
-//     }
-//   }
-// };
+    } catch (error) {
+      console.error('Form submission failed:', error);
 
-   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      setIsSubmitting(true);
-      
-      try {
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        if (!isMounted) return;
-        await axios.post('http://localhost:3000/api/postloan', formData);
-        console.log('Form submitted:', formData);
-        setSubmitSuccess(true);
-        setErrors({});
-        setFormData(initialFormState);
-        
-        await Swal.fire({
-          title: t('LoanApplicationForm.success.title'),
-          text: t('LoanApplicationForm.success.message'),
-          icon: "success",
-          showClass: {
-            popup: 'animate__animated animate__fadeInDown animate__faster'
-          },
-          hideClass: {
-            popup: 'animate__animated animate__fadeOutUp animate__faster'
-          },
-          background: '#fff',
-          backdrop: `
-            rgba(245, 158, 11, 0.4)
-            url("/images/nyan-cat.gif")
-            left top
-            no-repeat
-          `,
-          confirmButtonColor: "#f59e0b",
-          confirmButtonText: t('LoanApplicationForm.success.button'),
-          customClass: {
-            container: 'shadow-xl rounded-xl'
-          },
-          
-        }
-      );
+      await Swal.fire({
+        title: "Submission Failed",
+        text: "Something went wrong while submitting your form. Please try again later.",
+        icon: "error",
+        confirmButtonColor: "#f87171", // red shade
+        confirmButtonText: "OK",
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown animate__faster'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp animate__faster'
+        },
+        customClass: {
+          container: 'shadow-xl rounded-xl'
+        },
+      });
 
-      } finally {
-        if (isMounted) {
-          setIsSubmitting(false);
-        }
+    } finally {
+      if (isMounted) {
+        setIsSubmitting(false);
       }
     }
-  };
-  
+  }
+};
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
