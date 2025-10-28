@@ -50,6 +50,7 @@ function Footer() {
               <li><Link to="/rbi-disclaimer" className="text-gray-400 hover:text-white">RBI Disclaimer</Link></li>
               <li><Link to="/customer-awareness" className="text-gray-400 hover:text-white">Customer Awareness</Link></li>
               <li><Link to="/terms-and-conditions" className="text-gray-400 hover:text-white">Terms and Conditions</Link></li>
+              <li><Link to="/board-of-directors" className="text-gray-400 hover:text-white">Board Of Directors</Link></li>
 
             </ul>
           </div>

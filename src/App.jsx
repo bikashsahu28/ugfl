@@ -38,6 +38,7 @@ import PastMentors from './components/PastMentors';
 import ScrollToTop from './components/ScrollToTop';
 import Sitemap from './components/Sitemap';
 import LiveChat from './components/LiveChat';
+import BoardOfDirectors from './components/BoardOfDirectors';
 
 function App() {
   return (
@@ -78,9 +79,10 @@ function App() {
             <Route path="/customer-awareness" element={<CustomerAwareness />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/job-application" element={<JobApplicationForm />} />
-            <Route path="/gold-loan-calculator" element={<GoldLoanCalculator />} />
+            {/* <Route path="/gold-loan-calculator" element={<GoldLoanCalculator />} /> */}
             <Route path="/past-mentors" element={<PastMentors />} />
             <Route path="/sitemap" element={<Sitemap />} />
+            <Route path="/board-of-directors" element={<BoardOfDirectors />} />
 
           </Routes>
         </main>

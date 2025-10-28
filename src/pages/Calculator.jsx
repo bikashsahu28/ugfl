@@ -29,7 +29,7 @@ function Calculator() {
   const [loanDuration, setLoanDuration] = useState('12');
   const { t } = useTranslation();
   
-  const currentGoldRate = 6245.50;
+  const currentGoldRate = 7900.50;
   const ltvRatio = 0.75;
 
   const calculateLoan = () => {

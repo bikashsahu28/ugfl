@@ -30,7 +30,7 @@ function Home() {
   // Adding these scroll effects at the component level
 
   useEffect(() => {
-    setGoldPrice(6810.50);
+    setGoldPrice(7900.00);
     
     const interval = setInterval(() => {
       const randomChange = (Math.random() - 0.5) * 3;
@@ -383,7 +383,7 @@ const visibleTestimonials = testimonials.slice(
             <div>
               <div className="text-4xl mb-4">🏦</div>
               <h3 className="text-xl font-semibold mb-2">RBI Registered</h3>
-              <p>Registered NBFC under RBI guidelines</p>
+              <p>Registered as non- deposit taking  NBFC under RBI guidelines</p>
             </div>
             <div>
               <div className="text-4xl mb-4">⭐</div>
@@ -527,6 +527,19 @@ const visibleTestimonials = testimonials.slice(
         <h3 className="text-2xl font-semibold text-primary mb-6">Contact Details</h3>
         
         <div className="space-y-6">
+                
+            <div className="flex items-start gap-4">
+            <div className="mt-1 text-primary">
+              <FaLocationDot className="h-6 w-6" />
+            </div>
+            <div>
+              <h4 className="font-semibold text-lg mb-1">Registered Office</h4>
+              <p className="text-gray-600">802C1, Pinnacle Corporate Park, Bandra Kurla Complex, Bandra(East), 
+                <br/>Mumbai, Maharashtra, India, 400051</p>
+            </div>
+          </div>
+
+
           <div className="flex items-start gap-4">
             <div className="mt-1 text-primary">
               <FaLocationDot className="h-6 w-6" />

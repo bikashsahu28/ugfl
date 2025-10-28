@@ -14,7 +14,7 @@ const CalculatorComponent = () => {
     19: 5600,
     20: 5800,
     21: 6000,
-    22: 6810
+    22: 7900
   };
 
   // Calculate based on input

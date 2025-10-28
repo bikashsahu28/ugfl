@@ -191,7 +191,7 @@ const fadeIn = {
               <h3 className="text-xl font-bold text-amber-600 mb-3">{t('about.growth.aum.title')}</h3>
               <p className="text-gray-600">{t('about.growth.aum.description')}</p>
               <div className="mt-4 p-4 bg-amber-100 rounded-lg">
-                <p className="text-amber-800 font-bold text-lg">₹230+ Crores AUM</p>
+                <p className="text-amber-800 font-bold text-lg">₹250+ Crores AUM</p>
                 <p className="text-amber-700 text-sm">{t('about.growth.aum.subtext')}</p>
               </div>
             </div>

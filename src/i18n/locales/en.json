@@ -107,9 +107,8 @@
   },
   
   "about": {
-   
-     "title": "Trusted Gold Loan Partners Since 2023",
-  "overview": "Founded in 2023, we've rapidly grown to become Odisha's fastest-growing gold loan provider with 20 branches and ₹230+ crores Assets Under Management (AUM). Our customer-first approach and transparent processes have helped over 15,000 families unlock the value of their gold assets.",
+   "title": "Trusted Gold Loan Partners Since 2023",
+  "overview": "Incorporated in 1995, our company ventured into the gold loan finance business in 2023. Since then, we’ve rapidly grown to become Odisha’s fastest-growing gold loan provider with 24 branches and ₹250+ crores in Assets Under Management (AUM). Our customer-first approach and transparent processes have empowered over 15,000 families to unlock the true value of their gold assets.",
 
   "growth": {
     "title": "Our Remarkable Growth",
@@ -126,18 +125,19 @@
       }},
     "expansion": {
       "title": "Odisha Expansion",
-      "description": "In just 18 months, we've established a strong presence across 20 strategic locations:",
+      "description": "In just 18 months, we've established a strong presence across 24 strategic locations:",
       "branches": {
         "1": "Bhubaneswar (Flagship Branch)",
         "2": "Cuttack City Center",
         "3": "Puri Pilgrim Center",
-        "4": "Sambalpur Commercial Hub",
-        "5": "Rourkela Industrial Branch"
+        "4": "Balasore Commercial Hub",
+        "5": "Talcher Industrial Branch"
       }
     },
     "aum": {
       "title": "Financial Milestone",
-      "description": "Achieved ₹230 Crore AUM through trust-building measures and competitive interest rates starting at 0.79% per month.",
+      "description": "As of July 2025, achieved ₹250 Crore AUM through consistent trust-building measures and competitive interest rates starting at 0.79% per month.",
+
       "subtext": "Serving 500+ customers monthly with 98% renewal rate"
     }
   },
@@ -149,7 +149,7 @@
       "April 2023": "Founded with a vision to revolutionize gold loans",
       "January  2024": "Crossed ₹100 crore in gold loan disbursements",
       "May 2024": "Launched Loan at home gold loan services",
-      "June 2025": "Served over 50,000 happy customers with 230 cores AUM"
+      "June 2025": "Served over 50,000 happy customers with 250 cores AUM"
     }
   },
   
@@ -991,7 +991,7 @@
       "customers": { "value": "1M+", "label": "Customers Served" },
       "branches": { "value": "100+", "label": "Branches Nationwide" },
       "loans": { "value": "500K+", "label": "Loans Disbursed" },
-      "employees":{"value": "₹230Cr+",
+      "employees":{"value": "₹250Cr+",
         "label": "Total Loan Amount Disbursed"
       }
     }

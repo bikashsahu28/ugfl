@@ -1,4 +1,3 @@
-import React from 'react';
 
 const GrievanceRedressalPolicy = () => {
   return (
@@ -41,7 +40,7 @@ const GrievanceRedressalPolicy = () => {
             <div className="bg-amber-50 p-6 rounded-lg mb-6">
               <h3 className="text-xl font-semibold text-amber-800 mb-3">Contact Particulars of our Customer Service Center:</h3>
               <p className="mb-2">
-                Call us on <span className="font-semibold">18003090620 (Toll free)</span> between 9:30 am and 6:30 pm from Monday to Saturday and our team will be happy to assist you or you may drop us an email at <span className="font-semibold">care@www.unigoldfinance.com</span>.
+                Call us on <span className="font-semibold">18003090620 (Toll free)</span> between 9:30 am and 6:30 pm from Monday to Saturday and our team will be happy to assist you or you may drop us an email at <span className="font-semibold">care@unigoldfinance.com</span>.
               </p>
               <p className="text-sm text-gray-600">
                 (Please mention your loan account number and contact number in the subject line)
@@ -52,14 +51,14 @@ const GrievanceRedressalPolicy = () => {
               <div className="border-l-4 border-amber-500 pl-4">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Level 1 Escalation:</h3>
                 <p>
-                  In case you are not satisfied with the response from our Customer Care/Helpline, you can e-mail us at <span className="font-semibold">cs.vinita@www.unigoldfinance.com</span>
+                  In case you are not satisfied with the response from our Customer Care/Helpline, you can e-mail us at <span className="font-semibold">cs.vinita@unigoldfinance.com</span>
                 </p>
               </div>
 
               <div className="border-l-4 border-amber-500 pl-4">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Level 2 Escalation:</h3>
                 <p className="mb-2">
-                  If case you are still not satisfied and want to raise your concern further, you may write an e-mail to our Principal officer at <span className="font-semibold">kailash.godhwani@www.unigoldfinance.com</span>
+                  If case you are still not satisfied and want to raise your concern further, you may write an e-mail to our Principal officer at <span className="font-semibold">kailash.godhwani@unigoldfinance.com</span>
                 </p>
                 <p>
                   Alternatively, you can also write to the below address:
@@ -70,7 +69,7 @@ const GrievanceRedressalPolicy = () => {
                   1st Floor, Ridge Residency Complex, Baramunda,<br />
                   Bhubaneswar, Odisha – 751003<br />
                   Contact: 9692189044<br />
-                  Email: sakti@www.unigoldfinance.com
+                  Email: sakti@unigoldfinance.com
                 </address>
               </div>
 

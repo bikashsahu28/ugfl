@@ -188,7 +188,7 @@ function Support() {
     {
       title: 'Phone Support',
       description: '24/7 customer service hotline',
-      details: '9777700511',
+      details: '9124515409',
       icon: '📞',
       action: 'Call Now'
     },
